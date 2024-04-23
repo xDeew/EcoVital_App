@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoVital.Views.ProgressStatus"
+             xmlns:vm="clr-namespace:EcoVital.ViewModels"
+             x:Name="ProgressStatusPage"
+             xmlns:converters="clr-namespace:EcoVital.Converters">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:BoolToOpacityConverter x:Key="BoolToOpacityConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout>
+            <CollectionView ItemsSource="{Binding RegisteredActivities}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10" Margin="5" CornerRadius="10" BorderColor="LightGray" HasShadow="True">
+                            <StackLayout Orientation="Vertical">
+                                <ImageButton Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="200"
+                                             Command="{Binding Source={x:Reference ProgressStatusPage}, Path=BindingContext.SelectActivityCommand}"
+                                             CommandParameter="{Binding .}">
+                                    <ImageButton.Triggers>
+                                        <DataTrigger TargetType="ImageButton" Binding="{Binding IsSelected}"
+                                                     Value="True">
+                                            <Setter Property="Opacity" Value="0.5" />
+                                        </DataTrigger>
+                                    </ImageButton.Triggers>
+                                </ImageButton>
+                                <Label Text="{Binding ActivityType}" FontAttributes="Bold"
+                                       HorizontalTextAlignment="Center" />
+                                <ProgressBar Progress="{Binding Progress}" ProgressColor="Green" WidthRequest="300"
+                                             HeightRequest="20" />
+                                <Label Text="{Binding Progress, StringFormat='{0:P0}'}"
+                                       HorizontalTextAlignment="Center" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <ScrollView Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Margin="0, 20">
+                    <Button Text="25% completado" Command="{Binding UpdateProgressCommand}"
+                            CommandParameter="{x:Double 0.25}" Margin="2" />
+                    <Button Text="50% completado" Command="{Binding UpdateProgressCommand}"
+                            CommandParameter="{x:Double 0.50}" Margin="2" />
+                    <Button Text="75% completado" Command="{Binding UpdateProgressCommand}"
+                            CommandParameter="{x:Double 0.75}" Margin="2" />
+                    <Button Text="100% completado" Command="{Binding UpdateProgressCommand}"
+                            CommandParameter="{x:Double 1.00}" Margin="2" />
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

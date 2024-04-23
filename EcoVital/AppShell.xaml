@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:EcoVital"
+       xmlns:views="clr-namespace:EcoVital.Views"
+       xmlns:viewModels1="clr-namespace:EcoVital.ViewModels"
+       xmlns:models="clr-namespace:EcoVital.Models"
+       xmlns:converters="clr-namespace:EcoVital.Converters"
+       x:Class="EcoVital.AppShell"
+       Shell.FlyoutBehavior="Flyout"
+       Title="EcoVital"
+       Navigated="OnNavigating"
+       Shell.BackgroundColor="#76C893"
+       TabBarBackgroundColor="#6A9D78"
+       ForegroundColor="#FFFFFF"
+       TabBarUnselectedColor="#9FA8A3"
+       TabBarTitleColor="#FFFFFF"
+       TabBarForegroundColor="#2F4F4F">
+
+
+    <!-- Shell Resources -->
+    <Shell.Resources>
+        <ResourceDictionary>
+            <converters:TitleToColorConverter x:Key="TitleToColor" />
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#F2B138" />
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="CornerRadius" Value="20" />
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+
+    <!-- Flyout Item Template -->
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid Padding="15,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" /> <!-- Espacio para el ícono -->
+                    <ColumnDefinition Width="*" />    <!-- Espacio para el texto -->
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon}"
+                       WidthRequest="30"
+                       HeightRequest="30"
+                       VerticalOptions="Center"
+                       Margin="0,0,10,0" />
+                <Label Grid.Column="1"
+                       Text="{Binding Title}"
+                       VerticalOptions="Center">
+                    <Label.TextColor>
+                        <Binding Path="Title" Converter="{StaticResource TitleToColor}" />
+                    </Label.TextColor>
+                </Label>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+
+    <!-- Flyout Items -->
+    <FlyoutItem Route="ProgressStatus" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Progreso actual"
+                      ContentTemplate="{DataTemplate views:ProgressStatus}" 
+                      Icon="bars_progress_solid.svg"/>
+        <ShellContent Title="Recordatorios de salud"
+                      ContentTemplate="{DataTemplate views:HealthReminders}"
+                      Icon="bell_solid.svg"/>
+    </FlyoutItem>
+
+    <FlyoutItem Route="HomePage" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Home"
+                      ContentTemplate="{DataTemplate views:HomePage}"
+                      Icon="house_solid.svg" />
+        <ShellContent Title="Contacto"
+                      ContentTemplate="{DataTemplate views:ContactPage}"
+                      Icon="phone_solid.svg" />
+        <ShellContent Title="Sobre nosotros"
+                      ContentTemplate="{DataTemplate views:AboutPage}"
+                      Icon="info_solid.svg" />
+    </FlyoutItem>
+    <!-- Main Page -->
+    <ShellContent Title="¿No es tu cuenta? Cierra sesión aquí"
+                  ContentTemplate="{DataTemplate local:LoginPage}"
+                  Route="LoginPage"
+                  Icon="logout.svg" />
+
+    <!-- Sign Out Menu Item -->
+    <MenuItem Text="Desconectarse"
+              Command="{Binding SignOutCommand}"
+              IconImageSource="logout.svg" />
+</Shell>
