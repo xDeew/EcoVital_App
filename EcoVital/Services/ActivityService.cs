@@ -12,7 +12,7 @@ namespace EcoVital.Services
         private readonly string _apiBaseUrl = "https://vivaservice.azurewebsites.net/api/activity";
         private readonly string _apiBaseUrlUnion = "https://vivaservice.azurewebsites.net/api/UserActivityRecords";
 
-        public ActivityService(HttpClient client) // Inyección de dependencias para HttpClient para realizar solicitudes HTTP
+        public ActivityService(HttpClient client) 
         {
             _client = client ?? throw new ArgumentNullException(nameof(client));
         }
