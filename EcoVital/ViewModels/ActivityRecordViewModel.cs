@@ -45,7 +45,7 @@ namespace EcoVital.ViewModels
             RegisterSelectedActivitiesCommand = new AsyncRelayCommand(RegisterSelectedActivitiesAsync);
             SelectedActivities = new ObservableCollection<ActivityRecord>();
 
-            // Este comando fue definido dos veces, eliminamos la primera definición.
+           
             SelectActivityCommand = new RelayCommand<ActivityRecord>(SelectActivity);
         }
 
