@@ -69,15 +69,16 @@
         <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2"/>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
         <PackageReference Include="Nito.Mvvm.Async" Version="1.0.0-delta-3"/>
-        <PackageReference Include="Plugin.Firebase" Version="2.0.12"/>
         <PackageReference Include="System.Text.Json" Version="8.0.2"/>
         <PackageReference Include="Xamarin.Build.Download" Version="0.11.4"/>
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
-        <PackageReference Include="Xamarin.AndroidX.Collection.Jvm" Version="1.4.0.1"/>
+        <PackageReference Include="Xamarin.AndroidX.Collection" Version="1.4.0.2" />
+        <PackageReference Include="Xamarin.AndroidX.Collection.Jvm" Version="1.4.0.1" />
         <PackageReference Include="Xamarin.AndroidX.Collection.Ktx" Version="1.4.0.1"/>
     </ItemGroup>
+
 
     <ItemGroup>
         <MauiXaml Update="Views\LoginPage.xaml">

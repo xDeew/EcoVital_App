@@ -20,3 +20,14 @@ node_modules/
 # Archivos de log
 *.log
 
+
+# Ignorar archivos de proyecto de Xamarin.Android
+*.csproj
+
+
+# Carpeta de salida de compilación
+./bin/
+./obj/
+
+packages/
+
