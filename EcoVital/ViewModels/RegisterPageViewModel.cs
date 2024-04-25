@@ -37,9 +37,17 @@ namespace EcoVital.ViewModels
         [ICommand]
         public async void Register()
         {
-            
+            if (!Email.Contains("@"))
+            {
+                await App.Current.MainPage.DisplayAlert("Error",
+                    "Por favor, proporciona un correo electrónico válido.", "OK");
+
+                return;
+            }
+
             if (string.IsNullOrWhiteSpace(UserName) || string.IsNullOrWhiteSpace(Email) ||
-                string.IsNullOrWhiteSpace(Password) || string.IsNullOrWhiteSpace(ConfirmPassword))
+                string.IsNullOrWhiteSpace(Password) || string.IsNullOrWhiteSpace(ConfirmPassword)
+               )
             {
                 await App.Current.MainPage.DisplayAlert("Error", "Todos los campos son obligatorios.", "OK");
                 await LoadingService.HideLoading();
@@ -50,11 +58,14 @@ namespace EcoVital.ViewModels
             if (!IsPasswordSecure(Password))
             {
                 await App.Current.MainPage.DisplayAlert("Contraseña insegura",
-                    "Tu contraseña debe tener al menos 6 caracteres, incluir al menos un carácter en mayúsculas y un símbolo.", "OK");
+                    "Tu contraseña debe tener al menos 6 caracteres, incluir al menos un carácter en mayúsculas y un símbolo.",
+                    "OK");
+
                 await LoadingService.HideLoading();
+
                 return;
             }
-            
+
             // Validación de coincidencia de contraseña
             if (Password != ConfirmPassword)
             {
@@ -67,16 +78,17 @@ namespace EcoVital.ViewModels
             }
 
             // Verificar si el usuario ya existe
-            bool userExists = await _loginRepository.UserExists(UserName.ToLower()) || await _loginRepository.UserExists(Email.ToLower());
+            bool userExists = await _loginRepository.UserExists(UserName.ToLower()) ||
+                              await _loginRepository.UserExists(Email.ToLower());
 
             if (userExists)
             {
                 await App.Current.MainPage.DisplayAlert("Error",
                     "Un usuario con el mismo nombre de usuario y/o correo electrónico ya existe.", "OK");
+
                 return;
             }
-            
-           
+
 
             // Proceda con el registro si todo está bien
             UserInfo userInfo = await _loginRepository.Register(Email, UserName, Password);
@@ -96,7 +108,7 @@ namespace EcoVital.ViewModels
 
                 // Mostrar mensaje exitoso
                 await LoadingService.ShowLoading();
-                
+
                 await App.Current.MainPage.DisplayAlert("Registro exitoso",
                     "El usuario se ha registrado correctamente.", "OK");
 
@@ -123,19 +135,18 @@ namespace EcoVital.ViewModels
 
         public bool IsPasswordSecure(string password)
         {
-            
             if (password.Length < 6)
             {
                 return false;
             }
 
-            
+
             if (!password.Any(char.IsUpper))
             {
                 return false;
             }
 
-            
+
             if (!password.Any(char.IsSymbol) && !password.Any(char.IsPunctuation))
             {
                 return false;

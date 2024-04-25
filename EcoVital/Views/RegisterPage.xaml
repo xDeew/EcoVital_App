@@ -2,9 +2,17 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:EcoVital.Converters"
              x:Class="EcoVital.Views.RegisterPage"
              Title="RegisterPage"
              Shell.NavBarIsVisible="False">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ContainsAtConverter x:Key="ContainsAtConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <Grid BackgroundColor="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="220" />
@@ -37,7 +45,7 @@
 
             <StackLayout Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Start" Spacing="5">
                 <Label Text="¡Bienvenido!" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold"
-                       Margin="0,10,0,0" /> <!-- Adjust top margin as needed -->
+                       Margin="0,10,0,0" /> 
                 <Label Text="Regístrate para continuar" HorizontalOptions="Center" FontSize="Subtitle" />
             </StackLayout>
 
@@ -52,8 +60,26 @@
                                 Source="https://cdn4.iconfinder.com/data/icons/essential-app-2/16/email-letter-inbox-send-1024.png"
                                 Aspect="AspectFill" HeightRequest="30" WidthRequest="30" Margin="0" />
                         </Frame>
-                        <Entry Text="{Binding Email}" Placeholder="Email" TextColor="Black" FontAttributes="Bold"
-                               VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0, 0, 20, 0" />
+                        
+                        <Entry x:Name="EmailEntry" Text="{Binding Email}" Placeholder="Email" FontAttributes="Bold"
+                               VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0, 0, 20, 0">
+                            <Entry.Style>
+                                <Style TargetType="Entry">
+                                    <Setter Property="TextColor" Value="Red" />
+                                    <Style.Triggers>
+                                        <DataTrigger TargetType="Entry" Binding="{Binding Email}" Value="{x:Null}">
+                                            <Setter Property="TextColor" Value="Red" />
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Entry" Binding="{Binding Email}" Value="">
+                                            <Setter Property="TextColor" Value="Red" />
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Entry" Binding="{Binding Email, Converter={StaticResource ContainsAtConverter}}" Value="True">
+                                            <Setter Property="TextColor" Value="Green" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Entry.Style>
+                        </Entry>
                     </StackLayout>
                 </Frame>
 
