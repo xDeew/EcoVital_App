@@ -35,7 +35,12 @@ namespace EcoVital.ViewModels
 
         public ActivityRecordViewModel(ActivityService activityService)
         {
-            _activityService = activityService ?? throw new ArgumentNullException(nameof(activityService));
+            _activityService = activityService;
+            if (_activityService == null)
+            {
+                throw new ArgumentNullException(nameof(activityService));
+            }
+
             _activityRecords = new ObservableCollection<ActivityRecord>();
             _userActivityRecords = new ObservableCollection<UserActivityRecord>();
 
@@ -78,20 +83,20 @@ namespace EcoVital.ViewModels
             {
                 foreach (var activity in SelectedActivities)
                 {
-                    // Verifica si la actividad ya ha sido registrada por el usuario
+                    
                     var existingActivity = UserActivityRecords.FirstOrDefault(a =>
                         a.ActivityRecordId == activity.RecordId && a.UserId == App.UserInfo.UserId);
 
-                    // Si la actividad existe, muestra una alerta y continúa con la siguiente iteración del bucle
+                    
                     if (existingActivity != null)
                     {
                         await Application.Current.MainPage.DisplayAlert("Aviso",
                             $"La actividad '{activity.Description}' ya ha sido registrada.", "OK");
 
-                        // Limpiar la seleccion de la imagen para que su estado sea falso
+                        
                         activity.IsSelected = false;
                         SelectedActivities
-                            .Remove(activity); // Elimina la actividad de la lista de actividades seleccionadas
+                            .Remove(activity); 
 
                         return;
                     }
@@ -102,14 +107,14 @@ namespace EcoVital.ViewModels
                         ActivityRecordId = activity.RecordId,
                     };
 
-                    // Registra la nueva actividad y actualiza la lista de actividades del usuario
+                    
                     var registeredActivity = await _activityService.RegisterUserActivityRecordAsync(userActivityRecord);
                     UserActivityRecords.Add(registeredActivity);
                 }
 
                 await Application.Current.MainPage.DisplayAlert("Éxito", "Actividades registradas con éxito.", "OK");
                 await SaveSelectedActivitiesAsync();
-                // Reinicia las selecciones de actividades
+                
                 foreach (var activity in SelectedActivities)
                 {
                     activity.IsSelected = false;
@@ -128,23 +133,23 @@ namespace EcoVital.ViewModels
 
         private async Task LoadActivitiesAsync()
         {
-            await LoadUserActivityRecordsAsync(); // Asegura que UserActivityRecords esté actualizado.
+            await LoadUserActivityRecordsAsync(); 
             var activityRecords = await _activityService.GetActivityRecordsAsync();
             ActivityRecords.Clear();
             foreach (var activityRecord in activityRecords)
             {
                 activityRecord.ImageUrl = GetImageUrlForActivityType(activityRecord.ActivityType);
-                activityRecord.IsSelected = false; // Asegura que ninguna actividad esté seleccionada por defecto
+                activityRecord.IsSelected = false; 
 
                 ActivityRecords.Add(activityRecord);
             }
 
             OnPropertyChanged(nameof(SelectedActivities));
 
-            // Borrar las preferencias de las actividades seleccionadas
+           
             Preferences.Remove("SelectedActivities");
 
-            await LoadSelectedActivitiesAsync(); // Carga el estado previo de las selecciones, si es aplicable.
+            await LoadSelectedActivitiesAsync(); 
         }
 
 
