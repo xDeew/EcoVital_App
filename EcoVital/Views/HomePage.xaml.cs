@@ -1,7 +1,4 @@
-﻿using EcoVital.ViewModels;
-using Microsoft.Maui.Controls;
-
-namespace EcoVital.Views
+﻿namespace EcoVital.Views
 {
     public partial class HomePage : ContentPage
     {

@@ -11,7 +11,7 @@ namespace EcoVital.Services
 {
     public class LoginService : ILoginRepository
     {
-        private readonly string _apiBaseUrl = "https://vivaservice.azurewebsites.net/api/UserInfoes/";
+        readonly string _apiBaseUrl = "https://vivaservice.azurewebsites.net/api/UserInfoes/";
 
         public async Task<UserInfo> Login(string usernameOrEmail, string password)
         {
@@ -21,12 +21,12 @@ namespace EcoVital.Services
                 if (Connectivity.Current.NetworkAccess == NetworkAccess.Internet)
                 {
                     var client = new HttpClient();
-                    client.BaseAddress = new Uri(_apiBaseUrl); // Set the base address of the API to the HttpClient
+                    client.BaseAddress = new Uri(_apiBaseUrl);
 
-                    // Send a GET request to 'GetUserByEmailOrUsername/{emailOrUsername}'
+
                     var response = await client.GetAsync($"GetUserByEmailOrUsername/{usernameOrEmail}");
                     Console.WriteLine(usernameOrEmail);
-                    // Then check if the response is successful
+
                     if (response.IsSuccessStatusCode)
                     {
                         Console.WriteLine(usernameOrEmail);
@@ -34,7 +34,6 @@ namespace EcoVital.Services
                         UserInfo userInfo = users?.FirstOrDefault();
                         if (userInfo != null)
                         {
-                            // Hasheamos la contraseña para garantizar la seguridad de la información
                             using (SHA256 sha256Hash = SHA256.Create())
                             {
                                 byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
@@ -47,12 +46,12 @@ namespace EcoVital.Services
                                 password = builder.ToString();
                             }
 
-                            // Verificar si la contraseña coincide con la contraseña almacenada en la base de datos
+
                             if (userInfo.Password == password)
                             {
                                 return
                                     await Task.FromResult(
-                                        userInfo); // Devuelve el objeto UserInfo si la contraseña coincide
+                                        userInfo);
                             }
                             else
                             {
@@ -102,7 +101,7 @@ namespace EcoVital.Services
                     string url = "https://vivaservice.azurewebsites.net/api/UserInfoes/";
                     client.BaseAddress = new Uri(url);
 
-                    // Hashear la contraseña antes de enviarla
+
                     using (SHA256 sha256Hash = SHA256.Create())
                     {
                         byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
@@ -115,14 +114,13 @@ namespace EcoVital.Services
                         password = builder.ToString();
                     }
 
-                    // Crear contenido JSON con nombre de usuario, correo electrónico y contraseña
+
                     var content = new StringContent(JsonConvert.SerializeObject(new { email, username, password }),
                         Encoding.UTF8, "application/json");
 
                     HttpResponseMessage response;
                     try
                     {
-                        // Enviar una solicitud POST
                         response = await client.PostAsync("", content);
                     }
                     catch (Exception ex)
@@ -192,9 +190,8 @@ namespace EcoVital.Services
                 HttpResponseMessage response;
                 try
                 {
-                    // Send a GET request
                     response = await client
-                        .GetAsync(""); // the requestUri is empty because the base address is already set
+                        .GetAsync("");
                 }
                 catch (Exception ex)
                 {
@@ -206,7 +203,6 @@ namespace EcoVital.Services
                     var users = await response.Content.ReadFromJsonAsync<List<UserInfo>>();
                     if (users != null)
                     {
-                        // If the server returns a list of users, search through the list to check if the user exists
                         foreach (var user in users)
                         {
                             if (user.UserName == userNameOrEmail || user.Email == userNameOrEmail)
@@ -219,7 +215,6 @@ namespace EcoVital.Services
                     }
                     else
                     {
-                        // If the server does not return a list of users, then the user does not exist
                         return false;
                     }
                 }
@@ -266,7 +261,7 @@ namespace EcoVital.Services
             if (response.IsSuccessStatusCode)
             {
                 var securityQuestion =
-                    await response.Content.ReadAsStringAsync(); // Lee la respuesta como una cadena de texto
+                    await response.Content.ReadAsStringAsync();
 
                 return securityQuestion;
             }
@@ -306,7 +301,7 @@ namespace EcoVital.Services
             string url = _apiBaseUrl + userId + "/ChangePassword";
             client.BaseAddress = new Uri(url);
 
-            // Hashear la nueva contraseña antes de enviarla
+
             using (SHA256 sha256Hash = SHA256.Create())
             {
                 byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(newPassword));
@@ -319,7 +314,7 @@ namespace EcoVital.Services
                 newPassword = builder.ToString();
             }
 
-            // Crear contenido JSON con la nueva contraseña
+
             var content =
                 new StringContent(JsonConvert.SerializeObject(new ChangePasswordRequest { NewPassword = newPassword }),
                     Encoding.UTF8, "application/json");
@@ -327,7 +322,6 @@ namespace EcoVital.Services
             HttpResponseMessage response;
             try
             {
-                // Enviar una solicitud POST
                 response = await client.PostAsync("", content);
             }
             catch (Exception ex)

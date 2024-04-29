@@ -1,5 +1,4 @@
-﻿using System.Net;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Input;
 using EcoVital.Models;
@@ -11,13 +10,13 @@ namespace EcoVital.ViewModels
 {
     public partial class SecurityQuestionPageViewModel : BaseViewModel
     {
-        [ObservableProperty] private string _selectedSecurityQuestion;
-        [ObservableProperty] private string _securityAnswer;
-        [ObservableProperty] private List<string> _securityQuestions;
+        [ObservableProperty] string _selectedSecurityQuestion;
+        [ObservableProperty] string _securityAnswer;
+        [ObservableProperty] List<string> _securityQuestions;
 
-        private string _hashedSecurityAnswer;
+        string _hashedSecurityAnswer;
 
-        private readonly ILoginRepository _loginRepository;
+        readonly ILoginRepository _loginRepository;
         public ICommand ContinueCommand { get; set; }
 
         public SecurityQuestionPageViewModel()
@@ -36,7 +35,6 @@ namespace EcoVital.ViewModels
 
         public async void Continue()
         {
-            // Hashear la respuesta antes de enviarla
             using (SHA256 sha256Hash = SHA256.Create())
             {
                 byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(SecurityAnswer));
@@ -53,7 +51,7 @@ namespace EcoVital.ViewModels
             {
                 SecurityQuestionId = 0,
                 QuestionText = SelectedSecurityQuestion,
-                Answer = _hashedSecurityAnswer, // Enviar la versión hasheada
+                Answer = _hashedSecurityAnswer,
                 UserId = App.UserInfo.UserId
             };
 
@@ -64,7 +62,7 @@ namespace EcoVital.ViewModels
                 await App.Current.MainPage.DisplayAlert("Éxito",
                     $"Pregunta guardada correctamente para el usuario {App.UserInfo.UserName}.", "OK");
 
-                // Limpiar campos
+
                 SelectedSecurityQuestion = null;
                 SecurityAnswer = null;
                 await Shell.Current.GoToAsync("///LoginPage");

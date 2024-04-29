@@ -18,6 +18,8 @@ namespace EcoVital.Views
         {
             // Se obtiene la instancia de ActivityService a través de DependencyService
             // para poder inyectarla en el ViewModel
+            // primero pantalla de carga
+
             ActivityService activityService = DependencyService.Get<ActivityService>();
             if (activityService == null)
             {
@@ -32,7 +34,14 @@ namespace EcoVital.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+            
+            await LoadingService.ShowLoading();
+
             await _viewModel.LoadRegisteredActivities(App.UserInfo.UserId);
+            
+            await Task.Delay(500);
+            
+            await LoadingService.HideLoading();
         }
     }
 }

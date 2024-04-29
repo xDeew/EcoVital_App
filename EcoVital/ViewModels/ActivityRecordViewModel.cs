@@ -1,18 +1,16 @@
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using EcoVital.Models;
 using EcoVital.Services;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 
 namespace EcoVital.ViewModels
 {
     public class ActivityRecordViewModel : BaseViewModel
     {
-        private readonly ActivityService _activityService;
-        private ObservableCollection<UserActivityRecord> _userActivityRecords;
-        private ObservableCollection<ActivityRecord> _activityRecords;
+        readonly ActivityService _activityService;
+        ObservableCollection<UserActivityRecord> _userActivityRecords;
+        ObservableCollection<ActivityRecord> _activityRecords;
 
         public ObservableCollection<UserActivityRecord> UserActivityRecords
         {
@@ -50,12 +48,12 @@ namespace EcoVital.ViewModels
             RegisterSelectedActivitiesCommand = new AsyncRelayCommand(RegisterSelectedActivitiesAsync);
             SelectedActivities = new ObservableCollection<ActivityRecord>();
 
-           
+
             SelectActivityCommand = new RelayCommand<ActivityRecord>(SelectActivity);
         }
 
 
-        private void SelectActivity(ActivityRecord activityRecord)
+        void SelectActivity(ActivityRecord activityRecord)
         {
             activityRecord.IsSelected = !activityRecord.IsSelected;
 
@@ -69,7 +67,7 @@ namespace EcoVital.ViewModels
             }
         }
 
-        private async Task RegisterSelectedActivitiesAsync()
+        async Task RegisterSelectedActivitiesAsync()
         {
             if (SelectedActivities.Count == 0)
             {
@@ -83,20 +81,19 @@ namespace EcoVital.ViewModels
             {
                 foreach (var activity in SelectedActivities)
                 {
-                    
                     var existingActivity = UserActivityRecords.FirstOrDefault(a =>
                         a.ActivityRecordId == activity.RecordId && a.UserId == App.UserInfo.UserId);
 
-                    
+
                     if (existingActivity != null)
                     {
                         await Application.Current.MainPage.DisplayAlert("Aviso",
                             $"La actividad '{activity.Description}' ya ha sido registrada.", "OK");
 
-                        
+
                         activity.IsSelected = false;
                         SelectedActivities
-                            .Remove(activity); 
+                            .Remove(activity);
 
                         return;
                     }
@@ -107,14 +104,14 @@ namespace EcoVital.ViewModels
                         ActivityRecordId = activity.RecordId,
                     };
 
-                    
+
                     var registeredActivity = await _activityService.RegisterUserActivityRecordAsync(userActivityRecord);
                     UserActivityRecords.Add(registeredActivity);
                 }
 
                 await Application.Current.MainPage.DisplayAlert("Éxito", "Actividades registradas con éxito.", "OK");
                 await SaveSelectedActivitiesAsync();
-                
+
                 foreach (var activity in SelectedActivities)
                 {
                     activity.IsSelected = false;
@@ -129,27 +126,27 @@ namespace EcoVital.ViewModels
                     $"Error al registrar actividades: {ex.Message}", "OK");
             }
         }
-        
 
-        private async Task LoadActivitiesAsync()
+
+        async Task LoadActivitiesAsync()
         {
-            await LoadUserActivityRecordsAsync(); 
+            await LoadUserActivityRecordsAsync();
             var activityRecords = await _activityService.GetActivityRecordsAsync();
             ActivityRecords.Clear();
             foreach (var activityRecord in activityRecords)
             {
                 activityRecord.ImageUrl = GetImageUrlForActivityType(activityRecord.ActivityType);
-                activityRecord.IsSelected = false; 
+                activityRecord.IsSelected = false;
 
                 ActivityRecords.Add(activityRecord);
             }
 
             OnPropertyChanged(nameof(SelectedActivities));
 
-           
+
             Preferences.Remove("SelectedActivities");
 
-            await LoadSelectedActivitiesAsync(); 
+            await LoadSelectedActivitiesAsync();
         }
 
 
@@ -164,7 +161,7 @@ namespace EcoVital.ViewModels
         }
 
 
-        private async Task LoadSelectedActivitiesAsync()
+        async Task LoadSelectedActivitiesAsync()
         {
             var selectedIdsString = Preferences.Get("SelectedActivities", string.Empty);
             if (!string.IsNullOrEmpty(selectedIdsString))
@@ -183,7 +180,7 @@ namespace EcoVital.ViewModels
         }
 
 
-        private async Task SaveSelectedActivitiesAsync()
+        async Task SaveSelectedActivitiesAsync()
         {
             var selectedActivityIds = SelectedActivities.Select(a => a.RecordId.ToString()).ToArray();
             var selectedIdsString = string.Join(",", selectedActivityIds);
@@ -224,9 +221,8 @@ namespace EcoVital.ViewModels
         }
 
 
-        private async Task RegisterUserActivityAsync(UserActivityRecord userActivityRecord)
+        async Task RegisterUserActivityAsync(UserActivityRecord userActivityRecord)
         {
-            // The following will register an activity for a user
             var registeredActivity = await _activityService.RegisterUserActivityRecordAsync(userActivityRecord);
             UserActivityRecords.Add(registeredActivity);
         }

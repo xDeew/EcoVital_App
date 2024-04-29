@@ -1,10 +1,7 @@
-﻿using System.Linq;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using EcoVital.Models;
 using EcoVital.Services;
 using EcoVital.UserControl;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Storage;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using Newtonsoft.Json;
@@ -13,12 +10,12 @@ namespace EcoVital.ViewModels
 {
     public partial class RegisterPageViewModel : BaseViewModel
     {
-        [ObservableProperty] private string _userName;
-        [ObservableProperty] private string _email;
-        [ObservableProperty] private string _password;
-        [ObservableProperty] private string _confirmPassword;
-        [ObservableProperty] private string _securityQuestion;
-        [ObservableProperty] private string _securityAnswer;
+        [ObservableProperty] string _userName;
+        [ObservableProperty] string _email;
+        [ObservableProperty] string _password;
+        [ObservableProperty] string _confirmPassword;
+        [ObservableProperty] string _securityQuestion;
+        [ObservableProperty] string _securityAnswer;
 
         readonly ILoginRepository _loginRepository = new LoginService();
 

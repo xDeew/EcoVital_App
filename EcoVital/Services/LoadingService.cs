@@ -1,12 +1,8 @@
-using System.Threading.Tasks;
-using Microsoft.Maui.Controls;
-using EcoVital.Views; 
-
 namespace EcoVital.Services
 {
     public static class LoadingService
     {
-        private static bool IsLoadingShown;
+        static bool IsLoadingShown;
 
         public static async Task ShowLoading()
         {
@@ -20,8 +16,12 @@ namespace EcoVital.Services
         {
             if (!IsLoadingShown) return;
 
-            await Application.Current.MainPage.Navigation.PopModalAsync(true);
-            IsLoadingShown = false;
+            var mainPage = Application.Current.MainPage;
+            if (mainPage != null && mainPage.Navigation.ModalStack.Count > 0)
+            {
+                await mainPage.Navigation.PopModalAsync(true);
+                IsLoadingShown = false;
+            }
         }
     }
 }

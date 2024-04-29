@@ -1,15 +1,14 @@
 using System.Windows.Input;
 using EcoVital.Models;
 using EcoVital.Services;
-using EcoVital.Views;
 
 namespace EcoVital.ViewModels;
 
 public class ChangePasswordViewModel : BaseViewModel
 {
-    private readonly ILoginRepository _loginRepository;
-    private string _newPassword;
-    private string _confirmPassword;
+    readonly ILoginRepository _loginRepository;
+    string _newPassword;
+    string _confirmPassword;
 
 
     public ChangePasswordViewModel(ILoginRepository loginRepository)
@@ -62,7 +61,7 @@ public class ChangePasswordViewModel : BaseViewModel
             throw new Exception("NewPassword is null");
         }
 
-        // Intentamos obtener el usuario por el email
+
         string email = App.UserEmail;
         UserInfo userInfo = await _loginRepository.GetUserByEmail(email);
         App.UserInfo = userInfo;
@@ -72,10 +71,6 @@ public class ChangePasswordViewModel : BaseViewModel
         {
             await Application.Current.MainPage.DisplayAlert("Éxito", "La contraseña se ha cambiado correctamente",
                 "OK");
-
-            // Esto limpia la pila de navegación y nos lleva a la página de inicio de sesión
-            // Limpiar la pila de navegacion conlleva a que no se pueda regresar a la página anterior
-            // await Shell.Current.Navigation.PopToRootAsync();
 
 
             await Shell.Current.GoToAsync("///LoginPage");
@@ -89,19 +84,18 @@ public class ChangePasswordViewModel : BaseViewModel
 
     private bool IsValidPassword(string password)
     {
-        // Verifica que la contraseña tenga al menos 6 caracteres
         if (password.Length < 6)
         {
             return false;
         }
 
-        // Verifica que la contraseña tenga al menos una letra mayúscula
+
         if (!password.Any(char.IsUpper))
         {
             return false;
         }
 
-        // Verifica que la contraseña tenga al menos un símbolo
+
         if (!password.Any(char.IsSymbol) && !password.Any(char.IsPunctuation))
         {
             return false;

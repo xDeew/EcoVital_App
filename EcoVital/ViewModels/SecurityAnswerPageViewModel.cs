@@ -33,11 +33,11 @@ public partial class SecurityAnswerPageViewModel : BaseViewModel
     public SecurityAnswerPageViewModel(int userId, string securityQuestion)
     {
         _userId = userId;
-        Question = securityQuestion; // Asigna la pregunta de seguridad a la propiedad Question
+        Question = securityQuestion;
         _loginRepository = new LoginService();
         CheckAnswerCommand = new RelayCommand(CheckAnswer);
 
-        // Inicializa la información del usuario
+
         InitializeUserInfo();
     }
 
@@ -58,7 +58,7 @@ public partial class SecurityAnswerPageViewModel : BaseViewModel
 
         var securityQuestion = await _loginRepository.GetSecurityQuestionByUserId(_userId);
 
-        // Recupera el número de intentos fallidos y la hora del último intento fallido de las preferencias de la aplicación
+
         int failedAttempts = Preferences.Get($"{App.UserEmail}_FailedPasswordRecoveryAttempts", 0);
         DateTime lastFailedAttempt =
             Preferences.Get($"{App.UserEmail}_LastFailedPasswordRecoveryAttempt", DateTime.MinValue);
@@ -66,17 +66,15 @@ public partial class SecurityAnswerPageViewModel : BaseViewModel
 
         if (failedAttempts >= 3)
         {
-            // Verifica si han pasado 30 minutos desde el último intento fallido
             if (DateTime.Now - lastFailedAttempt < TimeSpan.FromMinutes(30))
             {
-                // Si no han pasado 30 minutos, rechaza el intento de recuperación de contraseña
                 await Shell.Current.DisplayAlert("Error",
                     "Has excedido el número máximo de intentos de recuperación de contraseña. Por favor, intenta de nuevo en 30 minutos.",
                     "OK");
 
                 return;
             }
-            // Si han pasado 30 minutos, reinicia el contador de intentos fallidos
+
             failedAttempts = 0;
             Preferences.Set($"{App.UserEmail}_FailedPasswordRecoveryAttempts", failedAttempts);
         }
@@ -97,7 +95,7 @@ public partial class SecurityAnswerPageViewModel : BaseViewModel
             return;
         }
 
-        // Hashear la respuesta proporcionada
+
         using (SHA256 sha256Hash = SHA256.Create())
         {
             byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(Answer));
@@ -111,18 +109,16 @@ public partial class SecurityAnswerPageViewModel : BaseViewModel
         }
 
 
-        // Comparar la respuesta hasheada con la almacenada en la base de datos
         if (securityQuestionByQuestion.Answer == Answer)
         {
             App.UserInfo.FailedPasswordRecoveryAttempts = 0;
 
-            // le pasamos el id del usuario a la página de cambio de contraseña porque lo necesitamos para cambiar la contraseña
+
             var route = new ShellNavigationState($"{nameof(ChangePasswordPage)}?userId={_userId}");
             await Shell.Current.GoToAsync(route);
         }
         else
         {
-            // Si la respuesta de seguridad es incorrecta, incrementa el contador de intentos fallidos y registra la hora del intento fallido
             failedAttempts++;
             Preferences.Set($"{App.UserEmail}_FailedPasswordRecoveryAttempts", failedAttempts);
             Preferences.Set($"{App.UserEmail}_LastFailedPasswordRecoveryAttempt", DateTime.Now);

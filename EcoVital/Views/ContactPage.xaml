@@ -2,8 +2,65 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EcoVital.Views.ContactPage">
-    <ContentPage.Content>
-        
-    </ContentPage.Content>
+             x:Class="EcoVital.Views.ContactPage"
+             Shell.TabBarIsVisible="False"
+             Title="Contáctanos">
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="20">
+            <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" HasShadow="True">
+                <Grid RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <ImageButton Grid.Row="0" Grid.Column="0"
+                                 Source="phone_solid.svg"
+                                 Background="Transparent"
+                                 WidthRequest="30" HeightRequest="30"
+                                 Aspect="AspectFit"
+                                 Padding="10"
+                                 HorizontalOptions="Center" VerticalOptions="Center"
+                                 Margin="0,0,10,0"
+                                 Command="{Binding CallCommand}" />
+
+                    <Label Grid.Row="0" Grid.Column="1" Text="+1 (123) 456 7890" VerticalOptions="Center" />
+
+                    <ImageButton Grid.Row="1" Grid.Column="0"
+                                 Command="{Binding SendEmailCommand}"
+                                 Source="contact_us.svg"
+                                 Background="Transparent"
+                                 WidthRequest="30" HeightRequest="30"
+                                 Aspect="AspectFit"
+                                 Padding="10"
+                                 HorizontalOptions="Center" VerticalOptions="Center"
+                                 Margin="0,0,10,0" />
+                    <Label Grid.Row="1" Grid.Column="1" Text="info@ecovital.com" VerticalOptions="Center" />
+
+                    <ImageButton Grid.Row="2" Grid.Column="0"
+                                 Source="location_dot_solid.svg"
+                                 Background="Transparent"
+                                 WidthRequest="30" HeightRequest="30"
+                                 Aspect="AspectFit"
+                                 Padding="10"
+                                 HorizontalOptions="Center" VerticalOptions="Center"
+                                 Margin="0,0,10,0"
+                                 Command="{Binding OpenMapsCommand}" />
+
+                    <Label Grid.Row="2" Grid.Column="1" Text="123 Eco Street, Green City" VerticalOptions="Center" />
+                </Grid>
+            </Frame>
+
+
+            <Entry Placeholder="Tu nombre" Text="{Binding UserName}" />
+            <Entry Placeholder="Tu email" Text="{Binding UserEmail}" Keyboard="Email" />
+            <Editor Placeholder="Mensaje" HeightRequest="100" Text="{Binding Message}" />
+            <Button Text="Enviar mensaje" Command="{Binding SendEmailCommand}" />
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

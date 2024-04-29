@@ -1,10 +1,12 @@
-﻿using EcoVital.ViewModels;
+﻿using EcoVital.Services;
+using EcoVital.ViewModels;
 using EcoVital.Views;
 
 namespace EcoVital;
 
 public partial class LoginPage : ContentPage
 {
+    ILoginRepository _loginRepository;
     public LoginPage()
     {
         InitializeComponent();

@@ -1,18 +1,15 @@
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Net.Http.Json; 
-using System.Threading.Tasks;
+using System.Net.Http.Json;
 using EcoVital.Models;
 
 namespace EcoVital.Services
 {
     public class ActivityService
     {
-        private readonly HttpClient _client;
-        private readonly string _apiBaseUrl = "https://vivaservice.azurewebsites.net/api/activity";
-        private readonly string _apiBaseUrlUnion = "https://vivaservice.azurewebsites.net/api/UserActivityRecords";
+        readonly HttpClient _client;
+        readonly string _apiBaseUrl = "https://vivaservice.azurewebsites.net/api/activity";
+        readonly string _apiBaseUrlUnion = "https://vivaservice.azurewebsites.net/api/UserActivityRecords";
 
-        public ActivityService(HttpClient client) 
+        public ActivityService(HttpClient client)
         {
             _client = client ?? throw new ArgumentNullException(nameof(client));
         }
@@ -24,7 +21,6 @@ namespace EcoVital.Services
 
         public async Task<UserActivityRecord> RegisterUserActivityRecordAsync(UserActivityRecord userActivityRecord)
         {
-        
             var response = await _client.PostAsJsonAsync(_apiBaseUrlUnion, userActivityRecord);
             response.EnsureSuccessStatusCode();
 
@@ -45,7 +41,6 @@ namespace EcoVital.Services
 
             if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
             {
-                // Retorna una lista vacía si el usuario no tiene registros, evitando el error 404.
                 return new List<UserActivityRecord>();
             }
 
@@ -59,7 +54,7 @@ namespace EcoVital.Services
                 return async;
             }
 
-            return new List<UserActivityRecord>(); // Retorna una lista vacía si no hay registros.
+            return new List<UserActivityRecord>();
         }
     }
 }
