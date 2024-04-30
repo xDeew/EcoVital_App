@@ -80,7 +80,7 @@
     </FlyoutItem>
     <!-- Main Page -->
     <ShellContent Title="¿No es tu cuenta? Cierra sesión aquí"
-                  ContentTemplate="{DataTemplate local:LoginPage}"
+                  ContentTemplate="{DataTemplate views:LoginPage}"
                   Route="LoginPage"
                   Icon="logout.svg" />
 

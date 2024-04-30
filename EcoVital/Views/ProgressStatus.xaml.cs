@@ -8,6 +8,7 @@ namespace EcoVital.Views
     {
         private ProgressStatusViewModel _viewModel;
 
+
         public ProgressStatus()
         {
             InitializeComponent();
@@ -34,14 +35,8 @@ namespace EcoVital.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            
-            await LoadingService.ShowLoading();
-
             await _viewModel.LoadRegisteredActivities(App.UserInfo.UserId);
-            
-            await Task.Delay(500);
-            
-            await LoadingService.HideLoading();
+
         }
     }
 }

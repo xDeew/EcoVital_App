@@ -8,6 +8,4 @@ public class UserInfo
     public string Email { get; set; }
 
     public int FailedPasswordRecoveryAttempts { get; set; }
-
-    public DateTime LastFailedPasswordRecoveryAttempt { get; set; }
 }

@@ -15,6 +15,9 @@ public partial class LoginPageViewModel : BaseViewModel
     [ObservableProperty] private string _usernameOrEmail;
 
     [ObservableProperty] private string _password;
+    public bool IsLoadingEnabled { get; set; } = true;
+
+    public bool IsLoginSuccessful { get; private set; }
 
     public bool IsRememberMeChecked { get; set; }
 
@@ -22,23 +25,17 @@ public partial class LoginPageViewModel : BaseViewModel
     public ICommand ForgotPasswordCommand { get; set; }
 
     readonly ILoginRepository _loginRepository = new LoginService();
+    readonly ILoadingService _loadingService;
 
-    public LoginPageViewModel(ILoginRepository loginRepository)
+
+    public LoginPageViewModel(ILoginRepository loginRepository, ILoadingService loadingService)
     {
-        _loginRepository = loginRepository;
-        if (_loginRepository == null)
-        {
-            throw new ArgumentNullException(nameof(loginRepository));
-        }
-    }
-    
-    public LoginPageViewModel()
-    {
-        
+        _loginRepository = loginRepository ?? throw new ArgumentNullException(nameof(loginRepository));
+        _loadingService = loadingService ?? throw new ArgumentNullException(nameof(loadingService));
         ForgotPasswordCommand = new RelayCommand(NavigateToForgotPasswordPage);
     }
 
-    
+
     private async void NavigateToForgotPasswordPage()
     {
         UsernameOrEmail = string.Empty;
@@ -49,8 +46,11 @@ public partial class LoginPageViewModel : BaseViewModel
     [ICommand]
     public async Task Login()
     {
-        Debug.WriteLine("Entrando al método Login");
-        await LoadingService.ShowLoading();
+        if (IsLoadingEnabled)
+        {
+            await _loadingService.ShowLoading();
+        }
+
         if (!string.IsNullOrWhiteSpace(UsernameOrEmail) && !string.IsNullOrWhiteSpace(Password))
         {
             bool userExists = await _loginRepository.UserExists(UsernameOrEmail);
@@ -58,7 +58,9 @@ public partial class LoginPageViewModel : BaseViewModel
             {
                 await Application.Current.MainPage.DisplayAlert("Inicio de sesión fallido",
                     "El usuario " + UsernameOrEmail + " no se ha encontrado.", "OK");
-                await LoadingService.HideLoading();
+
+                await _loadingService.HideLoading();
+                IsLoginSuccessful = false;
                 return;
             }
 
@@ -67,10 +69,12 @@ public partial class LoginPageViewModel : BaseViewModel
             {
                 await Application.Current.MainPage.DisplayAlert("Inicio de sesión fallido",
                     "La contraseña es incorrecta. Por favor, inténtalo de nuevo.", "OK");
-                await LoadingService.HideLoading();
+
+                await _loadingService.HideLoading();
+
+                IsLoginSuccessful = false;
                 return;
             }
-
             if (Preferences.ContainsKey(nameof(App.UserInfo)))
             {
                 Preferences.Remove(nameof(App.UserInfo));
@@ -90,16 +94,25 @@ public partial class LoginPageViewModel : BaseViewModel
             UsernameOrEmail = string.Empty;
             Password = string.Empty;
             IsRememberMeChecked = false;
-            await LoadingService.HideLoading();
+            if (IsLoadingEnabled)
+            {
+                await _loadingService.HideLoading();
+            }
+            IsLoginSuccessful = App.UserInfo != null;
+
         }
         else
         {
             await Application.Current.MainPage.DisplayAlert("Error",
                 "Por favor, ingresa tanto el usuario como la contraseña.", "OK");
         }
-        await LoadingService.HideLoading();
-    }
 
+        if (IsLoadingEnabled)
+        {
+            await _loadingService.HideLoading();
+        }
+        IsLoginSuccessful = false;
+    }
 
 
     [ICommand]

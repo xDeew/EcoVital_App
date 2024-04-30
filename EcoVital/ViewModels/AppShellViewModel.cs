@@ -6,10 +6,12 @@ namespace EcoVital.ViewModels
 {
     public partial class AppShellViewModel : BaseViewModel
     {
+        readonly ILoadingService _loadingService = new LoadingService();
+
         [ICommand]
         async void SignOut()
         {
-            await LoadingService.ShowLoading();
+            await _loadingService.ShowLoading();
 
 
             if (Preferences.ContainsKey(nameof(App.UserInfo)))
@@ -26,7 +28,7 @@ namespace EcoVital.ViewModels
 
             Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;
 
-            await LoadingService.HideLoading();
+            await _loadingService.HideLoading();
 
 
             await Shell.Current.GoToAsync("///LoginPage");

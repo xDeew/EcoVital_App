@@ -1,19 +1,17 @@
 ﻿using EcoVital.Services;
 using EcoVital.ViewModels;
-using EcoVital.Views;
 
-namespace EcoVital;
+namespace EcoVital.Views;
 
 public partial class LoginPage : ContentPage
 {
-    ILoginRepository _loginRepository;
+    ILoginRepository _loginRepository = new LoginService();
+    ILoadingService _loadingService = new LoadingService();
     public LoginPage()
     {
         InitializeComponent();
-        BindingContext = new LoginPageViewModel();
+        BindingContext = new LoginPageViewModel(_loginRepository, _loadingService);
         Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;
-        // Replace LoginPageViewModel with the actual type of _viewModel
-
     }
 
     protected void OnAppearing(object? sender, EventArgs eventArgs)

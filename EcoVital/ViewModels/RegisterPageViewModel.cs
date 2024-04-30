@@ -16,6 +16,8 @@ namespace EcoVital.ViewModels
         [ObservableProperty] string _confirmPassword;
         [ObservableProperty] string _securityQuestion;
         [ObservableProperty] string _securityAnswer;
+        readonly ILoadingService _loadingService = new LoadingService();
+
 
         readonly ILoginRepository _loginRepository = new LoginService();
 
@@ -47,7 +49,7 @@ namespace EcoVital.ViewModels
                )
             {
                 await App.Current.MainPage.DisplayAlert("Error", "Todos los campos son obligatorios.", "OK");
-                await LoadingService.HideLoading();
+                await _loadingService.HideLoading();
 
                 return;
             }
@@ -58,7 +60,7 @@ namespace EcoVital.ViewModels
                     "Tu contraseña debe tener al menos 6 caracteres, incluir al menos un carácter en mayúsculas y un símbolo.",
                     "OK");
 
-                await LoadingService.HideLoading();
+                await _loadingService.HideLoading();
 
                 return;
             }
@@ -69,7 +71,7 @@ namespace EcoVital.ViewModels
                 await App.Current.MainPage.DisplayAlert("Error",
                     "La contraseña y la confirmación de contraseña no coinciden.", "OK");
 
-                await LoadingService.HideLoading();
+                await _loadingService.HideLoading();
 
                 return; // Detiene la ejecución si las contraseñas no coinciden
             }
@@ -104,12 +106,12 @@ namespace EcoVital.ViewModels
                 Shell.Current.FlyoutHeader = new FlyoutHeaderControl();
 
                 // Mostrar mensaje exitoso
-                await LoadingService.ShowLoading();
+                await _loadingService.ShowLoading();
 
                 await App.Current.MainPage.DisplayAlert("Registro exitoso",
                     "El usuario se ha registrado correctamente.", "OK");
 
-                await LoadingService.HideLoading();
+                await _loadingService.HideLoading();
 
                 await Shell.Current.GoToAsync("SecurityQuestionPage");
 

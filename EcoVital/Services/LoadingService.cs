@@ -1,27 +1,21 @@
 namespace EcoVital.Services
 {
-    public static class LoadingService
+    public class LoadingService : ILoadingService
     {
-        static bool IsLoadingShown;
+        private bool isLoadingShown = false;
 
-        public static async Task ShowLoading()
+        public async Task ShowLoading()
         {
-            if (IsLoadingShown) return;
-
-            IsLoadingShown = true;
+            if (isLoadingShown) return;
+            isLoadingShown = true;
             await Application.Current.MainPage.Navigation.PushModalAsync(new LoadingPage(), true);
         }
 
-        public static async Task HideLoading()
+        public async Task HideLoading()
         {
-            if (!IsLoadingShown) return;
-
-            var mainPage = Application.Current.MainPage;
-            if (mainPage != null && mainPage.Navigation.ModalStack.Count > 0)
-            {
-                await mainPage.Navigation.PopModalAsync(true);
-                IsLoadingShown = false;
-            }
+            if (!isLoadingShown) return;
+            isLoadingShown = false;
+            await Application.Current.MainPage.Navigation.PopModalAsync(true);
         }
     }
 }

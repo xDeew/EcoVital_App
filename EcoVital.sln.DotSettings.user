@@ -2,10 +2,32 @@
 	<s:String x:Key="/Default/CodeInspection/PencilsConfiguration/ActualSeverity/@EntryValue">INFO</s:String>
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
   &lt;Assembly Path="C:\Users\PC\.nuget\packages\microsoft.windowsappsdk\1.3.230724000\lib\net6.0-windows10.0.18362.0\Microsoft.WindowsAppRuntime.Release.Net.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\PC\.nuget\packages\nsubstitute\5.1.0\lib\net6.0\NSubstitute.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
+	<s:String x:Key="/Default/Environment/Hierarchy/Build/SolBuilderDuo/UseMsbuildSolutionBuilder/@EntryValue">No</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2ab233fe_002Dcc70_002D4dbb_002Dbd15_002D48f896b3e130/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Login_ValidCredentials_ReturnsUserInfo #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::D0DF1FAF-85DD-4E54-9880-50CC80BFD79C::net8.0::UnitTestsEcoVital.LoginPageViewModelTests.Login_ValidCredentials_ReturnsUserInfo&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=40074d96_002De01c_002D4ec4_002D96ce_002D98d4d4813a5c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Login_ValidCredentials_ReturnsUserInfo #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::D0DF1FAF-85DD-4E54-9880-50CC80BFD79C::net8.0::UnitTestsEcoVital.LoginPageViewModelTests.Login_ValidCredentials_ReturnsUserInfo&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=48a604f3_002D05bd_002D40fc_002D99a8_002D114d4d020515/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Login_WithValidCredentials_ShouldReturnUserInfo" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::D0DF1FAF-85DD-4E54-9880-50CC80BFD79C::net8.0::UnitTestsEcoVital.LoginPageViewModelTests.Login_WithValidCredentials_ShouldReturnUserInfo&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5b796ec0_002D4550_002D4f5b_002D820d_002Db74854a9a1da/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="LoginPageViewModelTests #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::4DFDA496-84B5-4EB5-85F2-D0850E023252::net8.0-android::EcoVitalTests.LoginPageViewModelTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=81e8d3eb_002D47a1_002D4867_002D84e0_002Dc8fbb0d419d4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Login_ValidCredentials_ReturnsUserInfo #5" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::D0DF1FAF-85DD-4E54-9880-50CC80BFD79C::net8.0::UnitTestsEcoVital.LoginPageViewModelTests.Login_ValidCredentials_ReturnsUserInfo&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=87c3677a_002D140e_002D42ec_002D9dbd_002Dea5f3e92bf99/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Login_WithValidCredentials_ShouldNavigateToHomePage" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
@@ -25,6 +47,16 @@
     &lt;TestId&gt;xUnit::4DFDA496-84B5-4EB5-85F2-D0850E023252::net8.0-windows10.0.19041.0::EcoVitalTests.LoginPageViewModelTests.Login_WithValidCredentials_ShouldNavigateToHomePage&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f659e1f5_002D02af_002D4060_002D842a_002D33ca83475541/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Login_ValidCredentials_ReturnsUserInfo" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a15811d5_002Db161_002D4b9f_002D98b6_002D9ccb4c3afdfb/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Login_WithValidCredentials_ShouldReturnUserInfo #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::D0DF1FAF-85DD-4E54-9880-50CC80BFD79C::net8.0::UnitTestsEcoVital.LoginPageViewModelTests.Login_WithValidCredentials_ShouldReturnUserInfo&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ad1a0e38_002D89bd_002D4eb3_002D845c_002D110671c5b71d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Login_ValidCredentials_ReturnsUserInfo #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::D0DF1FAF-85DD-4E54-9880-50CC80BFD79C::net8.0::UnitTestsEcoVital.LoginPageViewModelTests.Login_WithValidCredentials_ShouldReturnUserInfo&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f659e1f5_002D02af_002D4060_002D842a_002D33ca83475541/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Login_ValidCredentials_ReturnsUserInfo" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Project Location="C:\Users\PC\Desktop\EcoVital\UnitTestsEcoVital" Presentation="&amp;lt;UnitTestsEcoVital&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
