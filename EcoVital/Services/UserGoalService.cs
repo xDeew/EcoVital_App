@@ -28,8 +28,9 @@ namespace EcoVital.Services
             return await _client.GetFromJsonAsync<UserGoal>(url);
         }
 
-        public async Task PostUserGoalAsync(int userId, UserGoal userGoal)
+        public async Task PostUserGoalAsync(int userId, UserGoal userGoal, int activityRecordId)
         {
+            userGoal.ActivityRecordId = activityRecordId;
             var url = $"{_apiBaseUrl}{userId}";
             var response = await _client.PostAsJsonAsync(url, userGoal);
             response.EnsureSuccessStatusCode();
@@ -44,6 +45,11 @@ namespace EcoVital.Services
             return await response.Content.ReadFromJsonAsync<UserGoal>();
         }
 
+        public async Task<UserGoal> GetUserGoalByActivityIdAsync(int activityId)
+        {
+            var url = $"{_apiBaseUrl}Activity/{activityId}";
+            return await _client.GetFromJsonAsync<UserGoal>(url);
+        }
         public async Task DeleteUserGoalAsync(int id)
         {
             var url = $"{_apiBaseUrl}{id}";

@@ -70,5 +70,12 @@ namespace EcoVital.Services
 
             return new List<UserActivityRecord>();
         }
+        
+        public async Task DeleteUserActivityRecordAsync(int recordId)
+        {
+            var url = $"{_apiBaseUrlUnion}/{recordId}";
+            var response = await _client.DeleteAsync(url);
+            response.EnsureSuccessStatusCode();
+        }
     }
 }
