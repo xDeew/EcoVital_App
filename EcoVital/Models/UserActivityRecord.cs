@@ -5,6 +5,7 @@ namespace EcoVital.Models;
 
 public class UserActivityRecord : INotifyPropertyChanged
 {
+    public int UserActivityId { get; set; }
     public int UserId { get; set; }
     public int ActivityRecordId { get; set; }
     public string ImageUrl { get; set; }
@@ -39,6 +40,8 @@ public class UserActivityRecord : INotifyPropertyChanged
             }
         }
     }
+
+  
 
 
     public event PropertyChangedEventHandler? PropertyChanged;

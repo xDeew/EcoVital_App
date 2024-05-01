@@ -40,23 +40,51 @@ namespace EcoVital.ViewModels
             OnPropertyChanged(nameof(RegisteredActivities));
         }
 
-        void UpdateProgress(double progressPercentage)
+        async void UpdateProgress(double progressPercentage)
         {
             var selectedActivities = RegisteredActivities.Where(a => a.IsSelected).ToList();
             if (!selectedActivities.Any())
             {
                 Debug.WriteLine("No activities selected.");
-
                 return;
             }
 
+            List<Task> tasks = new List<Task>();
             foreach (var activity in selectedActivities)
             {
                 activity.Progress = progressPercentage;
+                if (activity.Progress >= 0.995)
+                {
+
+                    ShowCongratulationMessage();  
+                    // Agregar la tarea sin esperar inmediatamente
+                    var task = RemoveActivityAsync(activity);
+                    tasks.Add(task);
+                }
             }
 
+            // Esperar todas las tareas de eliminación
+            await Task.WhenAll(tasks);
 
             OnPropertyChanged(nameof(RegisteredActivities));
+        }
+
+        async Task RemoveActivityAsync(UserActivityRecord activity)
+        {
+            await _activityService.DeleteUserActivityRecordAsync(activity.UserActivityId);
+            RegisteredActivities.Remove(activity);
+            var userGoalService = new UserGoalService(new HttpClient());
+            var userGoal = await userGoalService.GetUserGoalByActivityIdAsync(activity.ActivityRecordId);
+            await userGoalService.DeleteUserGoalAsync(userGoal.GoalId);
+        }
+
+
+        void ShowCongratulationMessage()
+        {
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                Application.Current?.MainPage?.DisplayAlert("¡Felicidades!", "¡Completaste la actividad!", "OK");
+            });
         }
 
         public async Task LoadRegisteredActivities(int userId)

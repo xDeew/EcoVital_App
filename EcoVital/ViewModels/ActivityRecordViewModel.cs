@@ -119,7 +119,7 @@ namespace EcoVital.ViewModels
                         IsAchieved = false
                     };
 
-                    await _userGoalService.PostUserGoalAsync(App.UserInfo.UserId, userGoal);
+                    await _userGoalService.PostUserGoalAsync(App.UserInfo.UserId, userGoal, activity.RecordId);
                 }
 
                 await Application.Current.MainPage.DisplayAlert("Éxito", "Actividades registradas con éxito.", "OK");

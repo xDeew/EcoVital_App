@@ -37,6 +37,9 @@ public static class MauiProgram
         // Se usa AddTransient para que se cree una nueva instancia cada vez que se solicite
         builder.Services.AddTransient<ActivityRecordViewModel>();
         builder.Services.AddTransient<ProgressStatusViewModel>();
+      
+
+
 
 
 
