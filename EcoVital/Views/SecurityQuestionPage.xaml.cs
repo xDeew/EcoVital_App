@@ -3,7 +3,7 @@ using EcoVital.ViewModels;
 
 namespace EcoVital.Views;
 
-public partial class SecurityQuestionPage : ContentPage
+public partial class SecurityQuestionPage
 {
     public SecurityQuestionPage()
     {

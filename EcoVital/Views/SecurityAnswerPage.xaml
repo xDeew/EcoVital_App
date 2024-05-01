@@ -10,6 +10,10 @@
             <RowDefinition Height="220"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
 
         <Path Fill="#2ECC71" Stroke="#000" Data="m-9.69999,-1l449,0l0,128.48327c-122.5,64.30167 -332.5,65.89076 -449,7.2429c0,-45.25313 0,-90.473 0,0l0,-135.72617z"/>

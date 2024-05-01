@@ -63,7 +63,7 @@
                       ContentTemplate="{DataTemplate views:ProgressStatus}" 
                       Icon="bars_progress_solid.svg"/>
         <ShellContent Title="Recordatorios de salud"
-                      ContentTemplate="{DataTemplate views:HealthReminders}"
+                      ContentTemplate="{DataTemplate views:HealthRemindersPage}"
                       Icon="bell_solid.svg"/>
     </FlyoutItem>
 

@@ -31,8 +31,9 @@ public static class MauiProgram
         builder.Services.AddSingleton<ContactPage>();
         builder.Services.AddSingleton<ChatBotPage>();
         
-        // Inyección de dependencias para ActivityService
+        
         builder.Services.AddSingleton<ActivityService>();
+        builder.Services.AddSingleton<UserGoalService>();
         // Se usa AddTransient para que se cree una nueva instancia cada vez que se solicite
         builder.Services.AddTransient<ActivityRecordViewModel>();
         builder.Services.AddTransient<ProgressStatusViewModel>();

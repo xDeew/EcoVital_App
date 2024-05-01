@@ -1,6 +1,6 @@
 ﻿namespace EcoVital.Views;
 
-public partial class AboutPage : ContentPage
+public partial class AboutPage
 {
     public AboutPage()
     {

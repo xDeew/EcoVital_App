@@ -4,16 +4,15 @@ using EcoVital.ViewModels;
 
 namespace EcoVital.Views;
 
-public partial class ActivityRecord : ContentPage
+public partial class ActivityRecord
 {
     private ActivityRecordViewModel _viewModel;
 
     public ActivityRecord()
     {
         InitializeComponent();
-
-        var httpClient = new HttpClient();
-        _viewModel = new ActivityRecordViewModel(new ActivityService(httpClient));
+        HttpClient client = new HttpClient();
+        _viewModel = new ActivityRecordViewModel(new ActivityService(client), new UserGoalService(client));
         BindingContext = _viewModel;
     }
 

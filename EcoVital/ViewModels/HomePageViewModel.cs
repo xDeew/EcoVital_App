@@ -17,13 +17,11 @@ namespace EcoVital.ViewModels
 
         public string DailyAdvice { get; set; } // Deberías implementar la lógica para obtener el consejo del día
 
-        public string
-            HealthGoals { get; set; } // Deberías implementar la lógica para obtener las metas de salud del usuario
+        public string HealthGoals { get; set; } 
 
         public ICommand GoToChatbotCommand { get; set; }
 
-        public ICommand
-            RegisterActivityCommand { get; set; }
+        public ICommand RegisterActivityCommand { get; set; }
 
 
         public HomePageViewModel()

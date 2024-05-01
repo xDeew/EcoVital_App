@@ -9,6 +9,7 @@ namespace EcoVital.ViewModels
     public class ActivityRecordViewModel : BaseViewModel
     {
         readonly ActivityService _activityService;
+        readonly UserGoalService _userGoalService;
         ObservableCollection<UserActivityRecord> _userActivityRecords;
         ObservableCollection<ActivityRecord> _activityRecords;
 
@@ -31,9 +32,11 @@ namespace EcoVital.ViewModels
         public ICommand SelectActivityCommand { get; set; }
 
 
-        public ActivityRecordViewModel(ActivityService activityService)
+        public ActivityRecordViewModel(ActivityService activityService, UserGoalService userGoalService)
         {
             _activityService = activityService;
+            _userGoalService = userGoalService;
+
             if (_activityService == null)
             {
                 throw new ArgumentNullException(nameof(activityService));
@@ -107,6 +110,16 @@ namespace EcoVital.ViewModels
 
                     var registeredActivity = await _activityService.RegisterUserActivityRecordAsync(userActivityRecord);
                     UserActivityRecords.Add(registeredActivity);
+
+
+                    var userGoal = new UserGoal
+                    {
+                        UserId = App.UserInfo.UserId,
+                        TargetDate = DateTime.Today,
+                        IsAchieved = false
+                    };
+
+                    await _userGoalService.PostUserGoalAsync(App.UserInfo.UserId, userGoal);
                 }
 
                 await Application.Current.MainPage.DisplayAlert("Éxito", "Actividades registradas con éxito.", "OK");

@@ -16,9 +16,23 @@ namespace EcoVital.Services
 
         public async Task<List<ActivityRecord>> GetActivityRecordsAsync()
         {
-            return await _client.GetFromJsonAsync<List<ActivityRecord>>(_apiBaseUrl);
-        }
+            var activityRecords = await _client.GetFromJsonAsync<List<ActivityRecord>>(_apiBaseUrl);
 
+            // Crear un generador de números aleatorios
+            var random = new Random();
+
+            foreach (var activityRecord in activityRecords)
+            {
+                // Actualizar la fecha a la fecha actual
+                activityRecord.Date = DateTime.Today;
+
+                // Simular las horas agregando un número aleatorio de horas a la fecha actual
+                activityRecord.Date = activityRecord.Date.AddHours(random.Next(0, 24));
+            }
+
+            return activityRecords;
+        }
+        
         public async Task<UserActivityRecord> RegisterUserActivityRecordAsync(UserActivityRecord userActivityRecord)
         {
             var response = await _client.PostAsJsonAsync(_apiBaseUrlUnion, userActivityRecord);

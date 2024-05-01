@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace EcoVital.Views;
 
-public partial class HealthReminders : ContentPage
+public partial class HealthRemindersPage : ContentPage
 {
-    public HealthReminders()
+    public HealthRemindersPage()
     {
         InitializeComponent();
     }
