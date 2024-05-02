@@ -68,7 +68,7 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-                <Label Text="No hay ninguna actividad, registre una para visualizar el progreso."
+                <Label Text="No hay ninguna actividad, registre una para visualizar el progreso"
                        IsVisible="{Binding HasNoActivities}"
                        FontSize="Large"
                        HorizontalTextAlignment="Center"
