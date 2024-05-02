@@ -11,13 +11,21 @@ namespace EcoVital.ViewModels
     {
         readonly ActivityService _activityService;
         ObservableCollection<UserActivityRecord> _registeredActivities;
-
+        public bool HasActivities => RegisteredActivities?.Any() == true;
+        public bool HasNoActivities => !HasActivities;
         public ICommand SelectActivityCommand { get; set; }
 
         public ObservableCollection<UserActivityRecord> RegisteredActivities
         {
             get => _registeredActivities;
-            set => SetProperty(ref _registeredActivities, value);
+            set
+            {
+                if (SetProperty(ref _registeredActivities, value))
+                {
+                    OnPropertyChanged(nameof(HasActivities));
+                    OnPropertyChanged(nameof(HasNoActivities));
+                }
+            }
         }
 
         public RelayCommand<double> UpdateProgressCommand { get; private set; }
@@ -26,11 +34,17 @@ namespace EcoVital.ViewModels
         public ProgressStatusViewModel(ActivityService activityService)
         {
             _activityService = activityService ?? throw new ArgumentNullException(nameof(activityService));
-            _registeredActivities = new ObservableCollection<UserActivityRecord>();
             UpdateProgressCommand = new RelayCommand<double>(UpdateProgress);
             SelectActivityCommand = new RelayCommand<UserActivityRecord>(SelectActivity!);
+            _registeredActivities = new ObservableCollection<UserActivityRecord>();
+            _registeredActivities.CollectionChanged += (s, e) => 
+            {
+                OnPropertyChanged(nameof(HasActivities));
+                OnPropertyChanged(nameof(HasNoActivities));
+            };
         }
 
+        
         void SelectActivity(UserActivityRecord activity)
         {
             // if (activity == null) return;
@@ -73,6 +87,9 @@ namespace EcoVital.ViewModels
         {
             await _activityService.DeleteUserActivityRecordAsync(activity.UserActivityId);
             RegisteredActivities.Remove(activity);
+            OnPropertyChanged(nameof(RegisteredActivities)); 
+            OnPropertyChanged(nameof(HasActivities));
+            OnPropertyChanged(nameof(HasNoActivities));
             var userGoalService = new UserGoalService(new HttpClient());
             var userGoal = await userGoalService.GetUserGoalByActivityIdAsync(activity.ActivityRecordId);
             await userGoalService.DeleteUserGoalAsync(userGoal.GoalId);

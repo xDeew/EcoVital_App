@@ -36,13 +36,7 @@ namespace EcoVital.ViewModels
         [ICommand]
         public async void Register()
         {
-            if (!Email.Contains("@"))
-            {
-                await App.Current.MainPage.DisplayAlert("Error",
-                    "Por favor, proporciona un correo electrónico válido.", "OK");
-
-                return;
-            }
+            
 
             if (string.IsNullOrWhiteSpace(UserName) || string.IsNullOrWhiteSpace(Email) ||
                 string.IsNullOrWhiteSpace(Password) || string.IsNullOrWhiteSpace(ConfirmPassword)
@@ -50,6 +44,14 @@ namespace EcoVital.ViewModels
             {
                 await App.Current.MainPage.DisplayAlert("Error", "Todos los campos son obligatorios.", "OK");
                 await _loadingService.HideLoading();
+
+                return;
+            }
+            
+            if (string.IsNullOrEmpty(Email) || !Email.Contains("@"))
+            {
+                await App.Current.MainPage.DisplayAlert("Error",
+                    "Por favor, proporciona un correo electrónico válido.", "OK");
 
                 return;
             }

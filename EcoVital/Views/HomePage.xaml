@@ -38,10 +38,8 @@
             </Grid.RowDefinitions>
 
 
-            <!-- StackLayout para centrar los elementos -->
             <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0">
-                <!-- Mensaje de bienvenida y consejo diario -->
-                <!-- Mensaje de bienvenida con color de texto azul oscuro -->
+                
                 <Label Text="{Binding UserName, StringFormat='¡Bienvenido, {0}!'}"
                        HorizontalOptions="Center"
                        FontSize="Title"

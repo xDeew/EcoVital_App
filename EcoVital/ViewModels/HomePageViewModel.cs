@@ -1,4 +1,5 @@
 using System.Windows.Input;
+using EcoVital.Services;
 using EcoVital.Views;
 using Microsoft.Toolkit.Mvvm.Input;
 
@@ -6,6 +7,7 @@ namespace EcoVital.ViewModels
 {
     public partial class HomePageViewModel : BaseViewModel
     {
+        readonly ILoadingService _loadingService = new LoadingService();
         string _userName = "usuario predeterminado";
 
         public string UserName
@@ -15,9 +17,9 @@ namespace EcoVital.ViewModels
         }
 
 
-        public string DailyAdvice { get; set; } // Deberías implementar la lógica para obtener el consejo del día
+        public string DailyAdvice { get; set; }
 
-        public string HealthGoals { get; set; } 
+        public string HealthGoals { get; set; }
 
         public ICommand GoToChatbotCommand { get; set; }
 
@@ -30,19 +32,14 @@ namespace EcoVital.ViewModels
             RegisterActivityCommand = new RelayCommand(RegisterActivity);
         }
 
-        private void GoToChatbot()
+        void GoToChatbot()
         {
             Shell.Current.GoToAsync(nameof(ChatBotPage));
         }
 
-        private void RegisterActivity()
+        async void RegisterActivity()
         {
-            Shell.Current.GoToAsync(nameof(ActivityRecord));
-        }
-
-        private void GoBack()
-        {
-            Shell.Current.GoToAsync("..");
+            await Shell.Current.GoToAsync(nameof(ActivityRecord));
         }
     }
 }

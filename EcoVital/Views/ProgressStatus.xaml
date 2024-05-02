@@ -13,47 +13,94 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ScrollView>
-        <StackLayout>
-            <CollectionView ItemsSource="{Binding RegisteredActivities}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame Padding="10" Margin="5" CornerRadius="10" BorderColor="LightGray" HasShadow="True">
-                            <StackLayout Orientation="Vertical">
-                                <ImageButton Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="200"
-                                             Command="{Binding Source={x:Reference ProgressStatusPage}, Path=BindingContext.SelectActivityCommand}"
-                                             CommandParameter="{Binding .}">
-                                    <ImageButton.Triggers>
-                                        <DataTrigger TargetType="ImageButton" Binding="{Binding IsSelected}"
-                                                     Value="True">
-                                            <Setter Property="Opacity" Value="0.5" />
-                                        </DataTrigger>
-                                    </ImageButton.Triggers>
-                                </ImageButton>
-                                <Label Text="{Binding ActivityType}" FontAttributes="Bold"
-                                       HorizontalTextAlignment="Center" />
-                                <ProgressBar Progress="{Binding Progress}" ProgressColor="Green" WidthRequest="300"
-                                             HeightRequest="20" />
-                                <Label Text="{Binding Progress, StringFormat='{0:P0}'}"
-                                       HorizontalTextAlignment="Center" />
-                            </StackLayout>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-            <ScrollView Orientation="Horizontal">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Margin="0, 20">
-                    <Button Text="25% completado" Command="{Binding UpdateProgressCommand}"
-                            CommandParameter="{x:Double 0.25}" Margin="2" />
-                    <Button Text="50% completado" Command="{Binding UpdateProgressCommand}"
-                            CommandParameter="{x:Double 0.50}" Margin="2" />
-                    <Button Text="75% completado" Command="{Binding UpdateProgressCommand}"
-                            CommandParameter="{x:Double 0.75}" Margin="2" />
-                    <Button Text="100% completado" Command="{Binding UpdateProgressCommand}"
-                            CommandParameter="{x:Double 1.00}" Margin="2" />
-                </StackLayout>
-            </ScrollView>
-        </StackLayout>
-    </ScrollView>
+        <ScrollView Grid.Row="0">
+            <StackLayout>
+                <CollectionView ItemsSource="{Binding RegisteredActivities}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="10" Margin="5" CornerRadius="10" BorderColor="LightGray" HasShadow="True">
+                                <StackLayout Orientation="Vertical">
+                                    <ImageButton Source="{Binding ImageUrl}" Aspect="AspectFit" HeightRequest="200"
+                                                 Command="{Binding Source={x:Reference ProgressStatusPage}, Path=BindingContext.SelectActivityCommand}"
+                                                 CommandParameter="{Binding .}">
+                                        <ImageButton.BackgroundColor>
+                                            <OnPlatform x:TypeArguments="Color">
+                                                <On Platform="Android, iOS">#FFFFFF</On>
+                                                <On Platform="Windows">#FFFFFF</On>
+                                            </OnPlatform>
+                                        </ImageButton.BackgroundColor>
+                                        <ImageButton.Triggers>
+                                            <DataTrigger TargetType="ImageButton" Binding="{Binding IsSelected}"
+                                                         Value="True">
+                                                <Setter Property="Opacity" Value="0.5" />
+                                            </DataTrigger>
+                                        </ImageButton.Triggers>
+                                    </ImageButton>
+
+                                    <Label Text="{Binding ActivityType}" FontAttributes="Bold"
+                                           HorizontalTextAlignment="Center" />
+                                    <Grid HeightRequest="20" WidthRequest="300" Margin="0,10" IsClippedToBounds="True">
+                                        <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                            <BoxView.Background>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                    <GradientStop Color="#D9EAD3" Offset="0.1" />
+                                                    <GradientStop Color="#B6D7A8" Offset="1.0" />
+                                                </LinearGradientBrush>
+                                            </BoxView.Background>
+                                        </BoxView>
+                                        <ProgressBar Progress="{Binding Progress}" BackgroundColor="Transparent"
+                                                     HeightRequest="20" HorizontalOptions="FillAndExpand"
+                                                     VerticalOptions="FillAndExpand"
+                                                     ProgressColor="#6AA84F" />
+                                    </Grid>
+
+
+                                    <Label Text="{Binding Progress, StringFormat='{0:P0}'}"
+                                           HorizontalTextAlignment="Center" />
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Label Text="No hay ninguna actividad, registre una para visualizar el progreso."
+                       IsVisible="{Binding HasNoActivities}"
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="CenterAndExpand"
+                       TextColor="#008000" 
+                       FontAttributes="Bold"/>
+            </StackLayout>
+        </ScrollView>
+
+        <Grid Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="End">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Button Text="25% completado" Grid.Row="0" Grid.Column="0"
+                    Command="{Binding UpdateProgressCommand}" CommandParameter="{x:Double 0.25}"
+                    Margin="10" BackgroundColor="#4CAF50" TextColor="#FFFFFF" CornerRadius="20" />
+            <Button Text="50% completado" Grid.Row="0" Grid.Column="1"
+                    Command="{Binding UpdateProgressCommand}" CommandParameter="{x:Double 0.50}"
+                    Margin="10" BackgroundColor="#4CAF50" TextColor="#FFFFFF" CornerRadius="20" />
+
+            <Button Text="75% completado" Grid.Row="1" Grid.Column="0"
+                    Command="{Binding UpdateProgressCommand}" CommandParameter="{x:Double 0.75}"
+                    Margin="10" BackgroundColor="#4CAF50" TextColor="#FFFFFF" CornerRadius="20" />
+            <Button Text="100% completado" Grid.Row="1" Grid.Column="1"
+                    Command="{Binding UpdateProgressCommand}" CommandParameter="{x:Double 1.00}"
+                    Margin="10" BackgroundColor="#4CAF50" TextColor="#FFFFFF" CornerRadius="20" />
+        </Grid>
+    </Grid>
 </ContentPage>
