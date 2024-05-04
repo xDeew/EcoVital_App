@@ -20,6 +20,7 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(ChatBotPage), typeof(ChatBotPage));
         Routing.RegisterRoute(nameof(ActivityRecord), typeof(ActivityRecord));
         Routing.RegisterRoute(nameof(ProgressStatus), typeof(ProgressStatus));
+        Routing.RegisterRoute(nameof(HealthRemindersPage), typeof(HealthRemindersPage));
         
                 
 

@@ -2,6 +2,7 @@
 using EcoVital.ViewModels;
 using EcoVital.Views;
 using Microsoft.Extensions.Logging;
+using Plugin.LocalNotification;
 
 namespace EcoVital;
 
@@ -13,6 +14,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseLocalNotification()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

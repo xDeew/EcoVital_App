@@ -68,6 +68,7 @@
         <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2"/>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
         <PackageReference Include="Nito.Mvvm.Async" Version="1.0.0-delta-3"/>
+        <PackageReference Include="Plugin.LocalNotification" Version="11.1.2" />
         <PackageReference Include="System.Text.Json" Version="8.0.2"/>
         <PackageReference Include="Xamarin.Build.Download" Version="0.11.4"/>
     </ItemGroup>

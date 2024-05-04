@@ -5,7 +5,8 @@
              x:Class="EcoVital.Views.ProgressStatus"
              xmlns:vm="clr-namespace:EcoVital.ViewModels"
              x:Name="ProgressStatusPage"
-             xmlns:converters="clr-namespace:EcoVital.Converters">
+             xmlns:converters="clr-namespace:EcoVital.Converters"
+             Shell.TabBarIsVisible="False">
 
     <ContentPage.Resources>
         <ResourceDictionary>

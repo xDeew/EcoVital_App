@@ -18,15 +18,12 @@ namespace EcoVital.Services
         {
             var activityRecords = await _client.GetFromJsonAsync<List<ActivityRecord>>(_apiBaseUrl);
 
-            // Crear un generador de números aleatorios
             var random = new Random();
 
             foreach (var activityRecord in activityRecords)
             {
-                // Actualizar la fecha a la fecha actual
                 activityRecord.Date = DateTime.Today;
 
-                // Simular las horas agregando un número aleatorio de horas a la fecha actual
                 activityRecord.Date = activityRecord.Date.AddHours(random.Next(0, 24));
             }
 

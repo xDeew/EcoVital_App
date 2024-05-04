@@ -1,66 +1,56 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoVital.Views.ContactPage"
              Shell.TabBarIsVisible="False"
-             Title="Contáctanos">
+             Title="Contáctanos"
+             BackgroundColor="#F4F4F5">
+
     <ScrollView>
         <StackLayout Spacing="20" Padding="20">
-            <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" HasShadow="True">
+            <Frame CornerRadius="10" Padding="10" BorderColor="#CCCCCC" HasShadow="True" BackgroundColor="White">
                 <Grid RowSpacing="10">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <ImageButton Grid.Row="0" Grid.Column="0"
-                                 Source="phone_solid.svg"
-                                 Background="Transparent"
-                                 WidthRequest="30" HeightRequest="30"
-                                 Aspect="AspectFit"
-                                 Padding="10"
+                    <ImageButton Grid.Row="0" Grid.Column="0" Source="phone_solid.svg"
+                                 Background="Transparent" WidthRequest="30" HeightRequest="30"
+                                 Aspect="AspectFit" Padding="10"
                                  HorizontalOptions="Center" VerticalOptions="Center"
-                                 Margin="0,0,10,0"
-                                 Command="{Binding CallCommand}" />
+                                 Margin="0,0,10,0" Command="{Binding CallCommand}"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="+1 (123) 456 7890" VerticalOptions="Center"
+                           TextColor="#333333" FontSize="Medium"/>
 
-                    <Label Grid.Row="0" Grid.Column="1" Text="+1 (123) 456 7890" VerticalOptions="Center" />
-
-                    <ImageButton Grid.Row="1" Grid.Column="0"
-                                 Command="{Binding SendEmailCommand}"
-                                 Source="contact_us.svg"
-                                 Background="Transparent"
-                                 WidthRequest="30" HeightRequest="30"
-                                 Aspect="AspectFit"
-                                 Padding="10"
+                    <ImageButton Grid.Row="1" Grid.Column="0" Source="contact_us.svg"
+                                 Background="Transparent" WidthRequest="30" HeightRequest="30"
+                                 Aspect="AspectFit" Padding="10"
                                  HorizontalOptions="Center" VerticalOptions="Center"
-                                 Margin="0,0,10,0" />
-                    <Label Grid.Row="1" Grid.Column="1" Text="info@ecovital.com" VerticalOptions="Center" />
+                                 Margin="0,0,10,0" Command="{Binding SendEmailCommand}"/>
+                    <Label Grid.Row="1" Grid.Column="1" Text="info@ecovital.com" VerticalOptions="Center"
+                           TextColor="#333333" FontSize="Medium"/>
 
-                    <ImageButton Grid.Row="2" Grid.Column="0"
-                                 Source="location_dot_solid.svg"
-                                 Background="Transparent"
-                                 WidthRequest="30" HeightRequest="30"
-                                 Aspect="AspectFit"
-                                 Padding="10"
+                    <ImageButton Grid.Row="2" Grid.Column="0" Source="location_dot_solid.svg"
+                                 Background="Transparent" WidthRequest="30" HeightRequest="30"
+                                 Aspect="AspectFit" Padding="10"
                                  HorizontalOptions="Center" VerticalOptions="Center"
-                                 Margin="0,0,10,0"
-                                 Command="{Binding OpenMapsCommand}" />
-
-                    <Label Grid.Row="2" Grid.Column="1" Text="123 Eco Street, Green City" VerticalOptions="Center" />
+                                 Margin="0,0,10,0" Command="{Binding OpenMapsCommand}"/>
+                    <Label Grid.Row="2" Grid.Column="1" Text="123 Eco Street, Green City" VerticalOptions="Center"
+                           TextColor="#333333" FontSize="Medium"/>
                 </Grid>
             </Frame>
 
+            <Entry Placeholder="Tu nombre" Text="{Binding UserName}" TextColor="#333333" PlaceholderColor="#888888"/>
+            <Entry Placeholder="Tu email" Text="{Binding UserEmail}" Keyboard="Email" TextColor="#333333" PlaceholderColor="#888888"/>
+            <Editor Placeholder="Mensaje" HeightRequest="100" Text="{Binding Message}" TextColor="#333333" PlaceholderColor="#888888"/>
 
-            <Entry Placeholder="Tu nombre" Text="{Binding UserName}" />
-            <Entry Placeholder="Tu email" Text="{Binding UserEmail}" Keyboard="Email" />
-            <Editor Placeholder="Mensaje" HeightRequest="100" Text="{Binding Message}" />
-            <Button Text="Enviar mensaje" Command="{Binding SendEmailCommand}" />
+            
+            <Button Text="Enviar mensaje" Command="{Binding SendEmailCommand}" BackgroundColor="#4CAF50" TextColor="White" CornerRadius="20"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>
