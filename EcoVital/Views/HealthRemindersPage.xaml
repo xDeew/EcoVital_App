@@ -2,9 +2,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoVital.Views.HealthRemindersPage"
              xmlns:vm="clr-namespace:EcoVital.ViewModels"
-             Shell.TabBarIsVisible="False">
+             Shell.TabBarIsVisible="True">
     <ContentPage.BindingContext>
-        <vm:HealthRemindersViewModel/>
+        <vm:HealthRemindersViewModel />
     </ContentPage.BindingContext>
 
     <ScrollView>
@@ -13,20 +13,25 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame CornerRadius="10" Margin="10" Padding="10" BackgroundColor="#A5D6A7">
-                            <StackLayout>
-                                <Image Source="{Binding ImageSource}" Aspect="AspectFill" HeightRequest="100" />
-                                <Label Text="{Binding ReminderType}" FontAttributes="Bold" FontSize="Medium" />
-                                <Label Text="{Binding ReminderMessage}" FontSize="Small" TextColor="#666666" />
-                                
-                                <TimePicker Time="{Binding Path=BindingContext.SelectedTime, Source={RelativeSource AncestorType={x:Type ContentPage}}}" Format="HH:mm" />
-                                
-                                <Button Text="Añadir recordatorio"
+                            <Grid RowDefinitions="*, Auto, Auto"
+                                  ColumnDefinitions="*">
+                                <StackLayout Grid.Row="0">
+                                    <Image Source="{Binding ImageSource}" Aspect="AspectFit" HeightRequest="100" />
+                                    <Label Text="{Binding ReminderType}" FontAttributes="Bold" FontSize="Medium" />
+                                    <Label Text="{Binding ReminderMessage}" FontSize="Small" TextColor="#666666" />
+                                </StackLayout>
+                                <TimePicker Grid.Row="1"
+                                            Time="{Binding Path=BindingContext.SelectedTime, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
+                                            Format="HH:mm" HorizontalOptions="FillAndExpand" />
+                                <Button Grid.Row="2" Text="Añadir recordatorio"
                                         Command="{Binding Path=BindingContext.AddReminderCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
                                         CommandParameter="{Binding .}"
-                                        BackgroundColor="#4CAF50" TextColor="White"/>
-                            </StackLayout>
+                                        BackgroundColor="#4CAF50" TextColor="White" HorizontalOptions="FillAndExpand" />
+                            </Grid>
                         </Frame>
                     </DataTemplate>
+
+
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </StackLayout>

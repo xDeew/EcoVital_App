@@ -37,8 +37,8 @@
         <DataTemplate>
             <Grid Padding="15,10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" /> <!-- Espacio para el ícono -->
-                    <ColumnDefinition Width="*" />    <!-- Espacio para el texto -->
+                    <ColumnDefinition Width="Auto" /> 
+                    <ColumnDefinition Width="*" />    
                 </Grid.ColumnDefinitions>
                 <Image Source="{Binding Icon}"
                        WidthRequest="30"
@@ -60,13 +60,13 @@
     <!-- Flyout Items -->
     <FlyoutItem Route="ProgressStatus" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="Progreso actual"
-                      ContentTemplate="{DataTemplate views:ProgressStatus}" 
-                      Icon="bars_progress_solid.svg"/>
+                      ContentTemplate="{DataTemplate views:ProgressStatus}"
+                      Icon="bars_progress_solid.svg" />
         <ShellContent Title="Recordatorios de salud"
                       ContentTemplate="{DataTemplate views:HealthRemindersPage}"
-                      Icon="bell_solid.svg"/>
+                      Icon="bell_solid.svg" />
     </FlyoutItem>
-
+    
     <FlyoutItem Route="HomePage" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="Home"
                       ContentTemplate="{DataTemplate views:HomePage}"
@@ -78,6 +78,7 @@
                       ContentTemplate="{DataTemplate views:AboutPage}"
                       Icon="info_solid.svg" />
     </FlyoutItem>
+
     <!-- Main Page -->
     <ShellContent Title="¿No es tu cuenta? Cierra sesión aquí"
                   ContentTemplate="{DataTemplate views:LoginPage}"
@@ -88,4 +89,5 @@
     <MenuItem Text="Desconectarse"
               Command="{Binding SignOutCommand}"
               IconImageSource="logout.svg" />
+
 </Shell>

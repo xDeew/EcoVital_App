@@ -21,23 +21,18 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(ActivityRecord), typeof(ActivityRecord));
         Routing.RegisterRoute(nameof(ProgressStatus), typeof(ProgressStatus));
         Routing.RegisterRoute(nameof(HealthRemindersPage), typeof(HealthRemindersPage));
-        
-                
-
     }
 
     void OnNavigating(object? sender, ShellNavigatedEventArgs e)
     {
-        // Comprueba si el usuario está navegando a la página de inicio de sesión
         if (e.Current.Location.OriginalString == "///LoginPage")
         {
             // Desactiva el Flyout
-            this.FlyoutBehavior = FlyoutBehavior.Disabled;
+            FlyoutBehavior = FlyoutBehavior.Disabled;
         }
         else
         {
-            // Si el usuario está navegando a cualquier otra página y está autenticado, habilita el Flyout
-            this.FlyoutBehavior = FlyoutBehavior.Flyout;
+            FlyoutBehavior = FlyoutBehavior.Flyout;
         }
     }
 
@@ -54,6 +49,16 @@ public partial class AppShell : Shell
         {
             // Activa el Flyout para todas las demás páginas
             this.FlyoutBehavior = FlyoutBehavior.Flyout;
+        }
+
+        if (args.Current.Location.OriginalString.Contains("//HomePage"))
+        {
+            Shell.Current.GoToAsync("//HomePage", animate: true);
+        }
+
+        if (args.Current.Location.OriginalString.Contains(nameof(ProgressStatus)))
+        {
+            Shell.Current.GoToAsync("//" + nameof(ProgressStatus));
         }
     }
 }
