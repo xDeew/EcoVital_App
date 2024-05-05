@@ -52,6 +52,7 @@ namespace EcoVital.ViewModels
         private async void GoToChatbot()
         {
             await Shell.Current.GoToAsync(nameof(ChatBotPage));
+           
         }
 
         private async void RegisterActivity()

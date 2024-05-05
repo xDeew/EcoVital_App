@@ -40,25 +40,14 @@ public partial class AppShell : Shell
     protected override void OnNavigated(ShellNavigatedEventArgs args)
     {
         base.OnNavigated(args);
-        // Ajusta el FlyoutBehavior basándote en la página actual
+
         if (args.Current.Location.OriginalString.Contains("LoginPage"))
         {
-            this.FlyoutBehavior = FlyoutBehavior.Disabled;
+            FlyoutBehavior = FlyoutBehavior.Disabled;
         }
         else
         {
-            // Activa el Flyout para todas las demás páginas
-            this.FlyoutBehavior = FlyoutBehavior.Flyout;
-        }
-
-        if (args.Current.Location.OriginalString.Contains("//HomePage"))
-        {
-            Shell.Current.GoToAsync("//HomePage", animate: true);
-        }
-
-        if (args.Current.Location.OriginalString.Contains(nameof(ProgressStatus)))
-        {
-            Shell.Current.GoToAsync("//" + nameof(ProgressStatus));
+            FlyoutBehavior = FlyoutBehavior.Flyout;
         }
     }
 }
