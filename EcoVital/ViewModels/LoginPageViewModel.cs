@@ -61,6 +61,7 @@ public partial class LoginPageViewModel : BaseViewModel
 
                 await _loadingService.HideLoading();
                 IsLoginSuccessful = false;
+
                 return;
             }
 
@@ -73,8 +74,10 @@ public partial class LoginPageViewModel : BaseViewModel
                 await _loadingService.HideLoading();
 
                 IsLoginSuccessful = false;
+
                 return;
             }
+
             if (Preferences.ContainsKey(nameof(App.UserInfo)))
             {
                 Preferences.Remove(nameof(App.UserInfo));
@@ -90,7 +93,10 @@ public partial class LoginPageViewModel : BaseViewModel
             Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
             App.HomePageViewModel.UserName = userInfo.UserName;
 
-            await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+
+            await Shell.Current.GoToAsync("///HomePage");
+
+
             UsernameOrEmail = string.Empty;
             Password = string.Empty;
             IsRememberMeChecked = false;
@@ -98,8 +104,8 @@ public partial class LoginPageViewModel : BaseViewModel
             {
                 await _loadingService.HideLoading();
             }
-            IsLoginSuccessful = App.UserInfo != null;
 
+            IsLoginSuccessful = App.UserInfo != null;
         }
         else
         {
@@ -111,6 +117,7 @@ public partial class LoginPageViewModel : BaseViewModel
         {
             await _loadingService.HideLoading();
         }
+
         IsLoginSuccessful = false;
     }
 

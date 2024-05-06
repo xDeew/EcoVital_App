@@ -41,8 +41,6 @@ public class UserActivityRecord : INotifyPropertyChanged
         }
     }
 
-  
-
 
     public event PropertyChangedEventHandler? PropertyChanged;
 
