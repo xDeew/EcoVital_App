@@ -25,10 +25,16 @@ namespace EcoVital.ViewModels
             ContinueCommand = new RelayCommand(Continue);
             _securityQuestions = new List<string>
             {
-                "¿Cuál es tu color favorito?",
-                "¿Cuál es el nombre de tu primera mascota?",
-                "¿Cuál es tu ciudad natal?",
+                "¿Cuál es el nombre de tu primer profesor?",
+                "¿Cuál es el nombre de la calle donde creciste?",
+                "¿Cuál es el nombre de tu libro favorito de la infancia?",
+                "¿Cuál es el nombre de tu mejor amigo de la infancia?",
+                "¿Cuál es el nombre de tu primer jefe?",
+                "¿Cuál es el nombre de tu película favorita?",
+                "¿Cuál es el nombre de tu primer mascota?",
+                "¿Cuál es tu ciudad de nacimiento?",
                 "¿Cuál es tu comida favorita?",
+                "¿Cuál es tu color favorito?"
             };
         }
 
