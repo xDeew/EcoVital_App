@@ -78,7 +78,6 @@
                   ContentTemplate="{DataTemplate views:AboutPage}"
                   Icon="info_solid.svg" />
 
-    <!-- Main Page -->
     <ShellContent Title="¿No es tu cuenta? Cierra sesión aquí"
                   ContentTemplate="{DataTemplate views:LoginPage}"
                   Route="LoginPage"
