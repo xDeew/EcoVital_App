@@ -19,6 +19,13 @@ public partial class App : Application
         MainPage = new AppShell();
         CheckInitialLoginState();
     }
+    
+    protected override async void OnStart()
+    {
+        base.OnStart();
+        await Shell.Current.GoToAsync("//LoginPage");
+        
+    }
 
     private async void CheckInitialLoginState()
     {
@@ -27,11 +34,8 @@ public partial class App : Application
 
         if (isRememberMeChecked && !string.IsNullOrWhiteSpace(userDetails))
         {
-            // Intenta restaurar la sesión del usuario
             try
             {
-                // Intenta deserializar la información del usuario para restaurar la sesión en
-                // caso de que el usuario haya marcado "Recordarme"
                 UserInfo userInfo = JsonConvert.DeserializeObject<UserInfo>(userDetails);
                 if (userInfo != null)
                 {
@@ -55,7 +59,7 @@ public partial class App : Application
         }
 
         // Dirige al usuario a la LoginPage si "Recordarme" no está marcado o si no hay información de usuario
-        await Shell.Current.GoToAsync("///LoginPage");
+        await Shell.Current.GoToAsync("//LoginPage");
         Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;
     }
 }

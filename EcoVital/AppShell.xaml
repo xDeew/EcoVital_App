@@ -2,16 +2,13 @@
 
 <Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:EcoVital"
        xmlns:views="clr-namespace:EcoVital.Views"
-       xmlns:viewModels1="clr-namespace:EcoVital.ViewModels"
-       xmlns:models="clr-namespace:EcoVital.Models"
        xmlns:converters="clr-namespace:EcoVital.Converters"
        x:Class="EcoVital.AppShell"
-       Shell.FlyoutBehavior="Flyout"
+       FlyoutBehavior="Flyout"
        Title="EcoVital"
        Navigated="OnNavigating"
-       Shell.BackgroundColor="#76C893"
+       BackgroundColor="#76C893"
        TabBarBackgroundColor="#6A9D78"
        ForegroundColor="#FFFFFF"
        TabBarUnselectedColor="#9FA8A3"
@@ -71,13 +68,15 @@
         <ShellContent Title="Home"
                       ContentTemplate="{DataTemplate views:HomePage}"
                       Icon="house_solid.svg" />
-        <ShellContent Title="Contacto"
-                      ContentTemplate="{DataTemplate views:ContactPage}"
-                      Icon="phone_solid.svg" />
-        <ShellContent Title="Sobre nosotros"
-                      ContentTemplate="{DataTemplate views:AboutPage}"
-                      Icon="info_solid.svg" />
+        
     </FlyoutItem>
+    
+    <ShellContent Title="Contacto"
+                  ContentTemplate="{DataTemplate views:ContactPage}"
+                  Icon="phone_solid.svg" />
+    <ShellContent Title="Sobre nosotros"
+                  ContentTemplate="{DataTemplate views:AboutPage}"
+                  Icon="info_solid.svg" />
 
     <!-- Main Page -->
     <ShellContent Title="¿No es tu cuenta? Cierra sesión aquí"

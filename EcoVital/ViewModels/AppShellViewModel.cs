@@ -11,9 +11,6 @@ namespace EcoVital.ViewModels
         [ICommand]
         async void SignOut()
         {
-            await _loadingService.ShowLoading();
-
-
             if (Preferences.ContainsKey(nameof(App.UserInfo)))
             {
                 Preferences.Remove(nameof(App.UserInfo));
@@ -28,10 +25,8 @@ namespace EcoVital.ViewModels
 
             Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;
 
-            await _loadingService.HideLoading();
 
-
-            await Shell.Current.GoToAsync("///LoginPage");
+            await Shell.Current.GoToAsync("//LoginPage");
 
 
             Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;

@@ -27,7 +27,6 @@ public partial class AppShell : Shell
     {
         if (e.Current.Location.OriginalString == "///LoginPage")
         {
-            // Desactiva el Flyout
             FlyoutBehavior = FlyoutBehavior.Disabled;
         }
         else
