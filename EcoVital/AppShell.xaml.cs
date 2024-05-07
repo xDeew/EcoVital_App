@@ -21,18 +21,14 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(ActivityRecord), typeof(ActivityRecord));
         Routing.RegisterRoute(nameof(ProgressStatus), typeof(ProgressStatus));
         Routing.RegisterRoute(nameof(HealthRemindersPage), typeof(HealthRemindersPage));
+        Navigated += (sender, args) => BackgroundColor = Color.FromArgb("#76C893");
     }
 
     void OnNavigating(object? sender, ShellNavigatedEventArgs e)
     {
-        if (e.Current.Location.OriginalString == "///LoginPage")
-        {
-            FlyoutBehavior = FlyoutBehavior.Disabled;
-        }
-        else
-        {
-            FlyoutBehavior = FlyoutBehavior.Flyout;
-        }
+        FlyoutBehavior = e.Current.Location.OriginalString.Contains("LoginPage")
+            ? FlyoutBehavior.Disabled
+            : FlyoutBehavior.Flyout;
     }
 
 
@@ -40,13 +36,8 @@ public partial class AppShell : Shell
     {
         base.OnNavigated(args);
 
-        if (args.Current.Location.OriginalString.Contains("LoginPage"))
-        {
-            FlyoutBehavior = FlyoutBehavior.Disabled;
-        }
-        else
-        {
-            FlyoutBehavior = FlyoutBehavior.Flyout;
-        }
+        FlyoutBehavior = args.Current.Location.OriginalString.Contains("LoginPage")
+            ? FlyoutBehavior.Disabled
+            : FlyoutBehavior.Flyout;
     }
 }

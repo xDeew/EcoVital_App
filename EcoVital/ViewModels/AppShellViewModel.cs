@@ -1,13 +1,10 @@
 ﻿using System.Diagnostics;
-using EcoVital.Services;
 using Microsoft.Toolkit.Mvvm.Input;
 
 namespace EcoVital.ViewModels
 {
     public partial class AppShellViewModel : BaseViewModel
     {
-        readonly ILoadingService _loadingService = new LoadingService();
-
         [ICommand]
         async void SignOut()
         {
@@ -26,8 +23,9 @@ namespace EcoVital.ViewModels
             Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;
 
 
-            await Shell.Current.GoToAsync("//LoginPage");
+            await Shell.Current.GoToAsync("LoginPage");
 
+            Shell.Current.BackgroundColor = Color.FromHex("#76C893");
 
             Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;
 

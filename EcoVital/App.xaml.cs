@@ -23,7 +23,7 @@ public partial class App : Application
     protected override async void OnStart()
     {
         base.OnStart();
-        await Shell.Current.GoToAsync("//LoginPage");
+        await Shell.Current.GoToAsync("LoginPage");
         
     }
 
@@ -59,7 +59,7 @@ public partial class App : Application
         }
 
         // Dirige al usuario a la LoginPage si "Recordarme" no está marcado o si no hay información de usuario
-        await Shell.Current.GoToAsync("//LoginPage");
+        await Shell.Current.GoToAsync("LoginPage");
         Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;
     }
 }

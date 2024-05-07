@@ -5,7 +5,8 @@
              xmlns:converters="clr-namespace:EcoVital.Converters"
              x:Class="EcoVital.Views.RegisterPage"
              Title="RegisterPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
     
     <ContentPage.Resources>
         <ResourceDictionary>

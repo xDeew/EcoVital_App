@@ -17,6 +17,6 @@ public partial class SecurityAnswerPage
 
     void OnBackButtonClicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//LoginPage");
+        Shell.Current.GoToAsync("LoginPage");
     }
 }

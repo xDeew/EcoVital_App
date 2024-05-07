@@ -23,7 +23,7 @@ namespace EcoVital.ViewModels
 
         void Cancel()
         {
-            Shell.Current.GoToAsync("///LoginPage");
+            Shell.Current.GoToAsync("LoginPage");
         }
 
         private async void Send()

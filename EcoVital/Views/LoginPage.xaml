@@ -6,7 +6,8 @@
              x:Class="EcoVital.Views.LoginPage"
              Title="LoginPage"
              Shell.NavBarIsVisible="False"
-             Appearing="OnAppearing">
+             Appearing="OnAppearing"
+             Shell.TabBarIsVisible="False">
     <Grid BackgroundColor="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="220" />

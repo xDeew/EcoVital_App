@@ -4,7 +4,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoVital.Views.SecurityAnswerPage"
              Title="SecurityAnswerPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
     <Grid BackgroundColor="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="220" />

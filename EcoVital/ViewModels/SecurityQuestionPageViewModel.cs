@@ -71,7 +71,7 @@ namespace EcoVital.ViewModels
 
                 SelectedSecurityQuestion = null;
                 SecurityAnswer = null;
-                await Shell.Current.GoToAsync("///LoginPage");
+                await Shell.Current.GoToAsync("LoginPage");
             }
             else
             {

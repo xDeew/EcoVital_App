@@ -36,7 +36,7 @@ public partial class LoginPageViewModel : BaseViewModel
     }
 
 
-    private async void NavigateToForgotPasswordPage()
+    async void NavigateToForgotPasswordPage()
     {
         UsernameOrEmail = string.Empty;
         Password = string.Empty;
@@ -46,6 +46,8 @@ public partial class LoginPageViewModel : BaseViewModel
     [ICommand]
     async Task Login()
     {
+        UsernameOrEmail = UsernameOrEmail.Trim();
+        Password = Password.Trim();
         if (IsLoadingEnabled)
         {
             await _loadingService.ShowLoading();
@@ -83,7 +85,7 @@ public partial class LoginPageViewModel : BaseViewModel
                 Preferences.Remove(nameof(App.UserInfo));
             }
 
-            string userDetails = JsonConvert.SerializeObject(userInfo);
+            var userDetails = JsonConvert.SerializeObject(userInfo);
             Preferences.Set(nameof(App.UserInfo), userDetails);
             App.UserInfo = userInfo;
             App.HomePageViewModel.UserName = userInfo.UserName;
@@ -93,7 +95,7 @@ public partial class LoginPageViewModel : BaseViewModel
             Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
             App.HomePageViewModel.UserName = userInfo.UserName;
             
-            await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+            await Shell.Current.GoToAsync("//HomePage");
             
             
             
