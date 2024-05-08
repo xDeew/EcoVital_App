@@ -22,8 +22,11 @@ namespace EcoVital.ViewModels
 
             Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;
 
+            
+            await Shell.Current.Navigation.PopToRootAsync(); 
+            
+            await Shell.Current.GoToAsync("LoginPage", true);
 
-            await Shell.Current.GoToAsync("LoginPage");
 
             Shell.Current.BackgroundColor = Color.FromHex("#76C893");
 
