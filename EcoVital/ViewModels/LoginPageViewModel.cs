@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace EcoVital.ViewModels;
 
-public partial class LoginPageViewModel : BaseViewModel
+public partial class LoginRegister : BaseViewModel
 {
     [ObservableProperty] private string _usernameOrEmail;
 
@@ -28,7 +28,7 @@ public partial class LoginPageViewModel : BaseViewModel
     readonly ILoadingService _loadingService;
 
 
-    public LoginPageViewModel(ILoginRepository loginRepository, ILoadingService loadingService)
+    public LoginRegister(ILoginRepository loginRepository, ILoadingService loadingService)
     {
         _loginRepository = loginRepository ?? throw new ArgumentNullException(nameof(loginRepository));
         _loadingService = loadingService ?? throw new ArgumentNullException(nameof(loadingService));

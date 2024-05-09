@@ -34,7 +34,7 @@ namespace EcoVital.ViewModels
         }
 
         [ICommand]
-        public async void Register()
+        public async Task Register()
         {
             
 

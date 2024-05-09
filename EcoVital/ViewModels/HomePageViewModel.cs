@@ -40,7 +40,16 @@ namespace EcoVital.ViewModels
             GoToProgressPageCommand = new RelayCommand(() => GoToPage("//ProgressStatus"));
             DailyAdvice = GetDailyAdvice();
         }
+        public HomePageViewModel(DateTime? specificDay = null)
+        {
+            int dayIndex = (int)(specificDay ?? DateTime.Now).DayOfWeek;
+            DailyAdvice = GetDailyAdvice(dayIndex);
+        }
 
+        private string GetDailyAdvice(int dayIndex)
+        {
+            return _dailyAdvices[dayIndex];
+        }
 
         private string GetDailyAdvice()
         {

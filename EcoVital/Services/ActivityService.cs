@@ -14,6 +14,7 @@ namespace EcoVital.Services
             _client = client ?? throw new ArgumentNullException(nameof(client));
         }
 
+
         public async Task<List<ActivityRecord>> GetActivityRecordsAsync()
         {
             var activityRecords = await _client.GetFromJsonAsync<List<ActivityRecord>>(_apiBaseUrl);
@@ -29,7 +30,7 @@ namespace EcoVital.Services
 
             return activityRecords;
         }
-        
+
         public async Task<UserActivityRecord> RegisterUserActivityRecordAsync(UserActivityRecord userActivityRecord)
         {
             var response = await _client.PostAsJsonAsync(_apiBaseUrlUnion, userActivityRecord);
@@ -67,7 +68,7 @@ namespace EcoVital.Services
 
             return new List<UserActivityRecord>();
         }
-        
+
         public async Task DeleteUserActivityRecordAsync(int recordId)
         {
             var url = $"{_apiBaseUrlUnion}/{recordId}";
@@ -75,4 +76,6 @@ namespace EcoVital.Services
             response.EnsureSuccessStatusCode();
         }
     }
+
+ 
 }

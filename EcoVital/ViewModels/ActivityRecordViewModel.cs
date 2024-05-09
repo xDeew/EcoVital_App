@@ -22,7 +22,7 @@ namespace EcoVital.ViewModels
         public ObservableCollection<ActivityRecord> ActivityRecords
         {
             get => _activityRecords;
-            private set => SetProperty(ref _activityRecords, value);
+            set => SetProperty(ref _activityRecords, value);
         }
 
         public ObservableCollection<ActivityRecord> SelectedActivities { get; set; }
@@ -56,7 +56,7 @@ namespace EcoVital.ViewModels
         }
 
 
-        void SelectActivity(ActivityRecord activityRecord)
+        public void SelectActivity(ActivityRecord activityRecord)
         {
             activityRecord.IsSelected = !activityRecord.IsSelected;
 
@@ -70,7 +70,7 @@ namespace EcoVital.ViewModels
             }
         }
 
-        async Task RegisterSelectedActivitiesAsync()
+        public async Task RegisterSelectedActivitiesAsync()
         {
             if (SelectedActivities.Count == 0)
             {
@@ -141,7 +141,7 @@ namespace EcoVital.ViewModels
         }
 
 
-        async Task LoadActivitiesAsync()
+        public async Task LoadActivitiesAsync()
         {
             await LoadUserActivityRecordsAsync();
             var activityRecords = await _activityService.GetActivityRecordsAsync();

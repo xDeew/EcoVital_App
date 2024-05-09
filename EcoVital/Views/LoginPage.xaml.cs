@@ -10,7 +10,7 @@ public partial class LoginPage : ContentPage
     public LoginPage()
     {
         InitializeComponent();
-        BindingContext = new LoginPageViewModel(_loginRepository, _loadingService);
+        BindingContext = new LoginRegister(_loginRepository, _loadingService);
         Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;
     }
 

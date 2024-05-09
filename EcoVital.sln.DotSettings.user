@@ -52,11 +52,9 @@
     &lt;TestId&gt;xUnit::D0DF1FAF-85DD-4E54-9880-50CC80BFD79C::net8.0::UnitTestsEcoVital.LoginPageViewModelTests.Login_WithValidCredentials_ShouldReturnUserInfo&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ad1a0e38_002D89bd_002D4eb3_002D845c_002D110671c5b71d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Login_ValidCredentials_ReturnsUserInfo #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::D0DF1FAF-85DD-4E54-9880-50CC80BFD79C::net8.0::UnitTestsEcoVital.LoginPageViewModelTests.Login_WithValidCredentials_ShouldReturnUserInfo&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ad1a0e38_002D89bd_002D4eb3_002D845c_002D110671c5b71d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Login_ValidCredentials_ReturnsUserInfo #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Users\PC\Desktop\EcoVital\UnitTestsEcoVital" Presentation="&amp;lt;UnitTestsEcoVital&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f659e1f5_002D02af_002D4060_002D842a_002D33ca83475541/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Login_ValidCredentials_ReturnsUserInfo" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f659e1f5_002D02af_002D4060_002D842a_002D33ca83475541/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Login_ValidCredentials_ReturnsUserInfo" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Project Location="C:\Users\PC\Desktop\EcoVital\UnitTestsEcoVital" Presentation="&amp;lt;UnitTestsEcoVital&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

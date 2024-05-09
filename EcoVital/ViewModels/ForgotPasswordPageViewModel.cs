@@ -21,12 +21,18 @@ namespace EcoVital.ViewModels
             SendCommand = new RelayCommand(Send);
         }
 
+        public ForgotPasswordPageViewModel(ILoginRepository loginRepository)
+        {
+            _loginRepository = loginRepository;
+           
+        }
+
         void Cancel()
         {
             Shell.Current.GoToAsync("LoginPage");
         }
 
-        private async void Send()
+        public async void Send()
         {
             // Verificamos si el correo electrónico no está vacío
             if (string.IsNullOrWhiteSpace(Email))

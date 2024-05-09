@@ -28,7 +28,7 @@ public static class MauiProgram
         // esto se agrega para que se pueda inyectar la dependencia de
         // la página, es decir, para que se pueda inyectar la vista en el ViewModel
 
-        builder.Services.AddSingleton<LoginPageViewModel>();
+        builder.Services.AddSingleton<LoginRegister>();
         builder.Services.AddSingleton<AboutPage>();
         builder.Services.AddSingleton<ContactPage>();
         builder.Services.AddSingleton<ChatBotPage>();
