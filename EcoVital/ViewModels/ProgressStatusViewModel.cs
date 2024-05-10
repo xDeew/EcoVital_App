@@ -44,8 +44,8 @@ namespace EcoVital.ViewModels
             };
         }
 
-        
-        void SelectActivity(UserActivityRecord activity)
+
+        public void SelectActivity(UserActivityRecord activity)
         {
             // if (activity == null) return;
 
@@ -54,7 +54,7 @@ namespace EcoVital.ViewModels
             OnPropertyChanged(nameof(RegisteredActivities));
         }
 
-        async void UpdateProgress(double progressPercentage)
+        public async void UpdateProgress(double progressPercentage)
         {
             var selectedActivities = RegisteredActivities.Where(a => a.IsSelected).ToList();
             if (!selectedActivities.Any())

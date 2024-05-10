@@ -12,14 +12,14 @@ namespace UnitTestsEcoVital
         private readonly Mock<ILoginRepository> _loginRepository;
         private readonly Mock<ILoadingService> _loadingService;
         private readonly RegisterPageViewModel _registerPageViewModel;
-        private readonly SecurityQuestionPageViewModel _securityQuestionPageViewModel;
+        private readonly SecurityQuestionPageViewModelTests _securityQuestionPageViewModelTests;
 
         public LoginRegisterTests()
         {
             _loginRepository = new Mock<ILoginRepository>();
             _loadingService = new Mock<ILoadingService>();
             _registerPageViewModel = new RegisterPageViewModel();
-            _securityQuestionPageViewModel = new SecurityQuestionPageViewModel();
+            _securityQuestionPageViewModelTests = new SecurityQuestionPageViewModelTests();
         }
 
 
@@ -43,9 +43,10 @@ namespace UnitTestsEcoVital
             }
         }
 
-        [Fact] 
+        [Fact]
         public async Task Login_WithValidCredentials_ShouldReturnUserInfo()
         {
+            string username;
             // Arrange
             var userInfo = new UserInfo
             {
@@ -57,9 +58,15 @@ namespace UnitTestsEcoVital
             _loginRepository.Setup(repo => repo.UserExists("justTesting")).ReturnsAsync(true);
             _loginRepository.Setup(repo => repo.Login("justTesting", "IamTesting123")).ReturnsAsync(userInfo);
 
-            // Act
-            await LoginForTesting("justTesting", "IamTesting123");
+            App.UserInfo = new UserInfo
+            {
+                UserName = "justTesting",
+                Password = "IamTesting123"
+            };
 
+            // Act
+            username = App.UserInfo.UserName;
+            await LoginForTesting(username, "IamTesting123");
             // Assert
             _loginRepository.Verify(repo => repo.Login("justTesting", "IamTesting123"), Times.Once);
             Assert.NotNull(App.UserInfo);
