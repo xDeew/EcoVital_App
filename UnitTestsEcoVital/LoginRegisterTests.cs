@@ -43,7 +43,7 @@ namespace UnitTestsEcoVital
             }
         }
 
-        [Fact]
+        [Fact] 
         public async Task Login_WithValidCredentials_ShouldReturnUserInfo()
         {
             // Arrange
