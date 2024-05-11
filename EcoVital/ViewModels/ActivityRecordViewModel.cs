@@ -72,6 +72,14 @@ namespace EcoVital.ViewModels
 
         public async Task RegisterSelectedActivitiesAsync()
         {
+            // if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            // {
+            //     // Mostrar un mensaje al usuario
+            //     await Application.Current.MainPage.DisplayAlert("Error",
+            //         "Se requiere conexión a Internet para iniciar sesión.", "OK");
+            //     return;
+            // }
+            
             if (SelectedActivities.Count == 0)
             {
                 await Application.Current.MainPage.DisplayAlert("Aviso", "No has seleccionado ninguna actividad.",

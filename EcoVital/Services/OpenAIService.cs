@@ -15,7 +15,7 @@ public class OpenAiService
                 "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");
     }
 
-    public async Task<string> GetResponseAsync(string prompt)
+    public virtual async Task<string> GetResponseAsync(string prompt)
     {
         var data = new
         {

@@ -24,8 +24,31 @@ public partial class ChatBotPage : ContentPage
         MessagesCollectionView.ItemsSource = Messages;
     }
 
-    private async void OnSendClicked(object sender, EventArgs e)
+    public ChatBotPage(OpenAiService openAiService)
     {
+        InitializeComponent();
+        _openAiService = openAiService;
+
+        Messages.Add(new Message
+        {
+            Text = "Hola, bienvenido a la aplicación" +
+                   " EcoVital, ¿qué puedo hacer por ti?",
+            IsUserMessage = false
+        });
+
+        MessagesCollectionView.ItemsSource = Messages;
+    }
+
+    public async void OnSendClicked(object sender, EventArgs e)
+    {
+        if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+        {
+            await Application.Current.MainPage.DisplayAlert("Error",
+                "Se requiere conexión a Internet para usar el chatbot.", "OK");
+
+            return;
+        }
+
         var userInput = UserInput.Text;
         if (!string.IsNullOrWhiteSpace(userInput))
         {

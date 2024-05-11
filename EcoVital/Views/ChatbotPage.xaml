@@ -41,7 +41,7 @@
         </CollectionView>
         <Entry x:Name="UserInput" 
                Placeholder="Escribe tu pregunta aquí..."
-               VerticalOptions="End"/>
+               VerticalOptions="End" x:FieldModifier="public" />
         <Button Text="Enviar" 
                 Clicked="OnSendClicked"
                 VerticalOptions="End"/>

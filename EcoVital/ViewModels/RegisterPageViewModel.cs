@@ -36,7 +36,14 @@ namespace EcoVital.ViewModels
         [ICommand]
         public async Task Register()
         {
-            
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error",
+                    "Se requiere conexión a Internet para registrarse.", "OK");
+
+                return;
+            }
+
 
             if (string.IsNullOrWhiteSpace(UserName) || string.IsNullOrWhiteSpace(Email) ||
                 string.IsNullOrWhiteSpace(Password) || string.IsNullOrWhiteSpace(ConfirmPassword)
@@ -47,7 +54,7 @@ namespace EcoVital.ViewModels
 
                 return;
             }
-            
+
             if (string.IsNullOrEmpty(Email) || !Email.Contains("@"))
             {
                 await App.Current.MainPage.DisplayAlert("Error",

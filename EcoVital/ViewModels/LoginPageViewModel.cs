@@ -46,6 +46,21 @@ public partial class LoginRegister : BaseViewModel
     [ICommand]
     async Task Login()
     {
+        if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+        {
+            await Application.Current.MainPage.DisplayAlert("Error",
+                "Se requiere conexión a Internet para iniciar sesión.", "OK");
+
+            return;
+        }
+    
+        if (string.IsNullOrWhiteSpace(UsernameOrEmail) || string.IsNullOrWhiteSpace(Password))
+        {
+            await Application.Current.MainPage.DisplayAlert("Error",
+                "Por favor, ingresa tanto el usuario como la contraseña.", "OK");
+            return;
+        }
+
         UsernameOrEmail = UsernameOrEmail.Trim();
         Password = Password.Trim();
         if (IsLoadingEnabled)
@@ -94,11 +109,10 @@ public partial class LoginRegister : BaseViewModel
             Shell.Current.FlyoutHeader = new FlyoutHeaderControl();
             Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
             App.HomePageViewModel.UserName = userInfo.UserName;
-            
+
             await Shell.Current.GoToAsync("//HomePage");
-            
-            
-            
+
+
             UsernameOrEmail = string.Empty;
             Password = string.Empty;
             IsRememberMeChecked = false;

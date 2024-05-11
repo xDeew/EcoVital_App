@@ -66,6 +66,14 @@ namespace EcoVital.ViewModels
 
         private async void RegisterActivity()
         {
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error",
+                    "Se requiere conexión a Internet para poder registrar una actividad.", "OK");
+
+                return;
+            }
+            
             await Shell.Current.GoToAsync(nameof(ActivityRecord));
         }
 
