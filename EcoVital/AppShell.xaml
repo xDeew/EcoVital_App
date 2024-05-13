@@ -15,8 +15,8 @@
        TabBarTitleColor="#FFFFFF"
        TabBarForegroundColor="#2F4F4F"
        FlyoutBackgroundColor="White">
-    
-    
+
+
     <Shell.Resources>
         <ResourceDictionary>
             <converters:TitleToColorConverter x:Key="TitleToColor" />
@@ -29,7 +29,6 @@
     </Shell.Resources>
 
 
-    
     <Shell.ItemTemplate>
         <DataTemplate>
             <Grid Padding="15,10">

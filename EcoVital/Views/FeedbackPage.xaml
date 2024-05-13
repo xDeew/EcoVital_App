@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:EcoVital.ViewModels"
+             x:Class="EcoVital.Views.FeedbackPage"
+             Title="Feedback"
+             Shell.NavBarIsVisible="True"
+             Shell.TabBarIsVisible="False">
+
+
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Path Fill="#2ECC71" Stroke="Transparent"
+              Data="m-9.69999,-1l449,0l0,128.48327c-122.5,64.30167 -332.5,65.89076 -449,7.2429l0,-135.72617z"
+              Grid.RowSpan="2" />
+
+        <ScrollView Grid.Row="0">
+            <StackLayout Margin="20,60,20,20">
+                <Label Text="¡Tu opinión es importante para nosotros!"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextColor="White"
+                       Margin="0,0,0,10" />
+                <Entry x:Name="EmailEntry"
+                       Placeholder="Tu correo electrónico (opcional)"
+                       Keyboard="Email"
+                       BackgroundColor="#FFFFFF"
+                       TextColor="Black"
+                       Text="{Binding CurrentFeedback.Email, Mode=TwoWay}" />
+                <Picker Title="Tipo de feedback"
+                        BackgroundColor="#FFFFFF"
+                        TextColor="Black"
+                        SelectedItem="{Binding CurrentFeedback.Type, Mode=TwoWay}">
+                    <Picker.Items>
+                        <x:String>Sugerencia</x:String>
+                        <x:String>Problema técnico</x:String>
+                        <x:String>Comentario general</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Editor x:Name="FeedbackEditor"
+                        Placeholder="Escribe tu comentario aquí..."
+                        HeightRequest="100"
+                        BackgroundColor="#FFFFFF"
+                        TextColor="Black"
+                        Text="{Binding CurrentFeedback.Message, Mode=TwoWay}" />
+            </StackLayout>
+        </ScrollView>
+
+        <StackLayout Grid.Row="1" VerticalOptions="End" HorizontalOptions="Center">
+            <Button Text="Enviar"
+                    Clicked="OnSendFeedbackClicked"
+                    BackgroundColor="#2ECC71"
+                    TextColor="White"
+                    CornerRadius="20"
+                    Margin="20"
+                    WidthRequest="200" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

@@ -39,7 +39,7 @@ public class HealthRemindersViewModel : BaseViewModel
             new()
             {
                 ReminderType = "Meditar", ReminderMessage = "Un momento de meditación para empezar el día.",
-                ImageSource = "meditation.png", ReminderTime = ""
+                ImageSource = "meditations.png", ReminderTime = ""
             },
             new()
             {

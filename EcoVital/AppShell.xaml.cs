@@ -21,6 +21,7 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(ActivityRecord), typeof(ActivityRecord));
         Routing.RegisterRoute(nameof(ProgressStatus), typeof(ProgressStatus));
         Routing.RegisterRoute(nameof(HealthRemindersPage), typeof(HealthRemindersPage));
+        Routing.RegisterRoute(nameof(FeedbackPage), typeof(FeedbackPage));
         Navigated += (sender, args) => BackgroundColor = Color.FromArgb("#76C893");
     }
 

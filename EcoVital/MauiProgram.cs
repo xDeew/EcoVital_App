@@ -10,7 +10,6 @@ public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
-        
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
@@ -24,7 +23,7 @@ public static class MauiProgram
 
 
         builder.Services.AddSingleton<HomePage>();
-        builder.Services.AddSingleton<LoginPage>(); 
+        builder.Services.AddSingleton<LoginPage>();
         // esto se agrega para que se pueda inyectar la dependencia de
         // la página, es decir, para que se pueda inyectar la vista en el ViewModel
 
@@ -32,17 +31,15 @@ public static class MauiProgram
         builder.Services.AddSingleton<AboutPage>();
         builder.Services.AddSingleton<ContactPage>();
         builder.Services.AddSingleton<ChatBotPage>();
-        
-        
+
+
         builder.Services.AddSingleton<ActivityService>();
         builder.Services.AddSingleton<UserGoalService>();
         // Se usa AddTransient para que se cree una nueva instancia cada vez que se solicite
         builder.Services.AddTransient<ActivityRecordViewModel>();
         builder.Services.AddTransient<ProgressStatusViewModel>();
-      
-
-
-
+        builder.Services.AddSingleton<FeedbackService>();
+        builder.Services.AddTransient<FeedbackViewModel>();
 
 
 #if DEBUG

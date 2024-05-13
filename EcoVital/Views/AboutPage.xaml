@@ -37,5 +37,11 @@
             <Label Text="Para más información, visita nuestro sitio web: www.ecovital.com" HorizontalOptions="Center"
                    TextColor="Blue" Margin="0,5" />
         </StackLayout>
+
+        <StackLayout Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center">
+            <Button Text="Envíanos tus comentarios" Margin="20,0" Width="100"
+                    Clicked="OnFeedbackButtonClicked" BackgroundColor="#2ECC71" TextColor="White" />
+        </StackLayout>
+
     </Grid>
 </ContentPage>

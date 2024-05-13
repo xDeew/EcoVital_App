@@ -8,11 +8,13 @@ namespace UnitTestsEcoVital
     public class ActivityRecordViewModelTests
     {
         private readonly ActivityRecordViewModel _viewModel;
-        private List<ActivityRecord> _activityRecords;  
+        private List<ActivityRecord> _activityRecords;
 
         public ActivityRecordViewModelTests()
         {
-            _viewModel = new ActivityRecordViewModel(new ActivityService(new HttpClient()), new UserGoalService(new HttpClient()));
+            _viewModel = new ActivityRecordViewModel(new ActivityService(new HttpClient()),
+                new UserGoalService(new HttpClient()));
+
             InitializeMockData();
         }
 
@@ -27,7 +29,9 @@ namespace UnitTestsEcoVital
 
         private Task LoadActivitiesLocally()
         {
-            _viewModel.ActivityRecords = new System.Collections.ObjectModel.ObservableCollection<ActivityRecord>(_activityRecords);
+            _viewModel.ActivityRecords =
+                new System.Collections.ObjectModel.ObservableCollection<ActivityRecord>(_activityRecords);
+
             return Task.CompletedTask;
         }
 
@@ -43,33 +47,30 @@ namespace UnitTestsEcoVital
             Assert.Contains(_viewModel.ActivityRecords, a => a.Description == "Running");
         }
 
-        // Helper method to simulate registering activities
-        private Task RegisterSelectedActivitiesLocally()
+        Task RegisterSelectedActivitiesLocally()
         {
             foreach (var activity in _viewModel.SelectedActivities)
             {
-                // Simulate adding to user activity records
                 _viewModel.UserActivityRecords.Add(new UserActivityRecord
                 {
-                    UserId = 1,  // Assuming a static user ID for the test
+                    UserId = 1, 
                     ActivityRecordId = activity.RecordId
                 });
             }
 
-            _viewModel.SelectedActivities.Clear();  // Clear after registration
+            _viewModel.SelectedActivities.Clear(); 
+
             return Task.CompletedTask;
         }
 
         [Fact]
         public async Task RegisterSelectedActivities_ShouldRegisterActivities()
         {
-            // Arrange
-            _viewModel.SelectedActivities = new System.Collections.ObjectModel.ObservableCollection<ActivityRecord>(_activityRecords);
+            _viewModel.SelectedActivities =
+                new System.Collections.ObjectModel.ObservableCollection<ActivityRecord>(_activityRecords);
 
-            // Act
             await RegisterSelectedActivitiesLocally();
 
-            // Assert
             Assert.Empty((IEnumerable)_viewModel.SelectedActivities);
             Assert.Equal(2, _viewModel.UserActivityRecords.Count);
         }
