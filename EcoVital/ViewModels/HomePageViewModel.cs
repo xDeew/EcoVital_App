@@ -40,6 +40,7 @@ namespace EcoVital.ViewModels
             GoToProgressPageCommand = new RelayCommand(() => GoToPage("//ProgressStatus"));
             DailyAdvice = GetDailyAdvice();
         }
+
         public HomePageViewModel(DateTime? specificDay = null)
         {
             int dayIndex = (int)(specificDay ?? DateTime.Now).DayOfWeek;
@@ -60,8 +61,9 @@ namespace EcoVital.ViewModels
 
         private async void GoToChatbot()
         {
-            await Shell.Current.GoToAsync(nameof(ChatBotPage));
-           
+            var chatBotPage = new ChatBotPage();
+
+            await Shell.Current.Navigation.PushAsync(chatBotPage);
         }
 
         private async void RegisterActivity()
@@ -73,7 +75,7 @@ namespace EcoVital.ViewModels
 
                 return;
             }
-            
+
             await Shell.Current.GoToAsync(nameof(ActivityRecord));
         }
 

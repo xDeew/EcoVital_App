@@ -66,8 +66,12 @@ namespace EcoVital.ViewModels
 
             try
             {
-                if (string.IsNullOrEmpty(feedback.Email) ||
-                    string.IsNullOrEmpty(feedback.Message))
+                Debug.WriteLine($"Email: {feedback.Email}");
+                Debug.WriteLine($"Message: {feedback.Message}");
+                Debug.WriteLine($"Type: {feedback.Type}");
+
+                if (string.IsNullOrEmpty(feedback.Message) ||
+                    string.IsNullOrEmpty(feedback.Type))
                 {
                     await Application.Current.MainPage.DisplayAlert("Error",
                         "Por favor, completa todos los campos requeridos.", "OK");
@@ -75,13 +79,17 @@ namespace EcoVital.ViewModels
                     return;
                 }
 
-
                 var success = await _feedbackService.PostFeedbackAsync(feedback);
                 if (success)
                 {
                     Feedbacks.Add(feedback);
                     await Application.Current.MainPage.DisplayAlert("Éxito", "Tu comentario ha sido enviado con éxito.",
                         "OK");
+
+                    // clean all the fields
+                    CurrentFeedback.Email = string.Empty;
+                    CurrentFeedback.Message = string.Empty;
+                    CurrentFeedback.Type = string.Empty;
                 }
                 else
                 {

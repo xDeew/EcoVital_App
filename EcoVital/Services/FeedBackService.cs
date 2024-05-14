@@ -1,4 +1,8 @@
+using System.Diagnostics;
 using System.Net.Http.Json;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using EcoVital.Models;
 
 namespace EcoVital.Services;
@@ -13,7 +17,6 @@ public class FeedbackService
         _httpClient = httpClient;
     }
 
-    // Obtener todos los feedbacks
     public async Task<List<Feedback>> GetAllFeedbacksAsync()
     {
         try
@@ -24,14 +27,12 @@ public class FeedbackService
         }
         catch (Exception ex)
         {
-            // Manejo de errores
             Console.WriteLine($"An error occurred: {ex.Message}");
 
             return new List<Feedback>();
         }
     }
 
-    // Obtener un feedback por ID
     public async Task<Feedback> GetFeedbackByIdAsync(int id)
     {
         try
@@ -49,20 +50,42 @@ public class FeedbackService
         }
     }
 
-    // Enviar un nuevo feedback
+    
     public async Task<bool> PostFeedbackAsync(Feedback feedback)
     {
+        // Serializar feedback a JSON
+        var jsonOptions = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+        };
+
+        var json = JsonSerializer.Serialize(feedback, jsonOptions);
+        Debug.WriteLine($"JSON a enviar: {json}");
+
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
         try
         {
-            var response = await _httpClient.PostAsJsonAsync(_baseUrl, feedback);
+            var response = await _httpClient.PostAsync("https://vivaservice.azurewebsites.net/api/Feedback", content);
+            var responseBody = await response.Content.ReadAsStringAsync();
+            Debug.WriteLine($"Código de respuesta: {response.StatusCode}");
+            Debug.WriteLine($"Cuerpo de respuesta: {responseBody}");
 
             return response.IsSuccessStatusCode;
         }
+        catch (HttpRequestException httpRequestException)
+        {
+            Debug.WriteLine($"Error de solicitud HTTP: {httpRequestException.Message}");
+            if (httpRequestException.InnerException != null)
+            {
+                Debug.WriteLine($"Detalles internos: {httpRequestException.InnerException.Message}");
+            }
+            return false;
+        }
         catch (Exception ex)
         {
-            // Manejo de errores
-            Console.WriteLine($"An error occurred: {ex.Message}");
-
+            Debug.WriteLine($"Error al enviar la solicitud: {ex.Message}");
             return false;
         }
     }
