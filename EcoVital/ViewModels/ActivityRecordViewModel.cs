@@ -76,7 +76,7 @@ namespace EcoVital.ViewModels
             // {
             //     // Mostrar un mensaje al usuario
             //     await Application.Current.MainPage.DisplayAlert("Error",
-            //         "Se requiere conexión a Internet para iniciar sesión.", "OK");
+            //         "Se requiere conexión a Internet para registrar actividades.", "OK");
             //     return;
             // }
             

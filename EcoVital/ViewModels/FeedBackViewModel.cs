@@ -59,6 +59,14 @@ namespace EcoVital.ViewModels
 
         public async Task PostFeedbackAsync(Feedback feedback)
         {
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error",
+                    "Se requiere conexión a Internet para enviar feedback.", "OK");
+
+                return;
+            }
+            
             if (IsBusy)
                 return;
 
@@ -93,6 +101,8 @@ namespace EcoVital.ViewModels
                 }
                 else
                 {
+                   
+                    
                     await Application.Current.MainPage.DisplayAlert("Error",
                         "No se pudo enviar el comentario. Por favor, inténtalo de nuevo.", "OK");
                 }

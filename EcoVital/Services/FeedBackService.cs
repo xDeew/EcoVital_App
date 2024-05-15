@@ -43,17 +43,15 @@ public class FeedbackService
         }
         catch (Exception ex)
         {
-            // Manejo de errores
             Console.WriteLine($"An error occurred: {ex.Message}");
 
             return null;
         }
     }
 
-    
+
     public async Task<bool> PostFeedbackAsync(Feedback feedback)
     {
-        // Serializar feedback a JSON
         var jsonOptions = new JsonSerializerOptions
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
@@ -81,16 +79,18 @@ public class FeedbackService
             {
                 Debug.WriteLine($"Detalles internos: {httpRequestException.InnerException.Message}");
             }
+
             return false;
         }
         catch (Exception ex)
         {
             Debug.WriteLine($"Error al enviar la solicitud: {ex.Message}");
+
             return false;
         }
     }
 
-    // Eliminar un feedback
+
     public async Task<bool> DeleteFeedbackAsync(int id)
     {
         try
@@ -101,7 +101,6 @@ public class FeedbackService
         }
         catch (Exception ex)
         {
-            // Manejo de errores
             Console.WriteLine($"An error occurred: {ex.Message}");
 
             return false;
