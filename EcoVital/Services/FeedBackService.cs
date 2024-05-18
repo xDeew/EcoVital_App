@@ -9,8 +9,8 @@ namespace EcoVital.Services;
 
 public class FeedbackService
 {
-    private readonly HttpClient _httpClient;
-    private readonly string _baseUrl = "https://vivaservice.azurewebsites.net/api/feedback";
+    readonly string _baseUrl = "https://vivaservice.azurewebsites.net/api/feedback";
+    readonly HttpClient _httpClient;
 
     public FeedbackService(HttpClient httpClient)
     {
@@ -76,9 +76,7 @@ public class FeedbackService
         {
             Debug.WriteLine($"Error de solicitud HTTP: {httpRequestException.Message}");
             if (httpRequestException.InnerException != null)
-            {
                 Debug.WriteLine($"Detalles internos: {httpRequestException.InnerException.Message}");
-            }
 
             return false;
         }

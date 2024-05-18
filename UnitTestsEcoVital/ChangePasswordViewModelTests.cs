@@ -1,18 +1,15 @@
-using Xunit;
-using Moq;
+using EcoVital.Models;
 using EcoVital.Services;
 using EcoVital.ViewModels;
-using System.Threading.Tasks;
-using EcoVital.Models;
-using Microsoft.Toolkit.Mvvm.Input;
+using Moq;
 using Nito.Mvvm;
 
 namespace UnitTestsEcoVital;
 
 public class ChangePasswordViewModelTests
 {
-    private readonly Mock<ILoginRepository> _mockLoginRepository;
-    private readonly ChangePasswordViewModel _viewModel;
+    readonly Mock<ILoginRepository> _mockLoginRepository;
+    readonly ChangePasswordViewModel _viewModel;
 
     public ChangePasswordViewModelTests()
     {
@@ -31,25 +28,19 @@ public class ChangePasswordViewModelTests
         // Act & Assert
         // Aquí tendrías que simular la llamada al DisplayAlert. Esto requiere abstraer las llamadas de UI en el ViewModel
         var command = _viewModel.ChangePasswordCommand as AsyncCommand;
-        if (command != null)
-        {
-            await command.ExecuteAsync(null);
-        }
+        if (command != null) await command.ExecuteAsync(null);
     }
 
     [Fact]
     public async Task InvalidPassword_ShowsError()
     {
         // Arrange
-        _viewModel.NewPassword = "abc"; 
+        _viewModel.NewPassword = "abc";
         _viewModel.ConfirmNewPassword = "abc";
 
         // Act & Assert
         var command = _viewModel.ChangePasswordCommand as AsyncCommand;
-        if (command != null)
-        {
-            await command.ExecuteAsync(null);
-        }
+        if (command != null) await command.ExecuteAsync(null);
     }
 
     [Fact]

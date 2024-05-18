@@ -7,10 +7,6 @@ namespace EcoVital.ViewModels;
 
 public class HealthRemindersViewModel : BaseViewModel
 {
-    public ICommand AddReminderCommand { get; }
-    public ObservableCollection<HealthReminder> Reminders { get; }
-    public TimeSpan SelectedTime { get; set; } = TimeSpan.Zero;
-
     public HealthRemindersViewModel()
     {
         AddReminderCommand = new Command(AddReminder);
@@ -60,6 +56,10 @@ public class HealthRemindersViewModel : BaseViewModel
         };
     }
 
+    public ICommand AddReminderCommand { get; }
+    public ObservableCollection<HealthReminder> Reminders { get; }
+    public TimeSpan SelectedTime { get; set; } = TimeSpan.Zero;
+
 
     public async void AddReminder(object obj)
     {
@@ -87,10 +87,7 @@ public class HealthRemindersViewModel : BaseViewModel
         var notificationMessage = GetNotificationMessage(reminder);
         var now = DateTime.Now;
         var scheduledNotificationTime = DateTime.Today.Add(SelectedTime);
-        if (scheduledNotificationTime < now)
-        {
-            scheduledNotificationTime = scheduledNotificationTime.AddDays(1);
-        }
+        if (scheduledNotificationTime < now) scheduledNotificationTime = scheduledNotificationTime.AddDays(1);
 
         var request = new NotificationRequest
         {
@@ -104,7 +101,7 @@ public class HealthRemindersViewModel : BaseViewModel
                 NotifyTime = scheduledNotificationTime,
                 //  NotifyRepeatInterval = TimeSpan.FromSeconds(10) // Repetir cada 10 segundos para pruebas
                 NotifyRepeatInterval = TimeSpan.FromDays(1) // Repetir cada 24 horas
-            },
+            }
         };
 
         await LocalNotificationCenter.Current.Show(request);

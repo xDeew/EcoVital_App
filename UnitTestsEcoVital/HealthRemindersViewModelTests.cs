@@ -1,43 +1,41 @@
-using Xunit;
-using EcoVital.ViewModels;
 using EcoVital.Models;
+using EcoVital.ViewModels;
 
-namespace UnitTestsEcoVital
+namespace UnitTestsEcoVital;
+
+public class HealthRemindersViewModelTests
 {
-    public class HealthRemindersViewModelTests
+    readonly HealthRemindersViewModel _viewModel;
+
+    public HealthRemindersViewModelTests()
     {
-        private readonly HealthRemindersViewModel _viewModel;
+        _viewModel = new HealthRemindersViewModel();
+    }
 
-        public HealthRemindersViewModelTests()
+    [Fact]
+    public void Reminders_InitializedCorrectly()
+    {
+        Assert.NotEmpty(_viewModel.Reminders);
+    }
+
+    [Fact]
+    public void AddReminderCommand_InitializedCorrectly()
+    {
+        Assert.NotNull(_viewModel.AddReminderCommand);
+    }
+
+    [Fact]
+    public void AddReminderCommand_CanExecute()
+    {
+        var reminder = new HealthReminder
         {
-            _viewModel = new HealthRemindersViewModel();
-        }
+            ReminderType = "Test",
+            ReminderMessage = "Test message",
+            ImageSource = "test.png",
+            ReminderTime = "12:00"
+        };
 
-        [Fact]
-        public void Reminders_InitializedCorrectly()
-        {
-            Assert.NotEmpty(_viewModel.Reminders);
-        }
-
-        [Fact]
-        public void AddReminderCommand_InitializedCorrectly()
-        {
-            Assert.NotNull(_viewModel.AddReminderCommand);
-        }
-
-        [Fact]
-        public void AddReminderCommand_CanExecute()
-        {
-            var reminder = new HealthReminder
-            {
-                ReminderType = "Test",
-                ReminderMessage = "Test message",
-                ImageSource = "test.png",
-                ReminderTime = "12:00"
-            };
-
-            var canExecute = _viewModel.AddReminderCommand.CanExecute(reminder);
-            Assert.True(canExecute);
-        }
+        var canExecute = _viewModel.AddReminderCommand.CanExecute(reminder);
+        Assert.True(canExecute);
     }
 }

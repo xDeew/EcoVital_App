@@ -1,38 +1,35 @@
-using Xunit;
 using EcoVital.ViewModels;
-using EcoVital.Models;
 
-namespace UnitTestsEcoVital
+namespace UnitTestsEcoVital;
+
+public class SecurityQuestionPageViewModelTests
 {
-    public class SecurityQuestionPageViewModelTests
+    readonly SecurityQuestionPageViewModel _viewModel;
+
+    public SecurityQuestionPageViewModelTests()
     {
-        private readonly SecurityQuestionPageViewModel _viewModel;
+        _viewModel = new SecurityQuestionPageViewModel();
+    }
 
-        public SecurityQuestionPageViewModelTests()
-        {
-            _viewModel = new SecurityQuestionPageViewModel();
-        }
+    [Fact]
+    public void SecurityQuestions_InitializedCorrectly()
+    {
+        Assert.NotEmpty(_viewModel.SecurityQuestions);
+    }
 
-        [Fact]
-        public void SecurityQuestions_InitializedCorrectly()
-        {
-            Assert.NotEmpty(_viewModel.SecurityQuestions);
-        }
+    [Fact]
+    public void ContinueCommand_InitializedCorrectly()
+    {
+        Assert.NotNull(_viewModel.ContinueCommand);
+    }
 
-        [Fact]
-        public void ContinueCommand_InitializedCorrectly()
-        {
-            Assert.NotNull(_viewModel.ContinueCommand);
-        }
+    [Fact]
+    public void ContinueCommand_CanExecute()
+    {
+        _viewModel.SelectedSecurityQuestion = _viewModel.SecurityQuestions[0];
+        _viewModel.SecurityAnswer = "Test answer";
 
-        [Fact]
-        public void ContinueCommand_CanExecute()
-        {
-            _viewModel.SelectedSecurityQuestion = _viewModel.SecurityQuestions[0];
-            _viewModel.SecurityAnswer = "Test answer";
-
-            var canExecute = _viewModel.ContinueCommand.CanExecute(null);
-            Assert.True(canExecute);
-        }
+        var canExecute = _viewModel.ContinueCommand.CanExecute(null);
+        Assert.True(canExecute);
     }
 }

@@ -5,16 +5,17 @@ namespace EcoVital.Models;
 
 public class UserActivityRecord : INotifyPropertyChanged
 {
+    bool _isSelected;
+    double _progress;
     public int UserActivityId { get; set; }
     public int UserId { get; set; }
     public int ActivityRecordId { get; set; }
     public string ImageUrl { get; set; }
     public string ActivityType { get; set; }
-    private double _progress;
 
     public double Progress
     {
-        get { return _progress; }
+        get => _progress;
         set
         {
             if (_progress != value)
@@ -25,12 +26,9 @@ public class UserActivityRecord : INotifyPropertyChanged
         }
     }
 
-
-    bool _isSelected;
-
     public bool IsSelected
     {
-        get { return _isSelected; }
+        get => _isSelected;
         set
         {
             if (_isSelected != value)

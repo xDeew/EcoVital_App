@@ -6,7 +6,7 @@
              BindingContext="{x:Static local:App.HomePageViewModel}"
              Shell.NavBarIsVisible="True"
              Shell.TabBarIsVisible="False"
-             Shell.BackgroundColor = "#76C893">
+             Shell.BackgroundColor="#76C893">
 
     <Grid>
         <Grid.RowDefinitions>

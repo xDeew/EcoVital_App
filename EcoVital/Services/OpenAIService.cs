@@ -1,3 +1,4 @@
+using System.Net.Http.Headers;
 using System.Text;
 using Newtonsoft.Json;
 
@@ -5,13 +6,13 @@ namespace EcoVital.Services;
 
 public class OpenAiService
 {
-    private readonly HttpClient _httpClient;
+    readonly HttpClient _httpClient;
 
     public OpenAiService()
     {
         _httpClient = new HttpClient();
         _httpClient.DefaultRequestHeaders.Authorization =
-            new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer",
+            new AuthenticationHeaderValue("Bearer",
                 "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");
     }
 
@@ -19,7 +20,7 @@ public class OpenAiService
     {
         var data = new
         {
-            model = "gpt-3.5-turbo", 
+            model = "gpt-3.5-turbo",
             messages = new[]
             {
                 new { role = "user", content = prompt }
@@ -28,7 +29,7 @@ public class OpenAiService
 
         var content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
 
-       
+
         var response = await _httpClient.PostAsync("https://api.openai.com/v1/chat/completions", content);
 
         if (response.IsSuccessStatusCode)
@@ -38,11 +39,9 @@ public class OpenAiService
 
             return result.choices[0].message.content;
         }
-        else
-        {
-            var errorResponse = await response.Content.ReadAsStringAsync();
 
-            return $"Lo siento, hubo un error al obtener una respuesta. Detalles: {errorResponse}";
-        }
+        var errorResponse = await response.Content.ReadAsStringAsync();
+
+        return $"Lo siento, hubo un error al obtener una respuesta. Detalles: {errorResponse}";
     }
 }

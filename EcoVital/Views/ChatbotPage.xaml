@@ -7,44 +7,45 @@
              Shell.TabBarIsVisible="False">
     <ContentPage.Resources>
         <Style TargetType="Button">
-            <Setter Property="BackgroundColor" Value="#4caf50"/>
-            <Setter Property="TextColor" Value="White"/>
-            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="BackgroundColor" Value="#4caf50" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="10" />
         </Style>
         <Style TargetType="Entry">
-            <Setter Property="BackgroundColor" Value="White"/>
-            <Setter Property="TextColor" Value="Black"/>
-            <Setter Property="PlaceholderColor" Value="Gray"/>
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="PlaceholderColor" Value="Gray" />
         </Style>
         <converters:BoolToLayoutOptionsConverter x:Key="BoolToLayoutOptionsConverter" />
         <converters:BoolToColorConverter x:Key="BoolToColorConverter" />
     </ContentPage.Resources>
     <ScrollView>
-    <VerticalStackLayout Spacing="15" Padding="10">
-        <CollectionView x:Name="MessagesCollectionView"
-                        ItemsSource="{Binding Messages}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Orientation="Horizontal"
-                                 HorizontalOptions="{Binding IsUserMessage, Converter={StaticResource BoolToLayoutOptionsConverter}}"
-                                 VerticalOptions="FillAndExpand">
-                        <Frame CornerRadius="20"
-                               BackgroundColor="{Binding IsUserMessage, Converter={StaticResource BoolToColorConverter}}"
-                               Padding="10"
-                               Margin="5"
-                               HorizontalOptions="FillAndExpand">
-                            <Label Text="{Binding Text}" TextColor="Black" LineBreakMode="WordWrap" HorizontalTextAlignment="Center"/>
-                        </Frame>
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-        <Entry x:Name="UserInput" 
-               Placeholder="Escribe tu pregunta aquí..."
-               VerticalOptions="End" x:FieldModifier="public" />
-        <Button Text="Enviar" 
-                Clicked="OnSendClicked"
-                VerticalOptions="End"/>
-    </VerticalStackLayout>
+        <VerticalStackLayout Spacing="15" Padding="10">
+            <CollectionView x:Name="MessagesCollectionView"
+                            ItemsSource="{Binding Messages}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="{Binding IsUserMessage, Converter={StaticResource BoolToLayoutOptionsConverter}}"
+                                     VerticalOptions="FillAndExpand">
+                            <Frame CornerRadius="20"
+                                   BackgroundColor="{Binding IsUserMessage, Converter={StaticResource BoolToColorConverter}}"
+                                   Padding="10"
+                                   Margin="5"
+                                   HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Text}" TextColor="Black" LineBreakMode="WordWrap"
+                                       HorizontalTextAlignment="Center" />
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Entry x:Name="UserInput"
+                   Placeholder="Escribe tu pregunta aquí..."
+                   VerticalOptions="End" x:FieldModifier="public" />
+            <Button Text="Enviar"
+                    Clicked="OnSendClicked"
+                    VerticalOptions="End" />
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

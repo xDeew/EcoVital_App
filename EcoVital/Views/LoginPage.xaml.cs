@@ -5,8 +5,9 @@ namespace EcoVital.Views;
 
 public partial class LoginPage : ContentPage
 {
-    ILoginRepository _loginRepository = new LoginService();
-    ILoadingService _loadingService = new LoadingService();
+    readonly ILoadingService _loadingService = new LoadingService();
+    readonly ILoginRepository _loginRepository = new LoginService();
+
     public LoginPage()
     {
         InitializeComponent();
@@ -21,7 +22,7 @@ public partial class LoginPage : ContentPage
         // Desactivar el Flyout
         Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;
     }
-    
+
     protected override void OnAppearing()
     {
         base.OnAppearing();
@@ -29,11 +30,9 @@ public partial class LoginPage : ContentPage
         // Desactivar el Flyout
         Shell.Current.FlyoutBehavior = FlyoutBehavior.Disabled;
     }
-    
-    protected override bool OnBackButtonPressed()
-    {
+
+    protected override bool OnBackButtonPressed() =>
         // True = Cancela la acción de volver atrás
         // False = Permite la acción normal de volver atrás
-        return true;
-    }
+        true;
 }

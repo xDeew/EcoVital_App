@@ -8,66 +8,86 @@
              Shell.TabBarIsVisible="False">
     <Grid BackgroundColor="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="220"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="220" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
-        <Path Fill="#2ECC71" Stroke="#000" Data="m-9.69999,-1l449,0l0,128.48327c-122.5,64.30167 -332.5,65.89076 -449,7.2429c0,-45.25313 0,-90.473 0,0l0,-135.72617z"/>
+        <Path Fill="#2ECC71" Stroke="#000"
+              Data="m-9.69999,-1l449,0l0,128.48327c-122.5,64.30167 -332.5,65.89076 -449,7.2429c0,-45.25313 0,-90.473 0,0l0,-135.72617z" />
 
         <StackLayout Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center">
-            <Frame BackgroundColor="SkyBlue" HeightRequest="60" WidthRequest="60" CornerRadius="30" Padding="0" Margin="0, 60,0,0" HorizontalOptions="Center">
-                <Image Source="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-round/700/09_lock-256.png" Aspect="AspectFill" Margin="0"/>
+            <Frame BackgroundColor="SkyBlue" HeightRequest="60" WidthRequest="60" CornerRadius="30" Padding="0"
+                   Margin="0, 60,0,0" HorizontalOptions="Center">
+                <Image Source="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-round/700/09_lock-256.png"
+                       Aspect="AspectFill" Margin="0" />
             </Frame>
         </StackLayout>
 
         <Grid RowSpacing="5" Grid.Row="1" Margin="20,20,20,0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="10*"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="10*"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="10*" />
             </Grid.RowDefinitions>
 
             <StackLayout Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Start" Spacing="5">
-                <Label Text="¡Bienvenido!" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold" Margin="0,10,0,0"/>
-                <Label Text="Para proceder con el registro seleccione una pregunta de seguridad" HorizontalOptions="Center" FontSize="Subtitle"/>
+                <Label Text="¡Bienvenido!" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold"
+                       Margin="0,10,0,0" />
+                <Label Text="Para proceder con el registro seleccione una pregunta de seguridad"
+                       HorizontalOptions="Center" FontSize="Subtitle" />
             </StackLayout>
 
-            <StackLayout Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0, 20, 0, 0">
-                <Frame BackgroundColor="Transparent" BorderColor="LightGreen" Padding="0" HorizontalOptions="Fill" CornerRadius="30" Margin="0,0,0,15">
-                    
-                    <StackLayout Orientation="Horizontal" >
-                        <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
-                            <Image Source="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-round/700/09_lock-256.png" Aspect="AspectFill" Margin="0"/>
+            <StackLayout Grid.Row="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                         Margin="0, 20, 0, 0">
+                <Frame BackgroundColor="Transparent" BorderColor="LightGreen" Padding="0" HorizontalOptions="Fill"
+                       CornerRadius="30" Margin="0,0,0,15">
+
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30"
+                               Padding="0" Margin="5">
+                            <Image
+                                Source="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-round/700/09_lock-256.png"
+                                Aspect="AspectFill" Margin="0" />
                         </Frame>
-                        <Picker Title="Pregunta de seguridad" ItemsSource="{Binding SecurityQuestions}" SelectedItem="{Binding SelectedSecurityQuestion}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0, 0, 20, 0"/>
+                        <Picker Title="Pregunta de seguridad" ItemsSource="{Binding SecurityQuestions}"
+                                SelectedItem="{Binding SelectedSecurityQuestion}" VerticalOptions="Center"
+                                HorizontalOptions="FillAndExpand" Margin="0, 0, 20, 0" />
                     </StackLayout>
                 </Frame>
 
-                <Frame BackgroundColor="Transparent" BorderColor="LightGreen" Margin="0, 15, 0, 0" Padding="0" HorizontalOptions="Fill" CornerRadius="30">
-                    <StackLayout Orientation="Vertical" >
-                        <Label Text="Por favor, elige una respuesta a la pregunta de seguridad que no sea fácil de adivinar. Esta respuesta te ayudará a recuperar tu cuenta en caso de que olvides tu contraseña."
-                               TextColor="DarkRed"
-                               FontSize="Small"
-                               LineBreakMode="WordWrap"
-                               Margin="20,0,20,0"
-                               HorizontalOptions="StartAndExpand" />
-                        <StackLayout Orientation="Horizontal" >
-                            <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
-                                <Image Source="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-round/700/09_lock-256.png" Aspect="AspectFill" Margin="0"/>
+                <Frame BackgroundColor="Transparent" BorderColor="LightGreen" Margin="0, 15, 0, 0" Padding="0"
+                       HorizontalOptions="Fill" CornerRadius="30">
+                    <StackLayout Orientation="Vertical">
+                        <Label
+                            Text="Por favor, elige una respuesta a la pregunta de seguridad que no sea fácil de adivinar. Esta respuesta te ayudará a recuperar tu cuenta en caso de que olvides tu contraseña."
+                            TextColor="DarkRed"
+                            FontSize="Small"
+                            LineBreakMode="WordWrap"
+                            Margin="20,0,20,0"
+                            HorizontalOptions="StartAndExpand" />
+                        <StackLayout Orientation="Horizontal">
+                            <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30"
+                                   Padding="0" Margin="5">
+                                <Image
+                                    Source="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-round/700/09_lock-256.png"
+                                    Aspect="AspectFill" Margin="0" />
                             </Frame>
-                            <Entry x:Name="SecurityAnswerEntry" Text="{Binding SecurityAnswer}" Placeholder="Respuesta de seguridad" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0, 0, 20, 0"/>
+                            <Entry x:Name="SecurityAnswerEntry" Text="{Binding SecurityAnswer}"
+                                   Placeholder="Respuesta de seguridad" TextColor="Black" FontAttributes="Bold"
+                                   VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0, 0, 20, 0" />
                         </StackLayout>
                     </StackLayout>
                 </Frame>
-                
-                <Button Text="CONTINUAR" BackgroundColor="#58D68D" TextColor="White" FontAttributes="Bold" CornerRadius="30" WidthRequest="200" Margin="0, 15, 0 ,0 " Command="{Binding ContinueCommand}"/>
+
+                <Button Text="CONTINUAR" BackgroundColor="#58D68D" TextColor="White" FontAttributes="Bold"
+                        CornerRadius="30" WidthRequest="200" Margin="0, 15, 0 ,0 " Command="{Binding ContinueCommand}" />
             </StackLayout>
         </Grid>
     </Grid>

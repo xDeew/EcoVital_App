@@ -1,14 +1,12 @@
 using EcoVital.ViewModels;
-using Microsoft.Maui.Controls;
 
-namespace EcoVital.Views
+namespace EcoVital.Views;
+
+public partial class ForgotPasswordPage : ContentPage
 {
-    public partial class ForgotPasswordPage : ContentPage
+    public ForgotPasswordPage()
     {
-        public ForgotPasswordPage()
-        {
-            InitializeComponent();
-            BindingContext = new ForgotPasswordPageViewModel();
-        }
+        InitializeComponent();
+        BindingContext = new ForgotPasswordPageViewModel();
     }
 }

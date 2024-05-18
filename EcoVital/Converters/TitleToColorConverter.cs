@@ -1,8 +1,6 @@
-﻿namespace EcoVital.Converters;
+﻿using System.Globalization;
 
-using System;
-using System.Globalization;
-using Microsoft.Maui.Controls;
+namespace EcoVital.Converters;
 
 public class TitleToColorConverter : IValueConverter
 {
@@ -15,8 +13,6 @@ public class TitleToColorConverter : IValueConverter
     }
 
 
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-    {
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) =>
         throw new NotImplementedException();
-    }
 }

@@ -39,7 +39,7 @@
         </StackLayout>
 
         <StackLayout Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Center">
-            <Button Text="Envíanos tus comentarios" Margin="20,0" Width="100"
+            <Button Text="Envíanos tus comentarios" Margin="20,0" WidthRequest="200"
                     Clicked="OnFeedbackButtonClicked" BackgroundColor="#2ECC71" TextColor="White" />
         </StackLayout>
 

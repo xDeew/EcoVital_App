@@ -33,37 +33,29 @@ public class LoginService : ILoginRepository
 
             Console.WriteLine(usernameOrEmail);
             var users = await response.Content.ReadFromJsonAsync<List<UserInfo>>();
-            UserInfo userInfo = users?.FirstOrDefault();
+            var userInfo = users?.FirstOrDefault();
 
             if (userInfo == null) return null!;
-            using (SHA256 sha256Hash = SHA256.Create())
+            using (var sha256Hash = SHA256.Create())
             {
                 var bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
                 var builder = new StringBuilder();
-                foreach (var t in bytes)
-                {
-                    builder.Append(t.ToString("x2"));
-                }
+                foreach (var t in bytes) builder.Append(t.ToString("x2"));
 
                 password = builder.ToString();
             }
 
 
             if (userInfo.Password == password)
-            {
                 return
                     await Task.FromResult(
                         userInfo);
-            }
 
             return null!;
         }
         catch (Exception ex)
         {
-            if (ex.InnerException != null)
-            {
-                throw ex.InnerException;
-            }
+            if (ex.InnerException != null) throw ex.InnerException;
 
             throw ex;
         }
@@ -84,14 +76,11 @@ public class LoginService : ILoginRepository
             client.BaseAddress = new Uri(url);
 
 
-            using (SHA256 sha256Hash = SHA256.Create())
+            using (var sha256Hash = SHA256.Create())
             {
                 var bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
                 var builder = new StringBuilder();
-                foreach (var t in bytes)
-                {
-                    builder.Append(t.ToString("x2"));
-                }
+                foreach (var t in bytes) builder.Append(t.ToString("x2"));
 
                 password = builder.ToString();
             }
@@ -113,10 +102,8 @@ public class LoginService : ILoginRepository
             if (response.IsSuccessStatusCode)
             {
                 var userInfo = await response.Content.ReadFromJsonAsync<UserInfo>();
-                if (userInfo != null)
-                {
-                    return await Task.FromResult(userInfo);
-                }
+
+                if (userInfo != null) return await Task.FromResult(userInfo);
 
                 return null!;
             }
@@ -125,10 +112,7 @@ public class LoginService : ILoginRepository
         }
         catch (Exception ex)
         {
-            if (ex.InnerException != null)
-            {
-                throw ex.InnerException;
-            }
+            if (ex.InnerException != null) throw ex.InnerException;
 
             throw ex;
         }
@@ -156,7 +140,7 @@ public class LoginService : ILoginRepository
             throw new Exception("No internet connection");
 
         var client = new HttpClient();
-            
+
         client.BaseAddress = new Uri(ApiBaseUrl);
 
         HttpResponseMessage response;
@@ -211,10 +195,7 @@ public class LoginService : ILoginRepository
             return securityQuestion;
         }
 
-        if (response.StatusCode == HttpStatusCode.NotFound)
-        {
-            return null!;
-        }
+        if (response.StatusCode == HttpStatusCode.NotFound) return null!;
 
         throw new Exception($"Error: {response.StatusCode}");
     }
@@ -248,10 +229,7 @@ public class LoginService : ILoginRepository
         {
             var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(newPassword));
             var builder = new StringBuilder();
-            foreach (var t in bytes)
-            {
-                builder.Append(t.ToString("x2"));
-            }
+            foreach (var t in bytes) builder.Append(t.ToString("x2"));
 
             newPassword = builder.ToString();
         }
@@ -271,10 +249,7 @@ public class LoginService : ILoginRepository
             throw new Exception("Error occurred while connecting to the server: " + ex.Message);
         }
 
-        if (response.IsSuccessStatusCode)
-        {
-            return true;
-        }
+        if (response.IsSuccessStatusCode) return true;
 
         throw new Exception("Server returned status code: " + response.StatusCode);
     }

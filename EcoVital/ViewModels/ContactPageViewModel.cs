@@ -2,10 +2,15 @@ using System.Windows.Input;
 
 namespace EcoVital.ViewModels;
 
-using Microsoft.Maui.ApplicationModel;
-
 public class ContactPageViewModel : BaseViewModel
 {
+    public ContactPageViewModel()
+    {
+        CallCommand = new Command(Execute);
+        SendEmailCommand = new Command(SendEmail);
+        OpenMapsCommand = new Command(OpenMaps);
+    }
+
     public Command OpenMapsCommand { get; }
     public Command CallCommand { get; }
 
@@ -14,19 +19,12 @@ public class ContactPageViewModel : BaseViewModel
     public string UserEmail { get; set; }
     public string Message { get; set; }
 
-    public ContactPageViewModel()
-    {
-        CallCommand = new Command(Execute);
-        SendEmailCommand = new Command(SendEmail);
-        OpenMapsCommand = new Command(OpenMaps);
-    }
-
     async void Execute()
     {
         await OnButtonClicked();
     }
 
-    private void PlacePhoneCall()
+    void PlacePhoneCall()
     {
         try
         {
@@ -42,13 +40,10 @@ public class ContactPageViewModel : BaseViewModel
         }
     }
 
-    public async Task OnButtonClicked()
+    async Task OnButtonClicked()
     {
         var status = await Permissions.CheckStatusAsync<Permissions.Phone>();
-        if (status != PermissionStatus.Granted)
-        {
-            status = await Permissions.RequestAsync<Permissions.Phone>();
-        }
+        if (status != PermissionStatus.Granted) status = await Permissions.RequestAsync<Permissions.Phone>();
 
         if (status == PermissionStatus.Granted)
         {
@@ -63,7 +58,8 @@ public class ContactPageViewModel : BaseViewModel
             // No se puede realizar la llamada telefónica porque el permiso está deshabilitado.
         }
     }
-    private void SendEmail()
+
+    void SendEmail()
     {
         try
         {
@@ -86,7 +82,7 @@ public class ContactPageViewModel : BaseViewModel
         }
     }
 
-    private void OpenMaps()
+    void OpenMaps()
     {
         try
         {

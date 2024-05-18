@@ -7,10 +7,24 @@ using EcoVital.Views;
 
 namespace EcoVital.ViewModels;
 
-public partial class SecurityAnswerPageViewModel : BaseViewModel
+public class SecurityAnswerPageViewModel : BaseViewModel
 {
-    public ICommand CheckAnswerCommand { get; set; }
+    readonly ILoginRepository _loginRepository;
     string _question;
+    readonly int _userId;
+
+    public SecurityAnswerPageViewModel(int userId, string securityQuestion)
+    {
+        _userId = userId;
+        Question = securityQuestion;
+        _loginRepository = new LoginService();
+        CheckAnswerCommand = new RelayCommand(CheckAnswer);
+
+
+        InitializeUserInfo();
+    }
+
+    public ICommand CheckAnswerCommand { get; set; }
 
     public string Question
     {
@@ -27,30 +41,16 @@ public partial class SecurityAnswerPageViewModel : BaseViewModel
 
     public string Answer { get; set; }
 
-    private readonly ILoginRepository _loginRepository;
-    private int _userId;
-
-    public SecurityAnswerPageViewModel(int userId, string securityQuestion)
-    {
-        _userId = userId;
-        Question = securityQuestion;
-        _loginRepository = new LoginService();
-        CheckAnswerCommand = new RelayCommand(CheckAnswer);
-
-
-        InitializeUserInfo();
-    }
-
-    private async void InitializeUserInfo()
+    async void InitializeUserInfo()
     {
         App.UserInfo = await _loginRepository.GetUserByEmail(App.UserEmail);
     }
 
-    private async void CheckAnswer()
+    async void CheckAnswer()
     {
         if (string.IsNullOrWhiteSpace(Answer))
         {
-            await App.Current.MainPage.DisplayAlert("Error",
+            await Application.Current.MainPage.DisplayAlert("Error",
                 "Por favor, proporciona una respuesta a la pregunta de seguridad.", "OK");
 
             return;
@@ -59,8 +59,8 @@ public partial class SecurityAnswerPageViewModel : BaseViewModel
         var securityQuestion = await _loginRepository.GetSecurityQuestionByUserId(_userId);
 
 
-        int failedAttempts = Preferences.Get($"{App.UserEmail}_FailedPasswordRecoveryAttempts", 0);
-        DateTime lastFailedAttempt =
+        var failedAttempts = Preferences.Get($"{App.UserEmail}_FailedPasswordRecoveryAttempts", 0);
+        var lastFailedAttempt =
             Preferences.Get($"{App.UserEmail}_LastFailedPasswordRecoveryAttempt", DateTime.MinValue);
 
 
@@ -96,14 +96,11 @@ public partial class SecurityAnswerPageViewModel : BaseViewModel
         }
 
 
-        using (SHA256 sha256Hash = SHA256.Create())
+        using (var sha256Hash = SHA256.Create())
         {
-            byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(Answer));
-            StringBuilder builder = new StringBuilder();
-            for (int i = 0; i < bytes.Length; i++)
-            {
-                builder.Append(bytes[i].ToString("x2"));
-            }
+            var bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(Answer));
+            var builder = new StringBuilder();
+            for (var i = 0; i < bytes.Length; i++) builder.Append(bytes[i].ToString("x2"));
 
             Answer = builder.ToString();
         }

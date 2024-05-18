@@ -1,5 +1,4 @@
-﻿using EcoVital.Services;
-using EcoVital.ViewModels;
+﻿using EcoVital.ViewModels;
 using EcoVital.Views;
 
 namespace EcoVital;

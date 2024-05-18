@@ -7,7 +7,7 @@ public partial class AboutPage
         InitializeComponent();
     }
 
-    private async void OnFeedbackButtonClicked(object sender, EventArgs e)
+    async void OnFeedbackButtonClicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync(nameof(FeedbackPage));
     }

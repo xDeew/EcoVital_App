@@ -24,9 +24,6 @@ public partial class HealthRemindersPage
         var viewModel = BindingContext as HealthRemindersViewModel;
 
         // Verifica si el ViewModel es nulo
-        if (viewModel == null)
-        {
-            Debug.WriteLine("El ViewModel es nulo");
-        }
+        if (viewModel == null) Debug.WriteLine("El ViewModel es nulo");
     }
 }

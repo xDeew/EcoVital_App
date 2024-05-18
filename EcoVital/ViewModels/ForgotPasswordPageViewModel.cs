@@ -3,87 +3,86 @@ using EcoVital.Services;
 using EcoVital.Views;
 using Microsoft.Toolkit.Mvvm.Input;
 
-namespace EcoVital.ViewModels
+namespace EcoVital.ViewModels;
+
+public class ForgotPasswordPageViewModel : BaseViewModel
 {
-    public partial class ForgotPasswordPageViewModel : BaseViewModel
+    readonly ILoginRepository _loginRepository;
+
+    public ForgotPasswordPageViewModel()
     {
-        public ICommand SendCommand { get; set; }
+        _loginRepository = new LoginService();
+        GoBackCommand = new RelayCommand(Cancel);
+        SendCommand = new RelayCommand(Send);
+    }
 
-        public ICommand GoBackCommand { get; set; }
-        public string Email { get; set; }
+    public ForgotPasswordPageViewModel(ILoginRepository loginRepository)
+    {
+        _loginRepository = loginRepository;
+    }
 
-        private readonly ILoginRepository _loginRepository;
+    public ICommand SendCommand { get; set; }
 
-        public ForgotPasswordPageViewModel()
+    public ICommand GoBackCommand { get; set; }
+    public string Email { get; set; }
+
+    void Cancel()
+    {
+        Shell.Current.GoToAsync("LoginPage");
+    }
+
+    public async void Send()
+    {
+        // Verificamos si el correo electrónico no está vacío
+        if (string.IsNullOrWhiteSpace(Email))
         {
-            _loginRepository = new LoginService();
-            GoBackCommand = new RelayCommand(Cancel);
-            SendCommand = new RelayCommand(Send);
+            await Application.Current.MainPage.DisplayAlert("Error", "Por favor, proporciona un correo electrónico.",
+                "OK");
+
+            return;
         }
 
-        public ForgotPasswordPageViewModel(ILoginRepository loginRepository)
-        {
-            _loginRepository = loginRepository;
-           
-        }
+        // Luego verificamos si el correo electrónico es válido
+        //var emailRegex = @"^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$";
+        //if (!Regex.IsMatch(Email, emailRegex))
+        //{
+        //    await App.Current.MainPage.DisplayAlert("Error", "Por favor, proporciona un correo electrónico válido.", "OK");
+        //      return;
+        //   }
 
-        void Cancel()
-        {
-            Shell.Current.GoToAsync("LoginPage");
-        }
 
-        public async void Send()
+        try
         {
-            // Verificamos si el correo electrónico no está vacío
-            if (string.IsNullOrWhiteSpace(Email))
+            var user = await _loginRepository.GetUserByEmail(Email);
+
+            if (user == null)
             {
-                await App.Current.MainPage.DisplayAlert("Error", "Por favor, proporciona un correo electrónico.", "OK");
+                await Application.Current.MainPage.DisplayAlert("Error",
+                    "No existe ningún correo registrado con el proporcionado.", "OK");
 
                 return;
             }
 
-            // Luego verificamos si el correo electrónico es válido
-            //var emailRegex = @"^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$";
-            //if (!Regex.IsMatch(Email, emailRegex))
-            //{
-            //    await App.Current.MainPage.DisplayAlert("Error", "Por favor, proporciona un correo electrónico válido.", "OK");
-            //      return;
-            //   }
+            App.UserEmail = Email;
 
+            var securityQuestion = await _loginRepository.GetSecurityQuestionByUserId(user.UserId);
 
-            try
+            if (securityQuestion != null)
             {
-                var user = await _loginRepository.GetUserByEmail(Email);
-
-                if (user == null)
-                {
-                    await Application.Current.MainPage.DisplayAlert("Error",
-                        "No existe ningún correo registrado con el proporcionado.", "OK");
-
-                    return;
-                }
-
-                App.UserEmail = Email;
-
-                var securityQuestion = await _loginRepository.GetSecurityQuestionByUserId(user.UserId);
-
-                if (securityQuestion != null)
-                {
-                    var securityAnswerPage = new SecurityAnswerPage(user.UserId, securityQuestion);
+                var securityAnswerPage = new SecurityAnswerPage(user.UserId, securityQuestion);
 
 
-                    await Shell.Current.Navigation.PushAsync(securityAnswerPage);
-                }
-                else
-                {
-                    await Application.Current.MainPage.DisplayAlert("Error", "No se encontró la pregunta de seguridad.",
-                        "OK");
-                }
+                await Shell.Current.Navigation.PushAsync(securityAnswerPage);
             }
-            catch (Exception ex)
+            else
             {
-                await Application.Current.MainPage.DisplayAlert("Error", $"Un error ocurrió: {ex.Message}", "OK");
+                await Application.Current.MainPage.DisplayAlert("Error", "No se encontró la pregunta de seguridad.",
+                    "OK");
             }
+        }
+        catch (Exception ex)
+        {
+            await Application.Current.MainPage.DisplayAlert("Error", $"Un error ocurrió: {ex.Message}", "OK");
         }
     }
 }

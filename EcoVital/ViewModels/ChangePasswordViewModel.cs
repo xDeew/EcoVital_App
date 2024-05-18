@@ -1,5 +1,4 @@
 using System.Windows.Input;
-using EcoVital.Models;
 using EcoVital.Services;
 
 namespace EcoVital.ViewModels;
@@ -7,8 +6,8 @@ namespace EcoVital.ViewModels;
 public class ChangePasswordViewModel : BaseViewModel
 {
     readonly ILoginRepository _loginRepository;
-    string _newPassword;
     string _confirmPassword;
+    string _newPassword;
 
 
     public ChangePasswordViewModel(ILoginRepository loginRepository)
@@ -29,10 +28,7 @@ public class ChangePasswordViewModel : BaseViewModel
     }
 
 
-    public ICommand ChangePasswordCommand
-    {
-        get { return new Command(Execute); }
-    }
+    public ICommand ChangePasswordCommand => new Command(Execute);
 
     async void Execute()
     {
@@ -51,22 +47,16 @@ public class ChangePasswordViewModel : BaseViewModel
             return;
         }
 
-        if (_loginRepository == null)
-        {
-            throw new Exception("_loginRepository is null");
-        }
+        if (_loginRepository == null) throw new Exception("_loginRepository is null");
 
-        if (NewPassword == null)
-        {
-            throw new Exception("NewPassword is null");
-        }
+        if (NewPassword == null) throw new Exception("NewPassword is null");
 
 
-        string email = App.UserEmail;
-        UserInfo userInfo = await _loginRepository.GetUserByEmail(email);
+        var email = App.UserEmail;
+        var userInfo = await _loginRepository.GetUserByEmail(email);
         App.UserInfo = userInfo;
 
-        bool result = await _loginRepository.ChangePassword(App.UserInfo.UserId, NewPassword);
+        var result = await _loginRepository.ChangePassword(App.UserInfo.UserId, NewPassword);
         if (result)
         {
             await Application.Current.MainPage.DisplayAlert("Éxito", "La contraseña se ha cambiado correctamente",
@@ -82,24 +72,15 @@ public class ChangePasswordViewModel : BaseViewModel
         }
     }
 
-    private bool IsValidPassword(string password)
+    bool IsValidPassword(string password)
     {
-        if (password.Length < 6)
-        {
-            return false;
-        }
+        if (password.Length < 6) return false;
 
 
-        if (!password.Any(char.IsUpper))
-        {
-            return false;
-        }
+        if (!password.Any(char.IsUpper)) return false;
 
 
-        if (!password.Any(char.IsSymbol) && !password.Any(char.IsPunctuation))
-        {
-            return false;
-        }
+        if (!password.Any(char.IsSymbol) && !password.Any(char.IsPunctuation)) return false;
 
         return true;
     }

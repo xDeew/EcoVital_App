@@ -1,9 +1,6 @@
-﻿using System.Diagnostics;
-using System.Windows.Input;
-using EcoVital.Models;
+﻿using System.Windows.Input;
 using EcoVital.Services;
 using EcoVital.UserControl;
-using EcoVital.Views;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using Newtonsoft.Json;
@@ -12,20 +9,12 @@ namespace EcoVital.ViewModels;
 
 public partial class LoginRegister : BaseViewModel
 {
-    [ObservableProperty] private string _usernameOrEmail;
-
-    [ObservableProperty] private string _password;
-    public bool IsLoadingEnabled { get; set; } = true;
-
-    public bool IsLoginSuccessful { get; private set; }
-
-    public bool IsRememberMeChecked { get; set; }
-
-
-    public ICommand ForgotPasswordCommand { get; set; }
+    readonly ILoadingService _loadingService;
 
     readonly ILoginRepository _loginRepository = new LoginService();
-    readonly ILoadingService _loadingService;
+
+    [ObservableProperty] string _password;
+    [ObservableProperty] string _usernameOrEmail;
 
 
     public LoginRegister(ILoginRepository loginRepository, ILoadingService loadingService)
@@ -34,6 +23,15 @@ public partial class LoginRegister : BaseViewModel
         _loadingService = loadingService ?? throw new ArgumentNullException(nameof(loadingService));
         ForgotPasswordCommand = new RelayCommand(NavigateToForgotPasswordPage);
     }
+
+    public bool IsLoadingEnabled { get; set; } = true;
+
+    public bool IsLoginSuccessful { get; private set; }
+
+    public bool IsRememberMeChecked { get; set; }
+
+
+    public ICommand ForgotPasswordCommand { get; set; }
 
 
     async void NavigateToForgotPasswordPage()
@@ -53,24 +51,22 @@ public partial class LoginRegister : BaseViewModel
 
             return;
         }
-    
+
         if (string.IsNullOrWhiteSpace(UsernameOrEmail) || string.IsNullOrWhiteSpace(Password))
         {
             await Application.Current.MainPage.DisplayAlert("Error",
                 "Por favor, ingresa tanto el usuario como la contraseña.", "OK");
+
             return;
         }
 
         UsernameOrEmail = UsernameOrEmail.Trim();
         Password = Password.Trim();
-        if (IsLoadingEnabled)
-        {
-            await _loadingService.ShowLoading();
-        }
+        if (IsLoadingEnabled) await _loadingService.ShowLoading();
 
         if (!string.IsNullOrWhiteSpace(UsernameOrEmail) && !string.IsNullOrWhiteSpace(Password))
         {
-            bool userExists = await _loginRepository.UserExists(UsernameOrEmail);
+            var userExists = await _loginRepository.UserExists(UsernameOrEmail);
             if (!userExists)
             {
                 await Application.Current.MainPage.DisplayAlert("Inicio de sesión fallido",
@@ -82,7 +78,7 @@ public partial class LoginRegister : BaseViewModel
                 return;
             }
 
-            UserInfo userInfo = await _loginRepository.Login(UsernameOrEmail, Password);
+            var userInfo = await _loginRepository.Login(UsernameOrEmail, Password);
             if (userInfo == null)
             {
                 await Application.Current.MainPage.DisplayAlert("Inicio de sesión fallido",
@@ -95,10 +91,7 @@ public partial class LoginRegister : BaseViewModel
                 return;
             }
 
-            if (Preferences.ContainsKey(nameof(App.UserInfo)))
-            {
-                Preferences.Remove(nameof(App.UserInfo));
-            }
+            if (Preferences.ContainsKey(nameof(App.UserInfo))) Preferences.Remove(nameof(App.UserInfo));
 
             var userDetails = JsonConvert.SerializeObject(userInfo);
             Preferences.Set(nameof(App.UserInfo), userDetails);
@@ -116,10 +109,7 @@ public partial class LoginRegister : BaseViewModel
             UsernameOrEmail = string.Empty;
             Password = string.Empty;
             IsRememberMeChecked = false;
-            if (IsLoadingEnabled)
-            {
-                await _loadingService.HideLoading();
-            }
+            if (IsLoadingEnabled) await _loadingService.HideLoading();
 
             IsLoginSuccessful = App.UserInfo != null;
         }
@@ -129,10 +119,7 @@ public partial class LoginRegister : BaseViewModel
                 "Por favor, ingresa tanto el usuario como la contraseña.", "OK");
         }
 
-        if (IsLoadingEnabled)
-        {
-            await _loadingService.HideLoading();
-        }
+        if (IsLoadingEnabled) await _loadingService.HideLoading();
 
         IsLoginSuccessful = false;
     }

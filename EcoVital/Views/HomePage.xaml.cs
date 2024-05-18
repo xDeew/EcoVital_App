@@ -1,19 +1,16 @@
-﻿namespace EcoVital.Views
+﻿namespace EcoVital.Views;
+
+public partial class HomePage : ContentPage
 {
-    public partial class HomePage : ContentPage
+    public HomePage()
     {
-        
-        public HomePage()
-        {
-            InitializeComponent();
-            BindingContext = App.HomePageViewModel; 
-        }
-        
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            Shell.Current.BackgroundColor = Color.FromArgb("#76C893");
-        }
-        
+        InitializeComponent();
+        BindingContext = App.HomePageViewModel;
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        Shell.Current.BackgroundColor = Color.FromArgb("#76C893");
     }
 }

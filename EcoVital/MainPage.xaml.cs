@@ -2,14 +2,14 @@
 
 public partial class MainPage : ContentPage
 {
-    int count = 0;
+    int count;
 
     public MainPage()
     {
         InitializeComponent();
     }
 
-    private void OnCounterClicked(object sender, EventArgs e)
+    void OnCounterClicked(object sender, EventArgs e)
     {
         count++;
 

@@ -1,60 +1,59 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace EcoVital.Models
+namespace EcoVital.Models;
+
+public sealed class Feedback : INotifyPropertyChanged
 {
-    public sealed class Feedback : INotifyPropertyChanged
+    string _email = string.Empty;
+    int _feedbackId;
+    string _message = string.Empty;
+    string _type;
+
+    public int FeedbackId
     {
-        private int _feedbackId;
-        private string _email = string.Empty;
-        private string _type;
-        private string _message = string.Empty;
-
-        public int FeedbackId
+        get => _feedbackId;
+        set
         {
-            get => _feedbackId;
-            set
-            {
-                _feedbackId = value;
-                OnPropertyChanged();
-            }
+            _feedbackId = value;
+            OnPropertyChanged();
         }
+    }
 
-        public string Email
+    public string Email
+    {
+        get => _email;
+        set
         {
-            get => _email;
-            set
-            {
-                _email = value;
-                OnPropertyChanged();
-            }
+            _email = value;
+            OnPropertyChanged();
         }
+    }
 
-        public string Type
+    public string Type
+    {
+        get => _type;
+        set
         {
-            get => _type;
-            set
-            {
-                _type = value;
-                OnPropertyChanged();
-            }
+            _type = value;
+            OnPropertyChanged();
         }
+    }
 
-        public string Message
+    public string Message
+    {
+        get => _message;
+        set
         {
-            get => _message;
-            set
-            {
-                _message = value;
-                OnPropertyChanged();
-            }
+            _message = value;
+            OnPropertyChanged();
         }
+    }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
+    public event PropertyChangedEventHandler? PropertyChanged;
 
-        void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+    void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
