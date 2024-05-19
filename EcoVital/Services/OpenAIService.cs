@@ -1,22 +1,22 @@
 using System.Net.Http.Headers;
 using System.Text;
+using EcoVital.Config;
 using Newtonsoft.Json;
 
 namespace EcoVital.Services;
 
-public class OpenAiService
+public sealed class OpenAiService
 {
     readonly HttpClient _httpClient;
 
     public OpenAiService()
     {
+        var apiKey = ApiConfig.ApiKey;
         _httpClient = new HttpClient();
-        _httpClient.DefaultRequestHeaders.Authorization =
-            new AuthenticationHeaderValue("Bearer",
-                "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");
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
     }
 
-    public virtual async Task<string> GetResponseAsync(string prompt)
+    public async Task<string> GetResponseAsync(string prompt)
     {
         var data = new
         {

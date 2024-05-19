@@ -31,3 +31,7 @@ node_modules/
 
 packages/
 
+# Ignorar archivos de configuración para evitar usos malintencionados con mi clave de API
+Config/ApiConfig.cs
+
+
