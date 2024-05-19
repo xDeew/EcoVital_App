@@ -41,6 +41,7 @@ public sealed class OpenAiService
         }
 
         var errorResponse = await response.Content.ReadAsStringAsync();
+
         return $"Lo siento, hubo un error al obtener una respuesta. Detalles: {errorResponse}";
     }
 }
