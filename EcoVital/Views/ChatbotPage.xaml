@@ -18,6 +18,8 @@
         </Style>
         <converters:BoolToLayoutOptionsConverter x:Key="BoolToLayoutOptionsConverter" />
         <converters:BoolToColorConverter x:Key="BoolToColorConverter" />
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" />
     </ContentPage.Resources>
     <ScrollView>
         <VerticalStackLayout Spacing="15" Padding="10">
@@ -28,13 +30,24 @@
                         <StackLayout Orientation="Horizontal"
                                      HorizontalOptions="{Binding IsUserMessage, Converter={StaticResource BoolToLayoutOptionsConverter}}"
                                      VerticalOptions="FillAndExpand">
+
+                            <Image Source="chatbot_icon.png"
+                                   IsVisible="{Binding IsUserMessage, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=false}"
+                                   WidthRequest="50" HeightRequest="50" />
+
+                            <Image Source="user_icon.png"
+                                   IsVisible="{Binding IsUserMessage, Converter={StaticResource InverseBoolToVisibilityConverter}, ConverterParameter=true}"
+                                   WidthRequest="50" HeightRequest="50"
+                                   HorizontalOptions="Start" />
+
                             <Frame CornerRadius="20"
                                    BackgroundColor="{Binding IsUserMessage, Converter={StaticResource BoolToColorConverter}}"
                                    Padding="10"
                                    Margin="5"
                                    HorizontalOptions="FillAndExpand">
                                 <Label Text="{Binding Text}" TextColor="Black" LineBreakMode="WordWrap"
-                                       HorizontalTextAlignment="Center" />
+                                       HorizontalTextAlignment="Start" VerticalOptions="Center"
+                                       HorizontalOptions="FillAndExpand" MaximumWidthRequest="300" />
                             </Frame>
                         </StackLayout>
                     </DataTemplate>
