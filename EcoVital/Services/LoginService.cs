@@ -11,7 +11,7 @@ namespace EcoVital.Services;
 
 public class LoginService : ILoginRepository
 {
-    const string ApiBaseUrl = "https://vivaservice.azurewebsites.net/api/UserInfoes/";
+    const string ApiBaseUrl = "https://vivaserviceapi.azurewebsites.net/api/UserInfoes/";
 
     public async Task<UserInfo> Login(string usernameOrEmail, string password)
     {
@@ -72,7 +72,7 @@ public class LoginService : ILoginRepository
                 throw new Exception("Sin conexión a internet");
 
             var client = new HttpClient();
-            var url = "https://vivaservice.azurewebsites.net/api/UserInfoes/";
+            var url = "https://vivaserviceapi.azurewebsites.net/api/UserInfoes/";
             client.BaseAddress = new Uri(url);
 
 
@@ -121,7 +121,7 @@ public class LoginService : ILoginRepository
     public async Task<HttpResponseMessage> SendSecurityQuestion(object securityQuestion)
     {
         var client = new HttpClient();
-        var url = "https://vivaservice.azurewebsites.net/api/SecurityQuestions/";
+        var url = "https://vivaserviceapi.azurewebsites.net/api/SecurityQuestions/";
         client.BaseAddress = new Uri(url);
 
         var json = JsonConvert.SerializeObject(securityQuestion);
@@ -184,7 +184,7 @@ public class LoginService : ILoginRepository
         var client = new HttpClient();
         var response =
             await client.GetAsync(
-                "https://vivaservice.azurewebsites.net/api/SecurityQuestions/GetSecurityQuestionByUserId/" +
+                "https://vivaserviceapi.azurewebsites.net/api/SecurityQuestions/GetSecurityQuestionByUserId/" +
                 userId);
 
         if (response.IsSuccessStatusCode)
@@ -205,7 +205,7 @@ public class LoginService : ILoginRepository
         var client = new HttpClient();
         var response =
             await client.GetAsync(
-                $"https://vivaservice.azurewebsites.net/api/SecurityQuestions/GetSecurityQuestionByQuestion/{Uri.EscapeDataString(question)}/{userId}");
+                $"https://vivaserviceapi.azurewebsites.net/api/SecurityQuestions/GetSecurityQuestionByQuestion/{Uri.EscapeDataString(question)}/{userId}");
 
 
         if (response.IsSuccessStatusCode)

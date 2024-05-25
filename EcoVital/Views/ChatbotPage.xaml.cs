@@ -13,56 +13,144 @@ namespace EcoVital.Views
         {
             {
                 "dolor de cabeza",
-                "Para un dolor de cabeza, asegúrate de hidratarte bien, descansar en un lugar oscuro y tranquilo. Si el dolor persiste, consulta a un médico."
+                "Para aliviar un dolor de cabeza:\n" +
+                "1. Bebe mucha agua para mantenerte hidratado.\n" +
+                "2. Descansa en un lugar oscuro y tranquilo.\n" +
+                "3. Usa una compresa fría o caliente en la cabeza o el cuello.\n" +
+                "4. Prueba técnicas de relajación como la meditación o la respiración profunda.\n" +
+                "5. Toma un analgésico de venta libre si es necesario.\n" +
+                "Si el dolor persiste o es muy intenso, es recomendable consultar a un médico. ¿Hay algo más específico sobre tu dolor de cabeza que te preocupe?"
             },
             {
                 "dolor de garganta",
-                "Para un dolor de garganta, puedes hacer gárgaras con agua salada, mantenerte hidratado y usar pastillas para la garganta. Si tienes fiebre o el dolor es muy fuerte, consulta a un médico."
+                "Para aliviar un dolor de garganta:\n" +
+                "1. Haz gárgaras con agua salada varias veces al día.\n" +
+                "2. Mantente hidratado bebiendo muchos líquidos, como agua, té o sopas.\n" +
+                "3. Usa pastillas para la garganta o caramelos duros.\n" +
+                "4. Evita fumar y las bebidas alcohólicas.\n" +
+                "5. Usa un humidificador para mantener el aire húmedo.\n" +
+                "Si tienes fiebre o el dolor es muy fuerte, consulta a un médico. ¿Presentas otros síntomas?"
             },
             {
                 "dolor de estómago",
-                "Para un dolor de estómago, prueba beber té de manzanilla, comer alimentos suaves y evitar comidas pesadas. Si el dolor persiste o es muy intenso, consulta a un médico."
+                "Para aliviar un dolor de estómago:\n" +
+                "1. Bebe té de manzanilla para calmar el estómago.\n" +
+                "2. Come alimentos suaves y fáciles de digerir, como arroz, plátanos y tostadas.\n" +
+                "3. Evita comidas pesadas, grasas o picantes.\n" +
+                "4. Aplica una compresa caliente en el abdomen.\n" +
+                "5. Descansa y evita el estrés.\n" +
+                "Si el dolor persiste o es muy intenso, consulta a un médico. ¿Tienes otros síntomas?"
             },
             {
                 "estrés",
-                "Para manejar el estrés, intenta practicar técnicas de relajación como la meditación, la respiración profunda o el yoga. También puede ser útil hablar con un profesional de la salud mental."
+                "Para manejar el estrés:\n" +
+                "1. Practica técnicas de relajación como la meditación, la respiración profunda o el yoga.\n" +
+                "2. Haz ejercicio regularmente para liberar tensiones.\n" +
+                "3. Mantén una dieta equilibrada y saludable.\n" +
+                "4. Duerme lo suficiente cada noche.\n" +
+                "5. Habla con un amigo o profesional de la salud mental sobre tus preocupaciones.\n" +
+                "¿Hay algo específico que te cause estrés?"
             },
             {
                 "ansiedad",
-                "Para manejar la ansiedad, intenta practicar técnicas de relajación como la meditación, la respiración profunda o el yoga. También puede ser útil hablar con un profesional de la salud mental."
+                "Para manejar la ansiedad:\n" +
+                "1. Practica la meditación o el mindfulness para centrarte en el presente.\n" +
+                "2. Realiza ejercicios de respiración profunda para calmarte.\n" +
+                "3. Haz ejercicio regularmente para reducir la tensión.\n" +
+                "4. Evita el consumo de cafeína y alcohol.\n" +
+                "5. Considera hablar con un profesional de la salud mental para obtener apoyo adicional.\n" +
+                "¿Puedes describir mejor cómo te sientes?"
             },
             {
                 "depresión",
-                "Si sientes que estás experimentando depresión, es importante buscar ayuda de un profesional de la salud mental. Pueden ofrecerte apoyo y tratamiento para sentirte mejor."
+                "Para manejar la depresión:\n" +
+                "1. Habla con un profesional de la salud mental para obtener apoyo y tratamiento.\n" +
+                "2. Mantén una rutina diaria con actividades que disfrutes.\n" +
+                "3. Haz ejercicio regularmente para mejorar tu estado de ánimo.\n" +
+                "4. Come de manera saludable y equilibrada.\n" +
+                "5. Duerme lo suficiente cada noche.\n" +
+                "¿Hay algo en particular que quieras compartir?"
             },
             {
                 "alergias",
-                "Para manejar las alergias, intenta evitar los desencadenantes, como el polen o los ácaros del polvo. También puedes tomar medicamentos antihistamínicos o usar un inhalador si es necesario."
+                "Para manejar las alergias:\n" +
+                "1. Evita los desencadenantes conocidos, como el polen, los ácaros del polvo o ciertos alimentos.\n" +
+                "2. Mantén tu casa limpia y libre de polvo.\n" +
+                "3. Usa purificadores de aire para reducir los alérgenos en el ambiente.\n" +
+                "4. Toma medicamentos antihistamínicos si es necesario.\n" +
+                "5. Consulta a un alergólogo para pruebas y tratamientos específicos.\n" +
+                "¿Qué tipo de síntomas estás experimentando?"
             },
             {
                 "diabetes",
-                "Si tienes diabetes, es importante seguir un plan de alimentación saludable, hacer ejercicio regularmente y tomar tus medicamentos según las indicaciones de tu médico. También es importante controlar tus niveles de azúcar en la sangre."
+                "Para manejar la diabetes:\n" +
+                "1. Sigue un plan de alimentación saludable y equilibrada.\n" +
+                "2. Haz ejercicio regularmente para mantener un peso saludable.\n" +
+                "3. Controla tus niveles de azúcar en la sangre con regularidad.\n" +
+                "4. Toma tus medicamentos según las indicaciones de tu médico.\n" +
+                "5. Asiste a tus citas médicas y sigue las recomendaciones de tu equipo de salud.\n" +
+                "¿Necesitas ayuda con algo específico relacionado con tu diabetes?"
             },
             {
                 "obesidad",
-                "Para manejar la obesidad, es importante seguir un plan de alimentación saludable y hacer ejercicio regularmente. También es importante hablar con un médico o un nutricionista para obtener apoyo y orientación."
+                "Para manejar la obesidad:\n" +
+                "1. Sigue un plan de alimentación saludable y bajo en calorías.\n" +
+                "2. Incrementa tu actividad física diaria.\n" +
+                "3. Consulta a un nutricionista para un plan personalizado.\n" +
+                "4. Evita alimentos procesados y bebidas azucaradas.\n" +
+                "5. Considera hablar con un médico sobre opciones adicionales como programas de pérdida de peso o cirugía bariátrica.\n" +
+                "¿Tienes algún objetivo específico en mente?"
             },
             {
                 "hipertensión",
-                "Para manejar la hipertensión, es importante seguir un plan de alimentación saludable, hacer ejercicio regularmente y tomar tus medicamentos según las indicaciones de tu médico. También es importante controlar tu presión arterial regularmente."
+                "Para manejar la hipertensión:\n" +
+                "1. Sigue una dieta baja en sal y rica en frutas y verduras.\n" +
+                "2. Haz ejercicio regularmente para mantener tu presión arterial bajo control.\n" +
+                "3. Controla tu presión arterial en casa con un tensiómetro.\n" +
+                "4. Toma tus medicamentos según las indicaciones de tu médico.\n" +
+                "5. Reduce el estrés mediante técnicas de relajación como la meditación o el yoga.\n" +
+                "¿Necesitas ayuda con alguna rutina o medicación?"
             },
             {
                 "cáncer",
-                "Si te han diagnosticado cáncer, es importante seguir el plan de tratamiento recomendado por tu médico. También es importante cuidar tu salud emocional y física durante el tratamiento."
+                "Para manejar un diagnóstico de cáncer:\n" +
+                "1. Sigue el plan de tratamiento recomendado por tu médico.\n" +
+                "2. Mantén una alimentación saludable para apoyar tu cuerpo durante el tratamiento.\n" +
+                "3. Haz ejercicio moderado si te es posible.\n" +
+                "4. Busca apoyo emocional a través de terapia, grupos de apoyo o seres queridos.\n" +
+                "5. Infórmate sobre tu condición para tomar decisiones informadas sobre tu tratamiento.\n" +
+                "¿Cómo te sientes al respecto?"
             },
             {
                 "asma",
-                "Para manejar el asma, es importante evitar los desencadenantes, como el humo, el polen o los ácaros del polvo. También es importante tomar tus medicamentos según las indicaciones de tu médico y llevar un inhalador de rescate contigo."
+                "Para manejar el asma:\n" +
+                "1. Evita los desencadenantes como el humo, el polvo y el polen.\n" +
+                "2. Usa tu inhalador preventivo según las indicaciones del médico.\n" +
+                "3. Lleva siempre contigo un inhalador de rescate.\n" +
+                "4. Mantén un ambiente limpio y libre de alérgenos en casa.\n" +
+                "5. Asiste a tus citas médicas para revisar tu plan de tratamiento.\n" +
+                "¿Estás experimentando algún síntoma ahora mismo?"
             },
             {
                 "artritis",
-                "Para manejar la artritis, es importante hacer ejercicio regularmente, mantener un peso saludable y tomar tus medicamentos según las indicaciones de tu médico. También es importante hablar con un fisioterapeuta para obtener orientación sobre ejercicios específicos."
+                "Para manejar la artritis:\n" +
+                "1. Haz ejercicio regularmente para mantener la movilidad y fortalecer los músculos.\n" +
+                "2. Mantén un peso saludable para reducir la presión en las articulaciones.\n" +
+                "3. Usa calor o frío para aliviar el dolor y la inflamación.\n" +
+                "4. Toma tus medicamentos según las indicaciones de tu médico.\n" +
+                "5. Considera la fisioterapia para aprender ejercicios específicos que te ayuden.\n" +
+                "¿Sientes dolor o rigidez en alguna articulación específica?"
             },
+        };
+
+        readonly List<string> _bannedWords = new()
+        {
+            "sicario", "asesino", "matar", "terrorista", "bomba", "arma", "violencia", "crimen", "droga", "secuestro",
+            "extorsión", "robo", "violación", "abusar", "abusador", "abusadora", "abusivo", "abusiva", "abusar",
+            "violador", "violadora", "violento", "violenta", "violencia", "asesinato", "asesinar", "matar", "muerte",
+            "muerto", "muerta", "muertos", "muertas", "mueren", "murió", "mataron", "mata", "matan", "mató", "mató",
+            "mataron", "mata", "matan", "mató", "mató", "mataron", "mata", "matan", "mató", "mató", "mataron", "mata",
+            "matan", "mató", "mató", "mataron", "mata", "matan", "mató", "mató", "mataron", "mata", "matan", "mató",
         };
 
         public ChatBotPage()
@@ -81,7 +169,6 @@ namespace EcoVital.Views
         {
             InitializeComponent();
             _openAiService = openAiService;
-
             Messages.Add(new Message
             {
                 Text = "Hola, bienvenido a la aplicación EcoVital, ¿qué puedo hacer por ti?",
@@ -109,42 +196,67 @@ namespace EcoVital.Views
                 Messages.Add(new Message { Text = userInput, IsUserMessage = true });
                 RefreshMessagesCollectionView();
 
-                var response = GetHealthResponse(userInput);
-                if (response != null)
+                if (ContainsBannedWords(userInput))
                 {
-                    Messages.Add(new Message { Text = response, IsUserMessage = false });
+                    Messages.Add(new Message
+                    {
+                        Text = "Lo siento, no puedo ayudarte con esa solicitud.",
+                        IsUserMessage = false
+                    });
                 }
                 else
                 {
-                    var relevanceLevel = GetInputRelevanceLevel(userInput);
-
-                    if (relevanceLevel == RelevanceLevel.High)
+                    var response = GetHealthResponse(userInput);
+                    if (response != null)
                     {
-                        var aiResponse = await _openAiService.GetResponseAsync(userInput);
-                        Messages.Add(new Message { Text = aiResponse, IsUserMessage = false });
-                    }
-                    else if (relevanceLevel == RelevanceLevel.Medium)
-                    {
-                        Messages.Add(new Message
-                        {
-                            Text =
-                                "Parece que tu pregunta puede estar relacionada con el bienestar o la salud. ¿Podrías ser más específico?",
-                            IsUserMessage = false
-                        });
+                        Messages.Add(new Message { Text = response, IsUserMessage = false });
                     }
                     else
                     {
-                        Messages.Add(new Message
+                        var relevanceLevel = GetInputRelevanceLevel(userInput);
+
+                        if (relevanceLevel == RelevanceLevel.High)
                         {
-                            Text = "Solo puedo responder preguntas relacionadas con el bienestar y la salud.",
-                            IsUserMessage = false
-                        });
+                            var aiResponse = await _openAiService.GetResponseAsync(userInput);
+                            Messages.Add(new Message { Text = aiResponse, IsUserMessage = false });
+                        }
+                        else if (relevanceLevel == RelevanceLevel.Medium)
+                        {
+                            Messages.Add(new Message
+                            {
+                                Text =
+                                    "Parece que tu pregunta puede estar relacionada con el bienestar o la salud. ¿Podrías ser más específico?",
+                                IsUserMessage = false
+                            });
+                        }
+                        else
+                        {
+                            Messages.Add(new Message
+                            {
+                                Text =
+                                    "Solo puedo responder preguntas relacionadas con el bienestar y la salud. ¿Te gustaría obtener más información sobre algún tema específico?",
+                                IsUserMessage = false
+                            });
+                        }
                     }
                 }
 
                 RefreshMessagesCollectionView();
                 UserInput.Text = string.Empty;
             }
+        }
+
+        private bool ContainsBannedWords(string input)
+        {
+            foreach (var word in _bannedWords)
+            {
+                if (input.ToLower().Contains(word))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private string GetHealthResponse(string userInput)
@@ -180,134 +292,133 @@ namespace EcoVital.Views
 
             var keywordRelevance = new Dictionary<string, int>
             {
-                { "salud", 3 }, { "bienestar", 3 }, { "ejercicio", 3 }, { "vida sana", 2 },
-                { "meditación", 2 }, { "yoga", 2 }, { "fitness", 2 }, { "gimnasio", 2 },
-                { "deporte", 2 }, { "actividad física", 2 }, { "rutina de ejercicio", 2 },
-                { "rutina", 2 }, { "vivir", 2 }, { "vida", 2 }, { "dieta", 2 },
-                { "nutrición", 2 }, { "alimentación saludable", 2 }, { "vegano", 2 },
-                { "vegetariano", 2 }, { "proteínas", 2 }, { "carbohidratos", 2 },
-                { "grasas saludables", 2 }, { "vitaminas", 2 }, { "minerales", 2 },
-                { "hidratación", 2 }, { "agua", 2 }, { "medicamento", 2 }, { "dosis", 2 },
-                { "tratamiento", 2 }, { "vacuna", 2 }, { "prevención", 2 }, { "cura", 2 },
-                { "remedio natural", 2 }, { "suplemento", 2 }, { "estrés", 2 },
-                { "ansiedad", 2 }, { "depresión", 2 }, { "bienestar emocional", 2 },
-                { "psicología", 2 }, { "terapia", 2 }, { "mindfulness", 2 },
-                { "chequeo", 2 }, { "examen médico", 2 }, { "salud cardiovascular", 2 },
-                { "presión arterial", 2 }, { "colesterol", 2 }, { "glucosa", 2 },
-                { "salud infantil", 2 }, { "salud de la mujer", 2 }, { "salud del hombre", 2 },
-                { "embarazo", 2 }, { "tercera edad", 2 }, { "diabetes", 2 },
-                { "obesidad", 2 }, { "hipertensión", 2 }, { "cáncer", 2 }, { "asma", 2 },
-                { "artritis", 2 }, { "alergias", 2 }, { "sueño", 2 }, { "descanso", 2 },
-                { "energía", 2 }, { "motivación", 2 }, { "objetivos de salud", 2 },
-                { "hábitos saludables", 2 }, { "masaje", 2 }, { "rehabilitación", 2 },
-                { "recuperación", 2 }, { "dolor", 2 }, { "caminata", 2 }, { "correr", 2 },
-                { "natación", 2 }, { "ciclismo", 2 }, { "pilates", 2 }, { "baile", 2 },
-                { "crossfit", 2 }, { "zumba", 2 }, { "senderismo", 2 }, { "escalada", 2 },
-                { "aeróbicos", 2 }, { "entrenamiento de fuerza", 2 }, { "flexibilidad", 2 },
-                { "movilidad", 2 }, { "entrenamiento funcional", 2 }, { "relajación", 2 },
-                { "spa", 2 }, { "cuidado personal", 2 }, { "autocuidado", 2 },
-                { "higiene", 2 }, { "belleza", 2 }, { "piel", 2 }, { "cuidado de la piel", 2 },
-                { "hidratación de la piel", 2 }, { "anti-estrés", 2 }, { "detox", 2 },
-                { "desintoxicación", 2 }, { "limpieza", 2 }, { "ayuno", 2 },
-                { "ayuno intermitente", 2 }, { "keto", 2 }, { "cetogénica", 2 },
-                { "paleo", 2 }, { "sin gluten", 2 }, { "vegetarianismo", 2 },
-                { "crudiveganismo", 2 }, { "bajo en carbohidratos", 2 },
-                { "dieta mediterránea", 2 }, { "superalimentos", 2 }, { "omega 3", 2 },
-                { "antioxidantes", 2 }, { "fibra", 2 }, { "probióticos", 2 },
-                { "prebióticos", 2 }, { "autoestima", 2 }, { "confianza", 2 },
-                { "satisfacción personal", 2 }, { "felicidad", 2 }, { "resiliencia", 2 },
-                { "gestión de la ira", 2 }, { "terapia cognitivo-conductual", 2 },
-                { "psicoanálisis", 2 }, { "mindfulness avanzado", 2 }, { "acupuntura", 2 },
-                { "homeopatía", 2 }, { "naturopatía", 2 }, { "reiki", 2 }, { "terapia floral", 2 },
-                { "aromaterapia", 2 }, { "cromoterapia", 2 }, { "salud sexual", 2 },
-                { "anticonceptivos", 2 }, { "fertilidad", 2 }, { "ITS", 2 },
-                { "infecciones de transmisión sexual", 2 }, { "educación sexual", 2 },
-                { "enfermedad cardiovascular", 2 }, { "enfermedad crónica", 2 },
-                { "manejo del dolor", 2 }, { "tratamiento del cáncer", 2 },
-                { "prevención del cáncer", 2 }, { "wearables", 2 }, { "aplicaciones de salud", 2 },
-                { "tecnología wearable", 2 }, { "monitoreo de la salud", 2 },
-                { "dispositivos de seguimiento", 2 }, { "ergonomía", 2 }, { "pausas activas", 2 },
-                { "salud ocupacional", 2 }, { "bienestar laboral", 2 }, { "estrés laboral", 2 },
-                { "calidad del aire", 2 }, { "contaminación", 2 }, { "espacios verdes", 2 },
-                { "naturaleza", 2 }, { "biodiversidad", 2 }, { "vacunación", 2 },
-                { "inmunización", 2 }, { "higiene mental", 2 }, { "sostenibilidad", 2 },
-                { "vida ecológica", 2 }, { "productos ecológicos", 2 }, { "atención primaria", 2 },
-                { "urgencias", 2 }, { "primeros auxilios", 2 }, { "cardiología", 2 },
-                { "dermatología", 2 }, { "endocrinología", 2 }, { "gastroenterología", 2 },
-                { "hematología", 2 }, { "neurología", 2 }, { "odontología", 2 },
-                { "oftalmología", 2 }, { "ortopedia", 2 }, { "otorrinolaringología", 2 },
-                { "pediatría", 2 }, { "psiquiatría", 2 }, { "reumatología", 2 },
-                { "urología", 2 }, { "cuerpo y mente", 2 }, { "equilibrio mental", 2 },
-                { "conciencia corporal", 2 }, { "epidemias", 2 }, { "pandemias", 2 },
-                { "salud global", 2 }, { "comida orgánica", 2 }, { "alimentos integrales", 2 },
-                { "dietas personalizadas", 2 }, { "marcha nórdica", 2 }, { "kayak", 2 },
-                { "escalada deportiva", 2 }, { "patinaje", 2 }, { "equilibrio emocional", 2 },
-                { "inteligencia emocional", 2 }, { "salud psicológica", 2 },
-                { "vida minimalista", 2 }, { "reducción del estrés", 2 }, { "mejora del sueño", 2 },
-                { "productos sostenibles", 2 }, { "huella de carbono", 2 },
-                { "apps de meditación", 2 }, { "tecnología para el bienestar", 2 },
-                { "pliometría", 2 }, { "HIIT", 2 }, { "tabata", 2 },
-                { "salud holística", 2 }, { "bienestar integral", 2 }, { "hogar saludable", 2 },
-                { "organización del hogar", 2 }, { "longevidad", 2 }, { "anti-envejecimiento", 2 },
-                { "baños de bosque", 2 }, { "terapia con animales", 2 },
-                { "suplementos vitamínicos", 2 }, { "nutrición deportiva", 2 },
-                { "esclerosis múltiple", 2 }, { "enfermedad de Crohn", 2 },
-                { "comunidad y bienestar", 2 }, { "voluntariado", 2 },
-                { "mindfulness pleno", 2 }, { "gratitud", 2 }, { "diario de gratitud", 2 },
-                { "biohacking", 2 }, { "crioterapia", 2 }, { "terapia de flotación", 2 },
-                { "biofeedback", 2 }, { "ayurveda", 2 }, { "balance hormonal", 2 },
-                { "detoxificación digital", 2 }, { "jejuar", 2 }, { "fasting", 2 },
-                { "higiene del sueño", 2 }, { "sueño polifásico", 2 }, { "microbioma", 2 },
-                { "salud intestinal", 2 }, { "fermentados", 2 }, { "kombucha", 2 },
-                { "kefir", 2 }, { "alimentos fermentados", 2 }, { "entrenamiento de intervalos", 2 },
-                { "calistenia", 2 }, { "parkour", 2 }, { "powerlifting", 2 },
-                { "bodybuilding", 2 }, { "esgrima", 2 }, { "surf", 2 },
-                { "escalada en roca", 2 }, { "esquí", 2 }, { "snowboarding", 2 },
-                { "buceo", 2 }, { "paracaidismo", 2 }, { "triathlon", 2 },
-                { "ironman", 2 }, { "maratón", 2 }, { "dietas flexibles", 2 },
-                { "carga glucémica", 2 }, { "índice glucémico", 2 },
-                { "alimentación consciente", 2 }, { "alimentos orgánicos", 2 },
-                { "comida local", 2 }, { "huerto urbano", 2 }, { "alimentos kilómetro cero", 2 },
-                { "alimentos de temporada", 2 }, { "comida real", 2 },
-                { "resolución de conflictos", 2 }, { "terapia de pareja", 2 },
-                { "coaching de vida", 2 }, { "gestión del cambio", 2 },
-                { "terapia de aceptación y compromiso", 2 }, { "terapia narrativa", 2 },
-                { "psicología positiva", 2 }, { "meditación guiada", 2 }, { "visualización", 2 },
-                { "pruebas genéticas", 2 }, { "análisis de sangre avanzado", 2 },
-                { "monitoreo de glucosa continuo", 2 }, { "pruebas de intolerancia alimentaria", 2 },
-                { "screening de cáncer", 2 }, { "análisis de microbioma", 2 },
-                { "gestión del tiempo", 2 }, { "productividad personal", 2 },
-                { "ambiente de trabajo saludable", 2 }, { "cultura corporativa", 2 },
-                { "mindfulness en el trabajo", 2 }, { "equilibrio trabajo-vida", 2 },
-                { "vida sin desperdicio", 2 }, { "minimalismo", 2 },
-                { "productos sin plástico", 2 }, { "moda sostenible", 2 },
-                { "cosmética natural", 2 }, { "productos no tóxicos", 2 }, { "genómica", 2 },
-                { "terapias con células madre", 2 }, { "medicina personalizada", 2 },
-                { "realidad virtual para salud", 2 }, { "impresión 3D en medicina", 2 },
-                { "inteligencia artificial en salud", 2 }, { "robots en cirugía", 2 },
-                { "aceites esenciales", 2 }, { "suplementos nutricionales", 2 },
-                { "hidroterapia", 2 }, { "musicoterapia", 2 }, { "arteterapia", 2 },
-                { "jardinería terapéutica", 2 }, { "conexión con la naturaleza", 2 },
-                { "fiebre", 2 }, { "tos", 2 }, { "dolor de cabeza", 2 },
-                { "dolor de garganta", 2 }, { "dolor de estómago", 2 },
-                { "dolor de espalda", 2 }, { "dolor de oído", 2 }, { "dolor de pecho", 2 },
-                { "dolor de muelas", 2 }, { "dolor de piernas", 2 }, { "dolor de brazos", 2 },
-                { "dolor de cuello", 2 }, { "dolor de rodilla", 2 }, { "dolor de cadera", 2 },
-                { "dolor de hombro", 2 }, { "duele", 3 }, { "pica", 3 }, { "ardor", 2 },
-                { "sangra", 2 }, { "inflamación", 2 }, { "hinchazón", 2 }, { "enrojecimiento", 2 },
-                { "tengo", 2 }, { "padezco", 2 }, { "malestar", 2 }, { "molestia", 2 },
-                { "incomodidad", 2 }, { "síntoma", 2 }, { "enfermedad", 2 }
+                { "salud", 5 }, { "bienestar", 5 }, { "ejercicio", 4 }, { "vida sana", 4 },
+                { "meditación", 4 }, { "yoga", 4 }, { "fitness", 4 }, { "gimnasio", 4 },
+                { "deporte", 4 }, { "actividad física", 4 }, { "rutina de ejercicio", 4 },
+                { "rutina", 4 }, { "vivir", 3 }, { "vida", 3 }, { "dieta", 4 },
+                { "nutrición", 4 }, { "alimentación saludable", 4 }, { "vegano", 4 },
+                { "vegetariano", 4 }, { "proteínas", 4 }, { "carbohidratos", 4 },
+                { "grasas saludables", 4 }, { "vitaminas", 4 }, { "minerales", 4 },
+                { "hidratación", 4 }, { "agua", 4 }, { "medicamento", 4 }, { "dosis", 4 },
+                { "tratamiento", 4 }, { "vacuna", 4 }, { "prevención", 4 }, { "cura", 4 },
+                { "remedio natural", 4 }, { "suplemento", 4 }, { "estrés", 4 },
+                { "ansiedad", 4 }, { "depresión", 4 }, { "bienestar emocional", 4 },
+                { "psicología", 4 }, { "terapia", 4 }, { "mindfulness", 4 },
+                { "chequeo", 4 }, { "examen médico", 4 }, { "salud cardiovascular", 4 },
+                { "presión arterial", 4 }, { "colesterol", 4 }, { "glucosa", 4 },
+                { "salud infantil", 4 }, { "salud de la mujer", 4 }, { "salud del hombre", 4 },
+                { "embarazo", 4 }, { "tercera edad", 4 }, { "diabetes", 4 },
+                { "obesidad", 4 }, { "hipertensión", 4 }, { "cáncer", 4 }, { "asma", 4 },
+                { "artritis", 4 }, { "alergias", 4 }, { "sueño", 4 }, { "descanso", 4 },
+                { "energía", 4 }, { "motivación", 4 }, { "objetivos de salud", 4 },
+                { "hábitos saludables", 4 }, { "masaje", 4 }, { "rehabilitación", 4 },
+                { "recuperación", 4 }, { "dolor", 4 }, { "caminata", 4 }, { "correr", 4 },
+                { "natación", 4 }, { "ciclismo", 4 }, { "pilates", 4 }, { "baile", 4 },
+                { "crossfit", 4 }, { "zumba", 4 }, { "senderismo", 4 }, { "escalada", 4 },
+                { "aeróbicos", 4 }, { "entrenamiento de fuerza", 4 }, { "flexibilidad", 4 },
+                { "movilidad", 4 }, { "entrenamiento funcional", 4 }, { "relajación", 4 },
+                { "spa", 4 }, { "cuidado personal", 4 }, { "autocuidado", 4 },
+                { "higiene", 4 }, { "belleza", 4 }, { "piel", 4 }, { "cuidado de la piel", 4 },
+                { "hidratación de la piel", 4 }, { "anti-estrés", 4 }, { "detox", 4 },
+                { "desintoxicación", 4 }, { "limpieza", 4 }, { "ayuno", 4 },
+                { "ayuno intermitente", 4 }, { "keto", 4 }, { "cetogénica", 4 },
+                { "paleo", 4 }, { "sin gluten", 4 }, { "vegetarianismo", 4 },
+                { "crudiveganismo", 4 }, { "bajo en carbohidratos", 4 },
+                { "dieta mediterránea", 4 }, { "superalimentos", 4 }, { "omega 3", 4 },
+                { "antioxidantes", 4 }, { "fibra", 4 }, { "probióticos", 4 },
+                { "prebióticos", 4 }, { "autoestima", 4 }, { "confianza", 4 },
+                { "satisfacción personal", 4 }, { "felicidad", 4 }, { "resiliencia", 4 },
+                { "gestión de la ira", 4 }, { "terapia cognitivo-conductual", 4 },
+                { "psicoanálisis", 4 }, { "mindfulness avanzado", 4 }, { "acupuntura", 4 },
+                { "homeopatía", 4 }, { "naturopatía", 4 }, { "reiki", 4 }, { "terapia floral", 4 },
+                { "aromaterapia", 4 }, { "cromoterapia", 4 }, { "salud sexual", 4 },
+                { "anticonceptivos", 4 }, { "fertilidad", 4 }, { "ITS", 4 },
+                { "infecciones de transmisión sexual", 4 }, { "educación sexual", 4 },
+                { "enfermedad cardiovascular", 4 }, { "enfermedad crónica", 4 },
+                { "manejo del dolor", 4 }, { "tratamiento del cáncer", 4 },
+                { "prevención del cáncer", 4 }, { "wearables", 4 }, { "aplicaciones de salud", 4 },
+                { "tecnología wearable", 4 }, { "monitoreo de la salud", 4 },
+                { "dispositivos de seguimiento", 4 }, { "ergonomía", 4 }, { "pausas activas", 4 },
+                { "salud ocupacional", 4 }, { "bienestar laboral", 4 }, { "estrés laboral", 4 },
+                { "calidad del aire", 4 }, { "contaminación", 4 }, { "espacios verdes", 4 },
+                { "naturaleza", 4 }, { "biodiversidad", 4 }, { "vacunación", 4 },
+                { "inmunización", 4 }, { "higiene mental", 4 }, { "sostenibilidad", 4 },
+                { "vida ecológica", 4 }, { "productos ecológicos", 4 }, { "atención primaria", 4 },
+                { "urgencias", 4 }, { "primeros auxilios", 4 }, { "cardiología", 4 },
+                { "dermatología", 4 }, { "endocrinología", 4 }, { "gastroenterología", 4 },
+                { "hematología", 4 }, { "neurología", 4 }, { "odontología", 4 },
+                { "oftalmología", 4 }, { "ortopedia", 4 }, { "otorrinolaringología", 4 },
+                { "pediatría", 4 }, { "psiquiatría", 4 }, { "reumatología", 4 },
+                { "urología", 4 }, { "cuerpo y mente", 4 }, { "equilibrio mental", 4 },
+                { "conciencia corporal", 4 }, { "epidemias", 4 }, { "pandemias", 4 },
+                { "salud global", 4 }, { "comida orgánica", 4 }, { "alimentos integrales", 4 },
+                { "dietas personalizadas", 4 }, { "marcha nórdica", 4 }, { "kayak", 4 },
+                { "escalada deportiva", 4 }, { "patinaje", 4 }, { "equilibrio emocional", 4 },
+                { "inteligencia emocional", 4 }, { "salud psicológica", 4 },
+                { "vida minimalista", 4 }, { "reducción del estrés", 4 }, { "mejora del sueño", 4 },
+                { "productos sostenibles", 4 }, { "huella de carbono", 4 },
+                { "apps de meditación", 4 }, { "tecnología para el bienestar", 4 },
+                { "pliometría", 4 }, { "HIIT", 4 }, { "tabata", 4 },
+                { "salud holística", 4 }, { "bienestar integral", 4 }, { "hogar saludable", 4 },
+                { "organización del hogar", 4 }, { "longevidad", 4 }, { "anti-envejecimiento", 4 },
+                { "baños de bosque", 4 }, { "terapia con animales", 4 },
+                { "suplementos vitamínicos", 4 }, { "nutrición deportiva", 4 },
+                { "esclerosis múltiple", 4 }, { "enfermedad de Crohn", 4 },
+                { "comunidad y bienestar", 4 }, { "voluntariado", 4 },
+                { "mindfulness pleno", 4 }, { "gratitud", 4 }, { "diario de gratitud", 4 },
+                { "biohacking", 4 }, { "crioterapia", 4 }, { "terapia de flotación", 4 },
+                { "biofeedback", 4 }, { "ayurveda", 4 }, { "balance hormonal", 4 },
+                { "detoxificación digital", 4 }, { "jejuar", 4 }, { "fasting", 4 },
+                { "higiene del sueño", 4 }, { "sueño polifásico", 4 }, { "microbioma", 4 },
+                { "salud intestinal", 4 }, { "fermentados", 4 }, { "kombucha", 4 },
+                { "kefir", 4 }, { "alimentos fermentados", 4 }, { "entrenamiento de intervalos", 4 },
+                { "calistenia", 4 }, { "parkour", 4 }, { "powerlifting", 4 },
+                { "bodybuilding", 4 }, { "esgrima", 4 }, { "surf", 4 },
+                { "escalada en roca", 4 }, { "esquí", 4 }, { "snowboarding", 4 },
+                { "buceo", 4 }, { "paracaidismo", 4 }, { "triathlon", 4 }, { "ironman", 4 },
+                { "maratón", 4 }, { "dietas flexibles", 4 }, { "carga glucémica", 4 },
+                { "índice glucémico", 4 }, { "alimentación consciente", 4 },
+                { "alimentos orgánicos", 4 }, { "comida local", 4 }, { "huerto urbano", 4 },
+                { "alimentos kilómetro cero", 4 }, { "alimentos de temporada", 4 },
+                { "comida real", 4 }, { "resolución de conflictos", 4 },
+                { "terapia de pareja", 4 }, { "coaching de vida", 4 },
+                { "gestión del cambio", 4 }, { "terapia de aceptación y compromiso", 4 },
+                { "terapia narrativa", 4 }, { "psicología positiva", 4 },
+                { "meditación guiada", 4 }, { "visualización", 4 }, { "pruebas genéticas", 4 },
+                { "análisis de sangre avanzado", 4 }, { "monitoreo de glucosa continuo", 4 },
+                { "pruebas de intolerancia alimentaria", 4 }, { "screening de cáncer", 4 },
+                { "análisis de microbioma", 4 }, { "gestión del tiempo", 4 },
+                { "productividad personal", 4 }, { "ambiente de trabajo saludable", 4 },
+                { "cultura corporativa", 4 }, { "mindfulness en el trabajo", 4 },
+                { "equilibrio trabajo-vida", 4 }, { "vida sin desperdicio", 4 },
+                { "minimalismo", 4 }, { "productos sin plástico", 4 }, { "moda sostenible", 4 },
+                { "cosmética natural", 4 }, { "productos no tóxicos", 4 }, { "genómica", 4 },
+                { "terapias con células madre", 4 }, { "medicina personalizada", 4 },
+                { "realidad virtual para salud", 4 }, { "impresión 3D en medicina", 4 },
+                { "inteligencia artificial en salud", 4 }, { "robots en cirugía", 4 },
+                { "aceites esenciales", 4 }, { "suplementos nutricionales", 4 },
+                { "hidroterapia", 4 }, { "musicoterapia", 4 }, { "arteterapia", 4 },
+                { "jardinería terapéutica", 4 }, { "conexión con la naturaleza", 4 },
+                { "fiebre", 4 }, { "tos", 4 }, { "dolor de cabeza", 4 },
+                { "dolor de garganta", 4 }, { "dolor de estómago", 4 },
+                { "dolor de espalda", 4 }, { "dolor de oído", 4 }, { "dolor de pecho", 4 },
+                { "dolor de muelas", 4 }, { "dolor de piernas", 4 }, { "dolor de brazos", 4 },
+                { "dolor de cuello", 4 }, { "dolor de rodilla", 4 }, { "dolor de cadera", 4 },
+                { "dolor de hombro", 4 }, { "duele", 4 }, { "pica", 4 }, { "ardor", 4 },
+                { "sangra", 4 }, { "inflamación", 4 }, { "hinchazón", 4 }, { "enrojecimiento", 4 },
+                { "tengo", 4 }, { "padezco", 4 }, { "malestar", 4 }, { "molestia", 4 },
+                { "incomodidad", 4 }, { "síntoma", 4 }, { "enfermedad", 4 }
             };
 
             var relevanceScore = 0;
 
             foreach (var keyword in keywordRelevance.Keys)
-                if (userInput.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0)
+                if (normalizedInput.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0)
                     relevanceScore += keywordRelevance[keyword];
 
-            if (relevanceScore > 2) return RelevanceLevel.High;
+            if (relevanceScore > 4) return RelevanceLevel.High;
 
-            if (relevanceScore > 0) return RelevanceLevel.Medium;
+            if (relevanceScore > 2) return RelevanceLevel.Medium;
 
             return RelevanceLevel.Low;
         }
@@ -327,3 +438,4 @@ namespace EcoVital.Views
         }
     }
 }
+

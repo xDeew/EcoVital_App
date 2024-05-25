@@ -5,7 +5,7 @@ namespace EcoVital.Services;
 
 public class UserGoalService
 {
-    readonly string _apiBaseUrl = "https://vivaservice.azurewebsites.net/api/UserGoal/";
+    readonly string _apiBaseUrl = "https://vivaserviceapi.azurewebsites.net/api/UserGoal/";
     readonly HttpClient _client;
 
     public UserGoalService(HttpClient client)

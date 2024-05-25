@@ -9,7 +9,7 @@ namespace EcoVital.Services;
 
 public class FeedbackService
 {
-    readonly string _baseUrl = "https://vivaservice.azurewebsites.net/api/feedback";
+    readonly string _baseUrl = "https://vivaserviceapi.azurewebsites.net/api/feedback";
     readonly HttpClient _httpClient;
 
     public FeedbackService(HttpClient httpClient)
@@ -65,7 +65,7 @@ public class FeedbackService
 
         try
         {
-            var response = await _httpClient.PostAsync("https://vivaservice.azurewebsites.net/api/Feedback", content);
+            var response = await _httpClient.PostAsync("https://vivaserviceapi.azurewebsites.net/api/Feedback", content);
             var responseBody = await response.Content.ReadAsStringAsync();
             Debug.WriteLine($"Código de respuesta: {response.StatusCode}");
             Debug.WriteLine($"Cuerpo de respuesta: {responseBody}");

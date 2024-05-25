@@ -6,8 +6,8 @@ namespace EcoVital.Services;
 
 public class ActivityService
 {
-    readonly string _apiBaseUrl = "https://vivaservice.azurewebsites.net/api/activity";
-    readonly string _apiBaseUrlUnion = "https://vivaservice.azurewebsites.net/api/UserActivityRecords";
+    readonly string _apiBaseUrl = "https://vivaserviceapi.azurewebsites.net/api/activity";
+    readonly string _apiBaseUrlUnion = "https://vivaserviceapi.azurewebsites.net/api/UserActivityRecords";
     readonly HttpClient _client;
 
     public ActivityService(HttpClient client)
