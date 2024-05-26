@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: EcoVital.Config
+  commentId: N:EcoVital.Config
+  id: EcoVital.Config
+  children:
+  - EcoVital.Config.ApiConfig
+  langs:
+  - csharp
+  - vb
+  name: EcoVital.Config
+  nameWithType: EcoVital.Config
+  fullName: EcoVital.Config
+  type: Namespace
+  assemblies:
+  - EcoVital
+references:
+- uid: EcoVital.Config.ApiConfig
+  commentId: T:EcoVital.Config.ApiConfig
+  href: EcoVital.Config.ApiConfig.html
+  name: ApiConfig
+  nameWithType: ApiConfig
+  fullName: EcoVital.Config.ApiConfig

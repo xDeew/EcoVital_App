@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: EcoVital.UserControl
+  commentId: N:EcoVital.UserControl
+  id: EcoVital.UserControl
+  children:
+  - EcoVital.UserControl.FlyoutHeaderControl
+  langs:
+  - csharp
+  - vb
+  name: EcoVital.UserControl
+  nameWithType: EcoVital.UserControl
+  fullName: EcoVital.UserControl
+  type: Namespace
+  assemblies:
+  - EcoVital
+references:
+- uid: EcoVital.UserControl.FlyoutHeaderControl
+  commentId: T:EcoVital.UserControl.FlyoutHeaderControl
+  href: EcoVital.UserControl.FlyoutHeaderControl.html
+  name: FlyoutHeaderControl
+  nameWithType: FlyoutHeaderControl
+  fullName: EcoVital.UserControl.FlyoutHeaderControl

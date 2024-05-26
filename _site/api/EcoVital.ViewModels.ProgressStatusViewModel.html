@@ -1,0 +1,602 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class ProgressStatusViewModel </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class ProgressStatusViewModel ">
+    
+    <meta name="description" content="ViewModel para gestionar el estado de progreso de las actividades del usuario.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="EcoVital.ViewModels.ProgressStatusViewModel">
+
+
+
+  <h1 id="EcoVital_ViewModels_ProgressStatusViewModel" data-uid="EcoVital.ViewModels.ProgressStatusViewModel" class="text-break">Class ProgressStatusViewModel</h1>
+  <div class="markdown level0 summary"><p>ViewModel para gestionar el estado de progreso de las actividades del usuario.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject">ObservableObject</a></div>
+    <div class="level2"><a class="xref" href="EcoVital.ViewModels.BaseViewModel.html">BaseViewModel</a></div>
+    <div class="level3"><span class="xref">ProgressStatusViewModel</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanging">INotifyPropertyChanging</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="EcoVital.ViewModels.BaseViewModel.html#EcoVital_ViewModels_BaseViewModel__isBusy">BaseViewModel._isBusy</a>
+    </div>
+    <div>
+      <a class="xref" href="EcoVital.ViewModels.BaseViewModel.html#EcoVital_ViewModels_BaseViewModel__title">BaseViewModel._title</a>
+    </div>
+    <div>
+      <a class="xref" href="EcoVital.ViewModels.BaseViewModel.html#EcoVital_ViewModels_BaseViewModel_IsBusy">BaseViewModel.IsBusy</a>
+    </div>
+    <div>
+      <a class="xref" href="EcoVital.ViewModels.BaseViewModel.html#EcoVital_ViewModels_BaseViewModel_Title">BaseViewModel.Title</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject.onpropertychanged#microsoft-toolkit-mvvm-componentmodel-observableobject-onpropertychanged(system-componentmodel-propertychangedeventargs)">ObservableObject.OnPropertyChanged(PropertyChangedEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject.onpropertychanging#microsoft-toolkit-mvvm-componentmodel-observableobject-onpropertychanging(system-componentmodel-propertychangingeventargs)">ObservableObject.OnPropertyChanging(PropertyChangingEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject.onpropertychanged#microsoft-toolkit-mvvm-componentmodel-observableobject-onpropertychanged(system-string)">ObservableObject.OnPropertyChanged(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject.onpropertychanging#microsoft-toolkit-mvvm-componentmodel-observableobject-onpropertychanging(system-string)">ObservableObject.OnPropertyChanging(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject.setproperty#microsoft-toolkit-mvvm-componentmodel-observableobject-setproperty-1(-0@-0-system-string)">ObservableObject.SetProperty&lt;T&gt;(ref T, T, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject.setproperty#microsoft-toolkit-mvvm-componentmodel-observableobject-setproperty-1(-0@-0-system-collections-generic-iequalitycomparer((-0))-system-string)">ObservableObject.SetProperty&lt;T&gt;(ref T, T, IEqualityComparer&lt;T&gt;, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject.setproperty#microsoft-toolkit-mvvm-componentmodel-observableobject-setproperty-1(-0-0-system-action((-0))-system-string)">ObservableObject.SetProperty&lt;T&gt;(T, T, Action&lt;T&gt;, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject.setproperty#microsoft-toolkit-mvvm-componentmodel-observableobject-setproperty-1(-0-0-system-collections-generic-iequalitycomparer((-0))-system-action((-0))-system-string)">ObservableObject.SetProperty&lt;T&gt;(T, T, IEqualityComparer&lt;T&gt;, Action&lt;T&gt;, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject.setproperty#microsoft-toolkit-mvvm-componentmodel-observableobject-setproperty-2(-1-1-0-system-action((-0-1))-system-string)">ObservableObject.SetProperty&lt;TModel, T&gt;(T, T, TModel, Action&lt;TModel, T&gt;, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject.setproperty#microsoft-toolkit-mvvm-componentmodel-observableobject-setproperty-2(-1-1-system-collections-generic-iequalitycomparer((-1))-0-system-action((-0-1))-system-string)">ObservableObject.SetProperty&lt;TModel, T&gt;(T, T, IEqualityComparer&lt;T&gt;, TModel, Action&lt;TModel, T&gt;, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#microsoft-toolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion(microsoft-toolkit-mvvm-componentmodel-observableobject-tasknotifier@-system-threading-tasks-task-system-string)">ObservableObject.SetPropertyAndNotifyOnCompletion(ref ObservableObject.TaskNotifier, Task, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#microsoft-toolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion(microsoft-toolkit-mvvm-componentmodel-observableobject-tasknotifier@-system-threading-tasks-task-system-action((system-threading-tasks-task))-system-string)">ObservableObject.SetPropertyAndNotifyOnCompletion(ref ObservableObject.TaskNotifier, Task, Action&lt;Task&gt;, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#microsoft-toolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion-1(microsoft-toolkit-mvvm-componentmodel-observableobject-tasknotifier((-0))@-system-threading-tasks-task((-0))-system-string)">ObservableObject.SetPropertyAndNotifyOnCompletion&lt;T&gt;(ref ObservableObject.TaskNotifier&lt;T&gt;, Task&lt;T&gt;, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject.setpropertyandnotifyoncompletion#microsoft-toolkit-mvvm-componentmodel-observableobject-setpropertyandnotifyoncompletion-1(microsoft-toolkit-mvvm-componentmodel-observableobject-tasknotifier((-0))@-system-threading-tasks-task((-0))-system-action((system-threading-tasks-task((-0))))-system-string)">ObservableObject.SetPropertyAndNotifyOnCompletion&lt;T&gt;(ref ObservableObject.TaskNotifier&lt;T&gt;, Task&lt;T&gt;, Action&lt;Task&lt;T&gt;&gt;, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject.propertychanged">ObservableObject.PropertyChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.toolkit.mvvm.componentmodel.observableobject.propertychanging">ObservableObject.PropertyChanging</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="EcoVital.html">EcoVital</a>.<a class="xref" href="EcoVital.ViewModels.html">ViewModels</a></h6>
+  <h6><strong>Assembly</strong>: EcoVital.dll</h6>
+  <h5 id="EcoVital_ViewModels_ProgressStatusViewModel_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ProgressStatusViewModel : BaseViewModel, INotifyPropertyChanged, INotifyPropertyChanging</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/xDeew/EcoVital_App/new/main/apiSpec/new?filename=EcoVital_ViewModels_ProgressStatusViewModel__ctor_EcoVital_Services_ActivityService_.md&amp;value=---%0Auid%3A%20EcoVital.ViewModels.ProgressStatusViewModel.%23ctor(EcoVital.Services.ActivityService)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/xDeew/EcoVital_App/blob/main/EcoVital/ViewModels/ProgressStatusViewModel.cs/#L22">View Source</a>
+  </span>
+  <a id="EcoVital_ViewModels_ProgressStatusViewModel__ctor_" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.#ctor*"></a>
+  <h4 id="EcoVital_ViewModels_ProgressStatusViewModel__ctor_EcoVital_Services_ActivityService_" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.#ctor(EcoVital.Services.ActivityService)">ProgressStatusViewModel(ActivityService)</h4>
+  <div class="markdown level1 summary"><p>Inicializa una nueva instancia de la clase <a class="xref" href="EcoVital.ViewModels.ProgressStatusViewModel.html">ProgressStatusViewModel</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProgressStatusViewModel(ActivityService activityService)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EcoVital.Services.ActivityService.html">ActivityService</a></td>
+        <td><span class="parametername">activityService</span></td>
+        <td><p>El servicio de actividades.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/xDeew/EcoVital_App/new/main/apiSpec/new?filename=EcoVital_ViewModels_ProgressStatusViewModel_HasActivities.md&amp;value=---%0Auid%3A%20EcoVital.ViewModels.ProgressStatusViewModel.HasActivities%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/xDeew/EcoVital_App/blob/main/EcoVital/ViewModels/ProgressStatusViewModel.cs/#L38">View Source</a>
+  </span>
+  <a id="EcoVital_ViewModels_ProgressStatusViewModel_HasActivities_" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.HasActivities*"></a>
+  <h4 id="EcoVital_ViewModels_ProgressStatusViewModel_HasActivities" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.HasActivities">HasActivities</h4>
+  <div class="markdown level1 summary"><p>Indica si hay actividades registradas.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasActivities { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/xDeew/EcoVital_App/new/main/apiSpec/new?filename=EcoVital_ViewModels_ProgressStatusViewModel_HasNoActivities.md&amp;value=---%0Auid%3A%20EcoVital.ViewModels.ProgressStatusViewModel.HasNoActivities%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/xDeew/EcoVital_App/blob/main/EcoVital/ViewModels/ProgressStatusViewModel.cs/#L43">View Source</a>
+  </span>
+  <a id="EcoVital_ViewModels_ProgressStatusViewModel_HasNoActivities_" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.HasNoActivities*"></a>
+  <h4 id="EcoVital_ViewModels_ProgressStatusViewModel_HasNoActivities" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.HasNoActivities">HasNoActivities</h4>
+  <div class="markdown level1 summary"><p>Indica si no hay actividades registradas.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasNoActivities { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/xDeew/EcoVital_App/new/main/apiSpec/new?filename=EcoVital_ViewModels_ProgressStatusViewModel_RegisteredActivities.md&amp;value=---%0Auid%3A%20EcoVital.ViewModels.ProgressStatusViewModel.RegisteredActivities%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/xDeew/EcoVital_App/blob/main/EcoVital/ViewModels/ProgressStatusViewModel.cs/#L53">View Source</a>
+  </span>
+  <a id="EcoVital_ViewModels_ProgressStatusViewModel_RegisteredActivities_" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.RegisteredActivities*"></a>
+  <h4 id="EcoVital_ViewModels_ProgressStatusViewModel_RegisteredActivities" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.RegisteredActivities">RegisteredActivities</h4>
+  <div class="markdown level1 summary"><p>Colección de actividades registradas del usuario.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ObservableCollection&lt;UserActivityRecord&gt; RegisteredActivities { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection</a>&lt;<a class="xref" href="EcoVital.Models.UserActivityRecord.html">UserActivityRecord</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/xDeew/EcoVital_App/new/main/apiSpec/new?filename=EcoVital_ViewModels_ProgressStatusViewModel_SelectActivityCommand.md&amp;value=---%0Auid%3A%20EcoVital.ViewModels.ProgressStatusViewModel.SelectActivityCommand%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/xDeew/EcoVital_App/blob/main/EcoVital/ViewModels/ProgressStatusViewModel.cs/#L48">View Source</a>
+  </span>
+  <a id="EcoVital_ViewModels_ProgressStatusViewModel_SelectActivityCommand_" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.SelectActivityCommand*"></a>
+  <h4 id="EcoVital_ViewModels_ProgressStatusViewModel_SelectActivityCommand" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.SelectActivityCommand">SelectActivityCommand</h4>
+  <div class="markdown level1 summary"><p>Comando para seleccionar una actividad.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICommand SelectActivityCommand { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.windows.input.icommand">ICommand</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/xDeew/EcoVital_App/new/main/apiSpec/new?filename=EcoVital_ViewModels_ProgressStatusViewModel_UpdateProgressCommand.md&amp;value=---%0Auid%3A%20EcoVital.ViewModels.ProgressStatusViewModel.UpdateProgressCommand%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/xDeew/EcoVital_App/blob/main/EcoVital/ViewModels/ProgressStatusViewModel.cs/#L69">View Source</a>
+  </span>
+  <a id="EcoVital_ViewModels_ProgressStatusViewModel_UpdateProgressCommand_" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.UpdateProgressCommand*"></a>
+  <h4 id="EcoVital_ViewModels_ProgressStatusViewModel_UpdateProgressCommand" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.UpdateProgressCommand">UpdateProgressCommand</h4>
+  <div class="markdown level1 summary"><p>Comando para actualizar el progreso de una actividad.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RelayCommand&lt;double&gt; UpdateProgressCommand { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/communitytoolkit.mvvm.input.relaycommand-1">RelayCommand</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/xDeew/EcoVital_App/new/main/apiSpec/new?filename=EcoVital_ViewModels_ProgressStatusViewModel_GetImageUrlForActivityType_System_String_.md&amp;value=---%0Auid%3A%20EcoVital.ViewModels.ProgressStatusViewModel.GetImageUrlForActivityType(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/xDeew/EcoVital_App/blob/main/EcoVital/ViewModels/ProgressStatusViewModel.cs/#L188">View Source</a>
+  </span>
+  <a id="EcoVital_ViewModels_ProgressStatusViewModel_GetImageUrlForActivityType_" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.GetImageUrlForActivityType*"></a>
+  <h4 id="EcoVital_ViewModels_ProgressStatusViewModel_GetImageUrlForActivityType_System_String_" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.GetImageUrlForActivityType(System.String)">GetImageUrlForActivityType(string)</h4>
+  <div class="markdown level1 summary"><p>Obtiene la URL de la imagen para un tipo de actividad específico.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetImageUrlForActivityType(string activityType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">activityType</span></td>
+        <td><p>El tipo de actividad.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>La URL de la imagen correspondiente al tipo de actividad.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/xDeew/EcoVital_App/new/main/apiSpec/new?filename=EcoVital_ViewModels_ProgressStatusViewModel_LoadRegisteredActivities_System_Int32_.md&amp;value=---%0Auid%3A%20EcoVital.ViewModels.ProgressStatusViewModel.LoadRegisteredActivities(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/xDeew/EcoVital_App/blob/main/EcoVital/ViewModels/ProgressStatusViewModel.cs/#L143">View Source</a>
+  </span>
+  <a id="EcoVital_ViewModels_ProgressStatusViewModel_LoadRegisteredActivities_" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.LoadRegisteredActivities*"></a>
+  <h4 id="EcoVital_ViewModels_ProgressStatusViewModel_LoadRegisteredActivities_System_Int32_" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.LoadRegisteredActivities(System.Int32)">LoadRegisteredActivities(int)</h4>
+  <div class="markdown level1 summary"><p>Carga las actividades registradas del usuario.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task LoadRegisteredActivities(int userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">userId</span></td>
+        <td><p>El identificador del usuario.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>Una tarea que representa la operación asincrónica de carga de actividades.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/xDeew/EcoVital_App/new/main/apiSpec/new?filename=EcoVital_ViewModels_ProgressStatusViewModel_SelectActivity_EcoVital_Models_UserActivityRecord_.md&amp;value=---%0Auid%3A%20EcoVital.ViewModels.ProgressStatusViewModel.SelectActivity(EcoVital.Models.UserActivityRecord)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/xDeew/EcoVital_App/blob/main/EcoVital/ViewModels/ProgressStatusViewModel.cs/#L75">View Source</a>
+  </span>
+  <a id="EcoVital_ViewModels_ProgressStatusViewModel_SelectActivity_" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.SelectActivity*"></a>
+  <h4 id="EcoVital_ViewModels_ProgressStatusViewModel_SelectActivity_EcoVital_Models_UserActivityRecord_" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.SelectActivity(EcoVital.Models.UserActivityRecord)">SelectActivity(UserActivityRecord)</h4>
+  <div class="markdown level1 summary"><p>Selecciona o deselecciona una actividad.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SelectActivity(UserActivityRecord activity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="EcoVital.Models.UserActivityRecord.html">UserActivityRecord</a></td>
+        <td><span class="parametername">activity</span></td>
+        <td><p>La actividad a seleccionar o deseleccionar.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/xDeew/EcoVital_App/new/main/apiSpec/new?filename=EcoVital_ViewModels_ProgressStatusViewModel_UpdateProgress_System_Double_.md&amp;value=---%0Auid%3A%20EcoVital.ViewModels.ProgressStatusViewModel.UpdateProgress(System.Double)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/xDeew/EcoVital_App/blob/main/EcoVital/ViewModels/ProgressStatusViewModel.cs/#L85">View Source</a>
+  </span>
+  <a id="EcoVital_ViewModels_ProgressStatusViewModel_UpdateProgress_" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.UpdateProgress*"></a>
+  <h4 id="EcoVital_ViewModels_ProgressStatusViewModel_UpdateProgress_System_Double_" data-uid="EcoVital.ViewModels.ProgressStatusViewModel.UpdateProgress(System.Double)">UpdateProgress(double)</h4>
+  <div class="markdown level1 summary"><p>Actualiza el progreso de las actividades seleccionadas.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateProgress(double progressPercentage)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
+        <td><span class="parametername">progressPercentage</span></td>
+        <td><p>El porcentaje de progreso.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanging">INotifyPropertyChanging</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/xDeew/EcoVital_App/new/main/apiSpec/new?filename=EcoVital_ViewModels_ProgressStatusViewModel.md&amp;value=---%0Auid%3A%20EcoVital.ViewModels.ProgressStatusViewModel%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/xDeew/EcoVital_App/blob/main/EcoVital/ViewModels/ProgressStatusViewModel.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

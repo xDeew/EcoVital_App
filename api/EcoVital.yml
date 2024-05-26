@@ -1,0 +1,51 @@
+### YamlMime:ManagedReference
+items:
+- uid: EcoVital
+  commentId: N:EcoVital
+  id: EcoVital
+  children:
+  - EcoVital.App
+  - EcoVital.AppShell
+  - EcoVital.LoadingPage
+  - EcoVital.MainPage
+  - EcoVital.MauiProgram
+  langs:
+  - csharp
+  - vb
+  name: EcoVital
+  nameWithType: EcoVital
+  fullName: EcoVital
+  type: Namespace
+  assemblies:
+  - EcoVital
+references:
+- uid: EcoVital.App
+  commentId: T:EcoVital.App
+  href: EcoVital.App.html
+  name: App
+  nameWithType: App
+  fullName: EcoVital.App
+- uid: EcoVital.AppShell
+  commentId: T:EcoVital.AppShell
+  href: EcoVital.AppShell.html
+  name: AppShell
+  nameWithType: AppShell
+  fullName: EcoVital.AppShell
+- uid: EcoVital.MainPage
+  commentId: T:EcoVital.MainPage
+  href: EcoVital.MainPage.html
+  name: MainPage
+  nameWithType: MainPage
+  fullName: EcoVital.MainPage
+- uid: EcoVital.MauiProgram
+  commentId: T:EcoVital.MauiProgram
+  href: EcoVital.MauiProgram.html
+  name: MauiProgram
+  nameWithType: MauiProgram
+  fullName: EcoVital.MauiProgram
+- uid: EcoVital.LoadingPage
+  commentId: T:EcoVital.LoadingPage
+  href: EcoVital.LoadingPage.html
+  name: LoadingPage
+  nameWithType: LoadingPage
+  fullName: EcoVital.LoadingPage

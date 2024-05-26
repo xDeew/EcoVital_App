@@ -5,10 +5,16 @@ using Newtonsoft.Json;
 
 namespace EcoVital.Services;
 
+/// <summary>
+/// Proporciona servicios para interactuar con la API de OpenAI.
+/// </summary>
 public sealed class OpenAiService
 {
     readonly HttpClient _httpClient;
 
+    /// <summary>
+    /// Inicializa una nueva instancia de la clase <see cref="OpenAiService"/>.
+    /// </summary>
     public OpenAiService()
     {
         var apiKey = ApiConfig.ApiKey;
@@ -16,6 +22,11 @@ public sealed class OpenAiService
         _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
     }
 
+    /// <summary>
+    /// Obtiene una respuesta de la API de OpenAI para el prompt proporcionado.
+    /// </summary>
+    /// <param name="prompt">El prompt para el cual se desea obtener una respuesta.</param>
+    /// <returns>Una tarea que representa la operación asincrónica y contiene la respuesta de la API de OpenAI.</returns>
     public async Task<string> GetResponseAsync(string prompt)
     {
         var data = new
@@ -28,7 +39,6 @@ public sealed class OpenAiService
         };
 
         var content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
-
 
         var response = await _httpClient.PostAsync("https://api.openai.com/v1/chat/completions", content);
 

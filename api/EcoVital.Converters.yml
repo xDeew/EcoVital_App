@@ -1,0 +1,65 @@
+### YamlMime:ManagedReference
+items:
+- uid: EcoVital.Converters
+  commentId: N:EcoVital.Converters
+  id: EcoVital.Converters
+  children:
+  - EcoVital.Converters.BoolToColorConverter
+  - EcoVital.Converters.BoolToLayoutOptionsConverter
+  - EcoVital.Converters.BoolToOpacityConverter
+  - EcoVital.Converters.BoolToVisibilityConverter
+  - EcoVital.Converters.ContainsAtConverter
+  - EcoVital.Converters.InverseBoolToVisibilityConverter
+  - EcoVital.Converters.TitleToColorConverter
+  langs:
+  - csharp
+  - vb
+  name: EcoVital.Converters
+  nameWithType: EcoVital.Converters
+  fullName: EcoVital.Converters
+  type: Namespace
+  assemblies:
+  - EcoVital
+references:
+- uid: EcoVital.Converters.BoolToColorConverter
+  commentId: T:EcoVital.Converters.BoolToColorConverter
+  href: EcoVital.Converters.BoolToColorConverter.html
+  name: BoolToColorConverter
+  nameWithType: BoolToColorConverter
+  fullName: EcoVital.Converters.BoolToColorConverter
+- uid: EcoVital.Converters.BoolToLayoutOptionsConverter
+  commentId: T:EcoVital.Converters.BoolToLayoutOptionsConverter
+  href: EcoVital.Converters.BoolToLayoutOptionsConverter.html
+  name: BoolToLayoutOptionsConverter
+  nameWithType: BoolToLayoutOptionsConverter
+  fullName: EcoVital.Converters.BoolToLayoutOptionsConverter
+- uid: EcoVital.Converters.BoolToOpacityConverter
+  commentId: T:EcoVital.Converters.BoolToOpacityConverter
+  href: EcoVital.Converters.BoolToOpacityConverter.html
+  name: BoolToOpacityConverter
+  nameWithType: BoolToOpacityConverter
+  fullName: EcoVital.Converters.BoolToOpacityConverter
+- uid: EcoVital.Converters.BoolToVisibilityConverter
+  commentId: T:EcoVital.Converters.BoolToVisibilityConverter
+  href: EcoVital.Converters.BoolToVisibilityConverter.html
+  name: BoolToVisibilityConverter
+  nameWithType: BoolToVisibilityConverter
+  fullName: EcoVital.Converters.BoolToVisibilityConverter
+- uid: EcoVital.Converters.ContainsAtConverter
+  commentId: T:EcoVital.Converters.ContainsAtConverter
+  href: EcoVital.Converters.ContainsAtConverter.html
+  name: ContainsAtConverter
+  nameWithType: ContainsAtConverter
+  fullName: EcoVital.Converters.ContainsAtConverter
+- uid: EcoVital.Converters.InverseBoolToVisibilityConverter
+  commentId: T:EcoVital.Converters.InverseBoolToVisibilityConverter
+  href: EcoVital.Converters.InverseBoolToVisibilityConverter.html
+  name: InverseBoolToVisibilityConverter
+  nameWithType: InverseBoolToVisibilityConverter
+  fullName: EcoVital.Converters.InverseBoolToVisibilityConverter
+- uid: EcoVital.Converters.TitleToColorConverter
+  commentId: T:EcoVital.Converters.TitleToColorConverter
+  href: EcoVital.Converters.TitleToColorConverter.html
+  name: TitleToColorConverter
+  nameWithType: TitleToColorConverter
+  fullName: EcoVital.Converters.TitleToColorConverter

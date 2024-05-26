@@ -7,6 +7,9 @@ using Newtonsoft.Json;
 
 namespace EcoVital;
 
+/// <summary>
+/// Clase principal de la aplicación.
+/// </summary>
 public partial class App : Application
 {
     public static UserInfo UserInfo;
@@ -21,18 +24,25 @@ public partial class App : Application
 
     public static HomePageViewModel HomePageViewModel { get; set; } = new();
 
+    /// <summary>
+    /// Método llamado cuando la aplicación inicia.
+    /// </summary>
     protected override async void OnStart()
     {
         base.OnStart();
         await Shell.Current.GoToAsync("LoginPage");
     }
 
+    /// <summary>
+    /// Verifica el estado inicial de inicio de sesión.
+    /// </summary>
     async void CheckInitialLoginState()
     {
         var isRememberMeChecked = Preferences.Get("IsRememberMeChecked", false);
         var userDetails = Preferences.Get(nameof(UserInfo), string.Empty);
 
         if (isRememberMeChecked && !string.IsNullOrWhiteSpace(userDetails))
+        {
             try
             {
                 var userInfo = JsonConvert.DeserializeObject<UserInfo>(userDetails);
@@ -55,6 +65,7 @@ public partial class App : Application
                 Debug.WriteLine($"Error deserializando UserInfo: {ex}");
                 // Manejar el error adecuadamente
             }
+        }
 
         // Dirige al usuario a la LoginPage si "Recordarme" no está marcado o si no hay información de usuario
         await Shell.Current.GoToAsync("LoginPage");

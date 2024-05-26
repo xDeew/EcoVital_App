@@ -8,6 +8,9 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace EcoVital.ViewModels;
 
+/// <summary>
+/// ViewModel para gestionar la configuración de la pregunta de seguridad.
+/// </summary>
 public partial class SecurityQuestionPageViewModel : BaseViewModel
 {
     readonly ILoginRepository _loginRepository;
@@ -17,6 +20,9 @@ public partial class SecurityQuestionPageViewModel : BaseViewModel
     [ObservableProperty] List<string> _securityQuestions;
     [ObservableProperty] string _selectedSecurityQuestion;
 
+    /// <summary>
+    /// Inicializa una nueva instancia de la clase <see cref="SecurityQuestionPageViewModel"/>.
+    /// </summary>
     public SecurityQuestionPageViewModel()
     {
         _loginRepository = new LoginService();
@@ -36,9 +42,14 @@ public partial class SecurityQuestionPageViewModel : BaseViewModel
         };
     }
 
+    /// <summary>
+    /// Comando para continuar con la configuración de la pregunta de seguridad.
+    /// </summary>
     public ICommand ContinueCommand { get; set; }
 
-
+    /// <summary>
+    /// Continúa con la configuración de la pregunta de seguridad.
+    /// </summary>
     public async void Continue()
     {
         using (var sha256Hash = SHA256.Create())
@@ -64,7 +75,6 @@ public partial class SecurityQuestionPageViewModel : BaseViewModel
         {
             await Application.Current.MainPage.DisplayAlert("Éxito",
                 $"Pregunta guardada correctamente para el usuario {App.UserInfo.UserName}.", "OK");
-
 
             SelectedSecurityQuestion = null;
             SecurityAnswer = null;

@@ -1,0 +1,138 @@
+### YamlMime:ManagedReference
+items:
+- uid: EcoVital.ViewModels
+  commentId: N:EcoVital.ViewModels
+  id: EcoVital.ViewModels
+  children:
+  - EcoVital.ViewModels.ActivityRecordViewModel
+  - EcoVital.ViewModels.AppShellViewModel
+  - EcoVital.ViewModels.BaseViewModel
+  - EcoVital.ViewModels.ChangePasswordViewModel
+  - EcoVital.ViewModels.ContactPageViewModel
+  - EcoVital.ViewModels.FeedbackViewModel
+  - EcoVital.ViewModels.ForgotPasswordPageViewModel
+  - EcoVital.ViewModels.HealthRemindersViewModel
+  - EcoVital.ViewModels.HomePageViewModel
+  - EcoVital.ViewModels.LoginRegister
+  - EcoVital.ViewModels.ProgressStatusViewModel
+  - EcoVital.ViewModels.RegisterPageViewModel
+  - EcoVital.ViewModels.SecurityAnswerPageViewModel
+  - EcoVital.ViewModels.SecurityQuestionPageViewModel
+  langs:
+  - csharp
+  - vb
+  name: EcoVital.ViewModels
+  nameWithType: EcoVital.ViewModels
+  fullName: EcoVital.ViewModels
+  type: Namespace
+  assemblies:
+  - EcoVital
+references:
+- uid: EcoVital.ViewModels.ActivityRecordViewModel
+  commentId: T:EcoVital.ViewModels.ActivityRecordViewModel
+  href: EcoVital.ViewModels.ActivityRecordViewModel.html
+  name: ActivityRecordViewModel
+  nameWithType: ActivityRecordViewModel
+  fullName: EcoVital.ViewModels.ActivityRecordViewModel
+- uid: EcoVital.ViewModels.AppShellViewModel
+  commentId: T:EcoVital.ViewModels.AppShellViewModel
+  href: EcoVital.ViewModels.AppShellViewModel.html
+  name: AppShellViewModel
+  nameWithType: AppShellViewModel
+  fullName: EcoVital.ViewModels.AppShellViewModel
+- uid: EcoVital.ViewModels.BaseViewModel
+  commentId: T:EcoVital.ViewModels.BaseViewModel
+  parent: EcoVital.ViewModels
+  href: EcoVital.ViewModels.BaseViewModel.html
+  name: BaseViewModel
+  nameWithType: BaseViewModel
+  fullName: EcoVital.ViewModels.BaseViewModel
+- uid: EcoVital.ViewModels.ChangePasswordViewModel
+  commentId: T:EcoVital.ViewModels.ChangePasswordViewModel
+  href: EcoVital.ViewModels.ChangePasswordViewModel.html
+  name: ChangePasswordViewModel
+  nameWithType: ChangePasswordViewModel
+  fullName: EcoVital.ViewModels.ChangePasswordViewModel
+- uid: EcoVital.ViewModels.ContactPageViewModel
+  commentId: T:EcoVital.ViewModels.ContactPageViewModel
+  href: EcoVital.ViewModels.ContactPageViewModel.html
+  name: ContactPageViewModel
+  nameWithType: ContactPageViewModel
+  fullName: EcoVital.ViewModels.ContactPageViewModel
+- uid: EcoVital.ViewModels.FeedbackViewModel
+  commentId: T:EcoVital.ViewModels.FeedbackViewModel
+  href: EcoVital.ViewModels.FeedbackViewModel.html
+  name: FeedbackViewModel
+  nameWithType: FeedbackViewModel
+  fullName: EcoVital.ViewModels.FeedbackViewModel
+- uid: EcoVital.ViewModels.ForgotPasswordPageViewModel
+  commentId: T:EcoVital.ViewModels.ForgotPasswordPageViewModel
+  href: EcoVital.ViewModels.ForgotPasswordPageViewModel.html
+  name: ForgotPasswordPageViewModel
+  nameWithType: ForgotPasswordPageViewModel
+  fullName: EcoVital.ViewModels.ForgotPasswordPageViewModel
+- uid: EcoVital.ViewModels.HealthRemindersViewModel
+  commentId: T:EcoVital.ViewModels.HealthRemindersViewModel
+  href: EcoVital.ViewModels.HealthRemindersViewModel.html
+  name: HealthRemindersViewModel
+  nameWithType: HealthRemindersViewModel
+  fullName: EcoVital.ViewModels.HealthRemindersViewModel
+- uid: EcoVital.ViewModels.HomePageViewModel
+  commentId: T:EcoVital.ViewModels.HomePageViewModel
+  parent: EcoVital.ViewModels
+  href: EcoVital.ViewModels.HomePageViewModel.html
+  name: HomePageViewModel
+  nameWithType: HomePageViewModel
+  fullName: EcoVital.ViewModels.HomePageViewModel
+- uid: EcoVital.ViewModels.LoginRegister
+  commentId: T:EcoVital.ViewModels.LoginRegister
+  href: EcoVital.ViewModels.LoginRegister.html
+  name: LoginRegister
+  nameWithType: LoginRegister
+  fullName: EcoVital.ViewModels.LoginRegister
+- uid: EcoVital.ViewModels.ProgressStatusViewModel
+  commentId: T:EcoVital.ViewModels.ProgressStatusViewModel
+  href: EcoVital.ViewModels.ProgressStatusViewModel.html
+  name: ProgressStatusViewModel
+  nameWithType: ProgressStatusViewModel
+  fullName: EcoVital.ViewModels.ProgressStatusViewModel
+- uid: EcoVital.ViewModels.RegisterPageViewModel
+  commentId: T:EcoVital.ViewModels.RegisterPageViewModel
+  href: EcoVital.ViewModels.RegisterPageViewModel.html
+  name: RegisterPageViewModel
+  nameWithType: RegisterPageViewModel
+  fullName: EcoVital.ViewModels.RegisterPageViewModel
+- uid: EcoVital.ViewModels.SecurityAnswerPageViewModel
+  commentId: T:EcoVital.ViewModels.SecurityAnswerPageViewModel
+  href: EcoVital.ViewModels.SecurityAnswerPageViewModel.html
+  name: SecurityAnswerPageViewModel
+  nameWithType: SecurityAnswerPageViewModel
+  fullName: EcoVital.ViewModels.SecurityAnswerPageViewModel
+- uid: EcoVital.ViewModels.SecurityQuestionPageViewModel
+  commentId: T:EcoVital.ViewModels.SecurityQuestionPageViewModel
+  href: EcoVital.ViewModels.SecurityQuestionPageViewModel.html
+  name: SecurityQuestionPageViewModel
+  nameWithType: SecurityQuestionPageViewModel
+  fullName: EcoVital.ViewModels.SecurityQuestionPageViewModel
+- uid: EcoVital.ViewModels
+  commentId: N:EcoVital.ViewModels
+  href: EcoVital.html
+  name: EcoVital.ViewModels
+  nameWithType: EcoVital.ViewModels
+  fullName: EcoVital.ViewModels
+  spec.csharp:
+  - uid: EcoVital
+    name: EcoVital
+    href: EcoVital.html
+  - name: .
+  - uid: EcoVital.ViewModels
+    name: ViewModels
+    href: EcoVital.ViewModels.html
+  spec.vb:
+  - uid: EcoVital
+    name: EcoVital
+    href: EcoVital.html
+  - name: .
+  - uid: EcoVital.ViewModels
+    name: ViewModels
+    href: EcoVital.ViewModels.html

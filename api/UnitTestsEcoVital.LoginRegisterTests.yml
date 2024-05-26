@@ -1,0 +1,501 @@
+### YamlMime:ManagedReference
+items:
+- uid: UnitTestsEcoVital.LoginRegisterTests
+  commentId: T:UnitTestsEcoVital.LoginRegisterTests
+  id: LoginRegisterTests
+  parent: UnitTestsEcoVital
+  children:
+  - UnitTestsEcoVital.LoginRegisterTests.#ctor
+  - UnitTestsEcoVital.LoginRegisterTests.Login_WithValidCredentials_ShouldReturnUserInfo
+  - UnitTestsEcoVital.LoginRegisterTests.Register_WithValidInputs_ShouldReturnUserInfo
+  - UnitTestsEcoVital.LoginRegisterTests.SecurityQuestionForTesting_ShouldCreateSecurityQuestion
+  langs:
+  - csharp
+  - vb
+  name: LoginRegisterTests
+  nameWithType: LoginRegisterTests
+  fullName: UnitTestsEcoVital.LoginRegisterTests
+  type: Class
+  source:
+    remote:
+      path: UnitTestsEcoVital/LoginRegisterTests.cs
+      branch: main
+      repo: https://github.com/xDeew/EcoVital_App.git
+    id: LoginRegisterTests
+    path: UnitTestsEcoVital/LoginRegisterTests.cs
+    startLine: 8
+  assemblies:
+  - UnitTestsEcoVital
+  namespace: UnitTestsEcoVital
+  syntax:
+    content: public class LoginRegisterTests
+    content.vb: Public Class LoginRegisterTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: UnitTestsEcoVital.LoginRegisterTests.#ctor
+  commentId: M:UnitTestsEcoVital.LoginRegisterTests.#ctor
+  id: '#ctor'
+  parent: UnitTestsEcoVital.LoginRegisterTests
+  langs:
+  - csharp
+  - vb
+  name: LoginRegisterTests()
+  nameWithType: LoginRegisterTests.LoginRegisterTests()
+  fullName: UnitTestsEcoVital.LoginRegisterTests.LoginRegisterTests()
+  type: Constructor
+  source:
+    remote:
+      path: UnitTestsEcoVital/LoginRegisterTests.cs
+      branch: main
+      repo: https://github.com/xDeew/EcoVital_App.git
+    id: .ctor
+    path: UnitTestsEcoVital/LoginRegisterTests.cs
+    startLine: 15
+  assemblies:
+  - UnitTestsEcoVital
+  namespace: UnitTestsEcoVital
+  syntax:
+    content: public LoginRegisterTests()
+    content.vb: Public Sub New()
+  overload: UnitTestsEcoVital.LoginRegisterTests.#ctor*
+  nameWithType.vb: LoginRegisterTests.New()
+  fullName.vb: UnitTestsEcoVital.LoginRegisterTests.New()
+  name.vb: New()
+- uid: UnitTestsEcoVital.LoginRegisterTests.Login_WithValidCredentials_ShouldReturnUserInfo
+  commentId: M:UnitTestsEcoVital.LoginRegisterTests.Login_WithValidCredentials_ShouldReturnUserInfo
+  id: Login_WithValidCredentials_ShouldReturnUserInfo
+  parent: UnitTestsEcoVital.LoginRegisterTests
+  langs:
+  - csharp
+  - vb
+  name: Login_WithValidCredentials_ShouldReturnUserInfo()
+  nameWithType: LoginRegisterTests.Login_WithValidCredentials_ShouldReturnUserInfo()
+  fullName: UnitTestsEcoVital.LoginRegisterTests.Login_WithValidCredentials_ShouldReturnUserInfo()
+  type: Method
+  source:
+    remote:
+      path: UnitTestsEcoVital/LoginRegisterTests.cs
+      branch: main
+      repo: https://github.com/xDeew/EcoVital_App.git
+    id: Login_WithValidCredentials_ShouldReturnUserInfo
+    path: UnitTestsEcoVital/LoginRegisterTests.cs
+    startLine: 40
+  assemblies:
+  - UnitTestsEcoVital
+  namespace: UnitTestsEcoVital
+  syntax:
+    content: >-
+      [Fact]
+
+      public Task Login_WithValidCredentials_ShouldReturnUserInfo()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Fact>
+
+      Public Function Login_WithValidCredentials_ShouldReturnUserInfo() As Task
+  overload: UnitTestsEcoVital.LoginRegisterTests.Login_WithValidCredentials_ShouldReturnUserInfo*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: UnitTestsEcoVital.LoginRegisterTests.Register_WithValidInputs_ShouldReturnUserInfo
+  commentId: M:UnitTestsEcoVital.LoginRegisterTests.Register_WithValidInputs_ShouldReturnUserInfo
+  id: Register_WithValidInputs_ShouldReturnUserInfo
+  parent: UnitTestsEcoVital.LoginRegisterTests
+  langs:
+  - csharp
+  - vb
+  name: Register_WithValidInputs_ShouldReturnUserInfo()
+  nameWithType: LoginRegisterTests.Register_WithValidInputs_ShouldReturnUserInfo()
+  fullName: UnitTestsEcoVital.LoginRegisterTests.Register_WithValidInputs_ShouldReturnUserInfo()
+  type: Method
+  source:
+    remote:
+      path: UnitTestsEcoVital/LoginRegisterTests.cs
+      branch: main
+      repo: https://github.com/xDeew/EcoVital_App.git
+    id: Register_WithValidInputs_ShouldReturnUserInfo
+    path: UnitTestsEcoVital/LoginRegisterTests.cs
+    startLine: 90
+  assemblies:
+  - UnitTestsEcoVital
+  namespace: UnitTestsEcoVital
+  syntax:
+    content: >-
+      [Fact]
+
+      public Task Register_WithValidInputs_ShouldReturnUserInfo()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Fact>
+
+      Public Function Register_WithValidInputs_ShouldReturnUserInfo() As Task
+  overload: UnitTestsEcoVital.LoginRegisterTests.Register_WithValidInputs_ShouldReturnUserInfo*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: UnitTestsEcoVital.LoginRegisterTests.SecurityQuestionForTesting_ShouldCreateSecurityQuestion
+  commentId: M:UnitTestsEcoVital.LoginRegisterTests.SecurityQuestionForTesting_ShouldCreateSecurityQuestion
+  id: SecurityQuestionForTesting_ShouldCreateSecurityQuestion
+  parent: UnitTestsEcoVital.LoginRegisterTests
+  langs:
+  - csharp
+  - vb
+  name: SecurityQuestionForTesting_ShouldCreateSecurityQuestion()
+  nameWithType: LoginRegisterTests.SecurityQuestionForTesting_ShouldCreateSecurityQuestion()
+  fullName: UnitTestsEcoVital.LoginRegisterTests.SecurityQuestionForTesting_ShouldCreateSecurityQuestion()
+  type: Method
+  source:
+    remote:
+      path: UnitTestsEcoVital/LoginRegisterTests.cs
+      branch: main
+      repo: https://github.com/xDeew/EcoVital_App.git
+    id: SecurityQuestionForTesting_ShouldCreateSecurityQuestion
+    path: UnitTestsEcoVital/LoginRegisterTests.cs
+    startLine: 150
+  assemblies:
+  - UnitTestsEcoVital
+  namespace: UnitTestsEcoVital
+  syntax:
+    content: >-
+      [Fact]
+
+      public Task SecurityQuestionForTesting_ShouldCreateSecurityQuestion()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Fact>
+
+      Public Function SecurityQuestionForTesting_ShouldCreateSecurityQuestion() As Task
+  overload: UnitTestsEcoVital.LoginRegisterTests.SecurityQuestionForTesting_ShouldCreateSecurityQuestion*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+references:
+- uid: UnitTestsEcoVital
+  commentId: N:UnitTestsEcoVital
+  href: UnitTestsEcoVital.html
+  name: UnitTestsEcoVital
+  nameWithType: UnitTestsEcoVital
+  fullName: UnitTestsEcoVital
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnitTestsEcoVital.LoginRegisterTests.#ctor*
+  commentId: Overload:UnitTestsEcoVital.LoginRegisterTests.#ctor
+  href: UnitTestsEcoVital.LoginRegisterTests.html#UnitTestsEcoVital_LoginRegisterTests__ctor
+  name: LoginRegisterTests
+  nameWithType: LoginRegisterTests.LoginRegisterTests
+  fullName: UnitTestsEcoVital.LoginRegisterTests.LoginRegisterTests
+  nameWithType.vb: LoginRegisterTests.New
+  fullName.vb: UnitTestsEcoVital.LoginRegisterTests.New
+  name.vb: New
+- uid: UnitTestsEcoVital.LoginRegisterTests.Login_WithValidCredentials_ShouldReturnUserInfo*
+  commentId: Overload:UnitTestsEcoVital.LoginRegisterTests.Login_WithValidCredentials_ShouldReturnUserInfo
+  href: UnitTestsEcoVital.LoginRegisterTests.html#UnitTestsEcoVital_LoginRegisterTests_Login_WithValidCredentials_ShouldReturnUserInfo
+  name: Login_WithValidCredentials_ShouldReturnUserInfo
+  nameWithType: LoginRegisterTests.Login_WithValidCredentials_ShouldReturnUserInfo
+  fullName: UnitTestsEcoVital.LoginRegisterTests.Login_WithValidCredentials_ShouldReturnUserInfo
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: UnitTestsEcoVital.LoginRegisterTests.Register_WithValidInputs_ShouldReturnUserInfo*
+  commentId: Overload:UnitTestsEcoVital.LoginRegisterTests.Register_WithValidInputs_ShouldReturnUserInfo
+  href: UnitTestsEcoVital.LoginRegisterTests.html#UnitTestsEcoVital_LoginRegisterTests_Register_WithValidInputs_ShouldReturnUserInfo
+  name: Register_WithValidInputs_ShouldReturnUserInfo
+  nameWithType: LoginRegisterTests.Register_WithValidInputs_ShouldReturnUserInfo
+  fullName: UnitTestsEcoVital.LoginRegisterTests.Register_WithValidInputs_ShouldReturnUserInfo
+- uid: UnitTestsEcoVital.LoginRegisterTests.SecurityQuestionForTesting_ShouldCreateSecurityQuestion*
+  commentId: Overload:UnitTestsEcoVital.LoginRegisterTests.SecurityQuestionForTesting_ShouldCreateSecurityQuestion
+  href: UnitTestsEcoVital.LoginRegisterTests.html#UnitTestsEcoVital_LoginRegisterTests_SecurityQuestionForTesting_ShouldCreateSecurityQuestion
+  name: SecurityQuestionForTesting_ShouldCreateSecurityQuestion
+  nameWithType: LoginRegisterTests.SecurityQuestionForTesting_ShouldCreateSecurityQuestion
+  fullName: UnitTestsEcoVital.LoginRegisterTests.SecurityQuestionForTesting_ShouldCreateSecurityQuestion

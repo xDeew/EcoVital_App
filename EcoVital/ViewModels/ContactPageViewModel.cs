@@ -2,8 +2,14 @@ using System.Windows.Input;
 
 namespace EcoVital.ViewModels;
 
+/// <summary>
+/// ViewModel para la página de contacto.
+/// </summary>
 public class ContactPageViewModel : BaseViewModel
 {
+    /// <summary>
+    /// Inicializa una nueva instancia de la clase <see cref="ContactPageViewModel"/>.
+    /// </summary>
     public ContactPageViewModel()
     {
         CallCommand = new Command(Execute);
@@ -11,35 +17,66 @@ public class ContactPageViewModel : BaseViewModel
         OpenMapsCommand = new Command(OpenMaps);
     }
 
+    /// <summary>
+    /// Comando para abrir mapas.
+    /// </summary>
     public Command OpenMapsCommand { get; }
+
+    /// <summary>
+    /// Comando para realizar una llamada.
+    /// </summary>
     public Command CallCommand { get; }
 
+    /// <summary>
+    /// Comando para enviar un correo electrónico.
+    /// </summary>
     public ICommand SendEmailCommand { get; }
+
+    /// <summary>
+    /// Obtiene o establece el nombre del usuario.
+    /// </summary>
     public string UserName { get; set; }
+
+    /// <summary>
+    /// Obtiene o establece el correo electrónico del usuario.
+    /// </summary>
     public string UserEmail { get; set; }
+
+    /// <summary>
+    /// Obtiene o establece el mensaje del usuario.
+    /// </summary>
     public string Message { get; set; }
 
+    /// <summary>
+    /// Ejecuta el comando de llamada.
+    /// </summary>
     async void Execute()
     {
         await OnButtonClicked();
     }
 
+    /// <summary>
+    /// Realiza una llamada telefónica.
+    /// </summary>
     void PlacePhoneCall()
     {
         try
         {
             PhoneDialer.Open("1234567890");
         }
-        catch (FeatureNotSupportedException fnsEx)
+        catch (FeatureNotSupportedException)
         {
             // La aplicación no admite la realización de llamadas telefónicas.
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             // Algun otro error ha ocurrido.
         }
     }
 
+    /// <summary>
+    /// Maneja el evento de clic del botón para realizar una llamada.
+    /// </summary>
     async Task OnButtonClicked()
     {
         var status = await Permissions.CheckStatusAsync<Permissions.Phone>();
@@ -59,6 +96,9 @@ public class ContactPageViewModel : BaseViewModel
         }
     }
 
+    /// <summary>
+    /// Envía un correo electrónico.
+    /// </summary>
     void SendEmail()
     {
         try
@@ -72,25 +112,28 @@ public class ContactPageViewModel : BaseViewModel
 
             Email.ComposeAsync(message);
         }
-        catch (FeatureNotSupportedException fnsEx)
+        catch (FeatureNotSupportedException)
         {
             // Email no soportado en este dispositivo
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             // Otro error ha ocurrido.
         }
     }
 
-    void OpenMaps()
+    /// <summary>
+    /// Abre la ubicación en la aplicación de mapas.
+    /// </summary>
+    static void OpenMaps()
     {
         try
         {
-            var location = new Location(37.422, -122.084); // Actualiza con la ubicación real
+            var location = new Location(37.422, -122.084); 
             var options = new MapLaunchOptions { Name = "123 Eco Street, Green City" };
             Map.OpenAsync(location, options);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             // Error al abrir mapas
         }

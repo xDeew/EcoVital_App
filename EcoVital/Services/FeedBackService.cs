@@ -7,16 +7,27 @@ using EcoVital.Models;
 
 namespace EcoVital.Services;
 
+/// <summary>
+/// Proporciona servicios relacionados con el feedback.
+/// </summary>
 public class FeedbackService
 {
     readonly string _baseUrl = "https://vivaserviceapi.azurewebsites.net/api/feedback";
     readonly HttpClient _httpClient;
 
+    /// <summary>
+    /// Inicializa una nueva instancia de la clase <see cref="FeedbackService"/>.
+    /// </summary>
+    /// <param name="httpClient">Instancia de <see cref="HttpClient"/> para realizar solicitudes HTTP.</param>
     public FeedbackService(HttpClient httpClient)
     {
         _httpClient = httpClient;
     }
 
+    /// <summary>
+    /// Obtiene todos los feedbacks.
+    /// </summary>
+    /// <returns>Una lista de <see cref="Feedback"/>.</returns>
     public async Task<List<Feedback>> GetAllFeedbacksAsync()
     {
         try
@@ -33,6 +44,11 @@ public class FeedbackService
         }
     }
 
+    /// <summary>
+    /// Obtiene un feedback por su identificador.
+    /// </summary>
+    /// <param name="id">El identificador del feedback.</param>
+    /// <returns>El <see cref="Feedback"/> solicitado.</returns>
     public async Task<Feedback> GetFeedbackByIdAsync(int id)
     {
         try
@@ -49,7 +65,11 @@ public class FeedbackService
         }
     }
 
-
+    /// <summary>
+    /// Envía un nuevo feedback.
+    /// </summary>
+    /// <param name="feedback">El feedback a enviar.</param>
+    /// <returns><c>true</c> si el feedback se envió correctamente; de lo contrario, <c>false</c>.</returns>
     public async Task<bool> PostFeedbackAsync(Feedback feedback)
     {
         var jsonOptions = new JsonSerializerOptions
@@ -88,7 +108,11 @@ public class FeedbackService
         }
     }
 
-
+    /// <summary>
+    /// Elimina un feedback por su identificador.
+    /// </summary>
+    /// <param name="id">El identificador del feedback a eliminar.</param>
+    /// <returns><c>true</c> si el feedback se eliminó correctamente; de lo contrario, <c>false</c>.</returns>
     public async Task<bool> DeleteFeedbackAsync(int id)
     {
         try

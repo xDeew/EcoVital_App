@@ -1,0 +1,106 @@
+### YamlMime:ManagedReference
+items:
+- uid: EcoVital.Models
+  commentId: N:EcoVital.Models
+  id: EcoVital.Models
+  children:
+  - EcoVital.Models.ActivityRecord
+  - EcoVital.Models.ChangePasswordRequest
+  - EcoVital.Models.Feedback
+  - EcoVital.Models.HealthReminder
+  - EcoVital.Models.Message
+  - EcoVital.Models.SecurityQuestion
+  - EcoVital.Models.UserActivityRecord
+  - EcoVital.Models.UserGoal
+  - EcoVital.Models.UserInfo
+  langs:
+  - csharp
+  - vb
+  name: EcoVital.Models
+  nameWithType: EcoVital.Models
+  fullName: EcoVital.Models
+  type: Namespace
+  assemblies:
+  - EcoVital
+references:
+- uid: EcoVital.Models.ActivityRecord
+  commentId: T:EcoVital.Models.ActivityRecord
+  parent: EcoVital.Models
+  href: EcoVital.Models.ActivityRecord.html
+  name: ActivityRecord
+  nameWithType: ActivityRecord
+  fullName: EcoVital.Models.ActivityRecord
+- uid: EcoVital.Models.ChangePasswordRequest
+  commentId: T:EcoVital.Models.ChangePasswordRequest
+  href: EcoVital.Models.ChangePasswordRequest.html
+  name: ChangePasswordRequest
+  nameWithType: ChangePasswordRequest
+  fullName: EcoVital.Models.ChangePasswordRequest
+- uid: EcoVital.Models.Feedback
+  commentId: T:EcoVital.Models.Feedback
+  parent: EcoVital.Models
+  href: EcoVital.Models.Feedback.html
+  name: Feedback
+  nameWithType: Feedback
+  fullName: EcoVital.Models.Feedback
+- uid: EcoVital.Models.HealthReminder
+  commentId: T:EcoVital.Models.HealthReminder
+  href: EcoVital.Models.HealthReminder.html
+  name: HealthReminder
+  nameWithType: HealthReminder
+  fullName: EcoVital.Models.HealthReminder
+- uid: EcoVital.Models.Message
+  commentId: T:EcoVital.Models.Message
+  href: EcoVital.Models.Message.html
+  name: Message
+  nameWithType: Message
+  fullName: EcoVital.Models.Message
+- uid: EcoVital.Models.SecurityQuestion
+  commentId: T:EcoVital.Models.SecurityQuestion
+  href: EcoVital.Models.SecurityQuestion.html
+  name: SecurityQuestion
+  nameWithType: SecurityQuestion
+  fullName: EcoVital.Models.SecurityQuestion
+- uid: EcoVital.Models.UserActivityRecord
+  commentId: T:EcoVital.Models.UserActivityRecord
+  parent: EcoVital.Models
+  href: EcoVital.Models.UserActivityRecord.html
+  name: UserActivityRecord
+  nameWithType: UserActivityRecord
+  fullName: EcoVital.Models.UserActivityRecord
+- uid: EcoVital.Models.UserGoal
+  commentId: T:EcoVital.Models.UserGoal
+  parent: EcoVital.Models
+  href: EcoVital.Models.UserGoal.html
+  name: UserGoal
+  nameWithType: UserGoal
+  fullName: EcoVital.Models.UserGoal
+- uid: EcoVital.Models.UserInfo
+  commentId: T:EcoVital.Models.UserInfo
+  parent: EcoVital.Models
+  href: EcoVital.Models.UserInfo.html
+  name: UserInfo
+  nameWithType: UserInfo
+  fullName: EcoVital.Models.UserInfo
+- uid: EcoVital.Models
+  commentId: N:EcoVital.Models
+  href: EcoVital.html
+  name: EcoVital.Models
+  nameWithType: EcoVital.Models
+  fullName: EcoVital.Models
+  spec.csharp:
+  - uid: EcoVital
+    name: EcoVital
+    href: EcoVital.html
+  - name: .
+  - uid: EcoVital.Models
+    name: Models
+    href: EcoVital.Models.html
+  spec.vb:
+  - uid: EcoVital
+    name: EcoVital
+    href: EcoVital.html
+  - name: .
+  - uid: EcoVital.Models
+    name: Models
+    href: EcoVital.Models.html

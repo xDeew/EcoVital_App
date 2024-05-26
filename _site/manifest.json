@@ -1,0 +1,822 @@
+{
+  "source_base_path": "C:/Users/PC/Desktop/EcoVital",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.App.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.App.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.AppShell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.AppShell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Config.ApiConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Config.ApiConfig.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Config.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Config.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Converters.BoolToColorConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Converters.BoolToColorConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Converters.BoolToLayoutOptionsConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Converters.BoolToLayoutOptionsConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Converters.BoolToOpacityConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Converters.BoolToOpacityConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Converters.BoolToVisibilityConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Converters.BoolToVisibilityConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Converters.ContainsAtConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Converters.ContainsAtConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Converters.InverseBoolToVisibilityConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Converters.InverseBoolToVisibilityConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Converters.TitleToColorConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Converters.TitleToColorConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Converters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Converters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.LoadingPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.LoadingPage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.MainPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.MainPage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.MauiProgram.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.MauiProgram.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Models.ActivityRecord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Models.ActivityRecord.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Models.ChangePasswordRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Models.ChangePasswordRequest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Models.Feedback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Models.Feedback.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Models.HealthReminder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Models.HealthReminder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Models.Message.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Models.Message.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Models.SecurityQuestion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Models.SecurityQuestion.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Models.UserActivityRecord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Models.UserActivityRecord.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Models.UserGoal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Models.UserGoal.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Models.UserInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Models.UserInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Services.ActivityService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Services.ActivityService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Services.FeedbackService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Services.FeedbackService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Services.ILoadingService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Services.ILoadingService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Services.ILoginRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Services.ILoginRepository.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Services.LoadingService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Services.LoadingService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Services.LoginService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Services.LoginService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Services.OpenAiService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Services.OpenAiService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Services.UserGoalService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Services.UserGoalService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.UserControl.FlyoutHeaderControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.UserControl.FlyoutHeaderControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.UserControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.UserControl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.ViewModels.ActivityRecordViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.ViewModels.ActivityRecordViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.ViewModels.AppShellViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.ViewModels.AppShellViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.ViewModels.BaseViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.ViewModels.BaseViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.ViewModels.ChangePasswordViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.ViewModels.ChangePasswordViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.ViewModels.ContactPageViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.ViewModels.ContactPageViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.ViewModels.FeedbackViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.ViewModels.FeedbackViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.ViewModels.ForgotPasswordPageViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.ViewModels.ForgotPasswordPageViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.ViewModels.HealthRemindersViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.ViewModels.HealthRemindersViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.ViewModels.HomePageViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.ViewModels.HomePageViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.ViewModels.LoginRegister.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.ViewModels.LoginRegister.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.ViewModels.ProgressStatusViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.ViewModels.ProgressStatusViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.ViewModels.RegisterPageViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.ViewModels.RegisterPageViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.ViewModels.SecurityAnswerPageViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.ViewModels.SecurityAnswerPageViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.ViewModels.SecurityQuestionPageViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.ViewModels.SecurityQuestionPageViewModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.ViewModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.ViewModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Views.AboutPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Views.AboutPage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Views.ActivityRecord.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Views.ActivityRecord.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Views.ChangePasswordPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Views.ChangePasswordPage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Views.ChatBotPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Views.ChatBotPage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Views.ContactPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Views.ContactPage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Views.FeedbackPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Views.FeedbackPage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Views.ForgotPasswordPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Views.ForgotPasswordPage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Views.HealthRemindersPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Views.HealthRemindersPage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Views.HomePage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Views.HomePage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Views.LoginPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Views.LoginPage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Views.ProgressStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Views.ProgressStatus.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Views.RegisterPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Views.RegisterPage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Views.SecurityAnswerPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Views.SecurityAnswerPage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Views.SecurityQuestionPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Views.SecurityQuestionPage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.Views.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.Views.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/EcoVital.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/EcoVital.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnitTestsEcoVital.ActivityRecordViewModelTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnitTestsEcoVital.ActivityRecordViewModelTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnitTestsEcoVital.ChangePasswordViewModelTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnitTestsEcoVital.ChangePasswordViewModelTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnitTestsEcoVital.ChatBotPageTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnitTestsEcoVital.ChatBotPageTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnitTestsEcoVital.ForgotPasswordPageViewModelTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnitTestsEcoVital.ForgotPasswordPageViewModelTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnitTestsEcoVital.HealthRemindersViewModelTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnitTestsEcoVital.HealthRemindersViewModelTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnitTestsEcoVital.HomePageViewModelTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnitTestsEcoVital.HomePageViewModelTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnitTestsEcoVital.LoginRegisterTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnitTestsEcoVital.LoginRegisterTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnitTestsEcoVital.ProgressStatusViewModelTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnitTestsEcoVital.ProgressStatusViewModelTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnitTestsEcoVital.SecurityAnswerPageViewModelTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnitTestsEcoVital.SecurityAnswerPageViewModelTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnitTestsEcoVital.SecurityQuestionPageViewModelTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnitTestsEcoVital.SecurityQuestionPageViewModelTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnitTestsEcoVital.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnitTestsEcoVital.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

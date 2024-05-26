@@ -6,8 +6,15 @@ using Plugin.LocalNotification;
 
 namespace EcoVital;
 
+/// <summary>
+/// Clase que configura la aplicación Maui.
+/// </summary>
 public static class MauiProgram
 {
+    /// <summary>
+    /// Crea y configura la aplicación Maui.
+    /// </summary>
+    /// <returns>Una instancia configurada de <see cref="MauiApp"/>.</returns>
     public static MauiApp CreateMauiApp()
     {
         var builder = MauiApp.CreateBuilder();
@@ -21,26 +28,23 @@ public static class MauiProgram
                 fonts.AddFont("FontAwesome.ttf", "FontAwesome");
             });
 
-
+        // Registro de páginas para inyección de dependencias
         builder.Services.AddSingleton<HomePage>();
         builder.Services.AddSingleton<LoginPage>();
-        // esto se agrega para que se pueda inyectar la dependencia de
-        // la página, es decir, para que se pueda inyectar la vista en el ViewModel
-
         builder.Services.AddSingleton<LoginRegister>();
         builder.Services.AddSingleton<AboutPage>();
         builder.Services.AddSingleton<ContactPage>();
         builder.Services.AddSingleton<ChatBotPage>();
 
-
+        // Registro de servicios para inyección de dependencias
         builder.Services.AddSingleton<ActivityService>();
         builder.Services.AddSingleton<UserGoalService>();
-        // Se usa AddTransient para que se cree una nueva instancia cada vez que se solicite
+        builder.Services.AddSingleton<FeedbackService>();
+
+        // Registro de ViewModels para inyección de dependencias
         builder.Services.AddTransient<ActivityRecordViewModel>();
         builder.Services.AddTransient<ProgressStatusViewModel>();
-        builder.Services.AddSingleton<FeedbackService>();
         builder.Services.AddTransient<FeedbackViewModel>();
-
 
 #if DEBUG
         builder.Logging.AddDebug();

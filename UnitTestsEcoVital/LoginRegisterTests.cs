@@ -78,7 +78,7 @@ public class LoginRegisterTests
 
         if (string.IsNullOrEmpty(email) || !email.Contains("@")) return;
 
-        if (_registerPageViewModel.IsPasswordSecure(password)) return;
+        if (RegisterPageViewModel.IsPasswordSecure(password)) return;
 
 
         var userInfo = await _loginRepository.Object.Register(email, username, password);

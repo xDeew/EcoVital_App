@@ -6,6 +6,9 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace EcoVital.ViewModels;
 
+/// <summary>
+/// ViewModel para gestionar los registros de actividades y metas de los usuarios.
+/// </summary>
 public class ActivityRecordViewModel : BaseViewModel
 {
     readonly ActivityService _activityService;
@@ -13,46 +16,73 @@ public class ActivityRecordViewModel : BaseViewModel
     ObservableCollection<ActivityRecord> _activityRecords;
     ObservableCollection<UserActivityRecord> _userActivityRecords;
 
-
+    /// <summary>
+    /// Inicializa una nueva instancia de la clase <see cref="ActivityRecordViewModel"/>.
+    /// </summary>
+    /// <param name="activityService">El servicio de actividades.</param>
+    /// <param name="userGoalService">El servicio de metas de usuario.</param>
     public ActivityRecordViewModel(ActivityService activityService, UserGoalService userGoalService)
     {
-        _activityService = activityService;
+        _activityService = activityService ?? throw new ArgumentNullException(nameof(activityService));
         _userGoalService = userGoalService;
-
-        if (_activityService == null) throw new ArgumentNullException(nameof(activityService));
 
         _activityRecords = new ObservableCollection<ActivityRecord>();
         _userActivityRecords = new ObservableCollection<UserActivityRecord>();
 
         LoadActivitiesCommand = new AsyncRelayCommand(LoadActivitiesAsync);
         RegisterUserActivityCommand = new AsyncRelayCommand<UserActivityRecord>(RegisterUserActivityAsync);
-
         RegisterSelectedActivitiesCommand = new AsyncRelayCommand(RegisterSelectedActivitiesAsync);
         SelectedActivities = new ObservableCollection<ActivityRecord>();
-
-
         SelectActivityCommand = new RelayCommand<ActivityRecord>(SelectActivity);
     }
 
+    /// <summary>
+    /// Obtiene o establece la colección de registros de actividades de los usuarios.
+    /// </summary>
     public ObservableCollection<UserActivityRecord> UserActivityRecords
     {
         get => _userActivityRecords;
         private set => SetProperty(ref _userActivityRecords, value);
     }
 
+    /// <summary>
+    /// Obtiene o establece la colección de registros de actividades.
+    /// </summary>
     public ObservableCollection<ActivityRecord> ActivityRecords
     {
         get => _activityRecords;
         set => SetProperty(ref _activityRecords, value);
     }
 
+    /// <summary>
+    /// Obtiene o establece la colección de actividades seleccionadas.
+    /// </summary>
     public ObservableCollection<ActivityRecord> SelectedActivities { get; set; }
+
+    /// <summary>
+    /// Comando para cargar las actividades.
+    /// </summary>
     public IAsyncRelayCommand LoadActivitiesCommand { get; }
+
+    /// <summary>
+    /// Comando para registrar una actividad del usuario.
+    /// </summary>
     public IAsyncRelayCommand<UserActivityRecord> RegisterUserActivityCommand { get; }
+
+    /// <summary>
+    /// Comando para registrar las actividades seleccionadas.
+    /// </summary>
     public ICommand RegisterSelectedActivitiesCommand { get; set; }
+
+    /// <summary>
+    /// Comando para seleccionar una actividad.
+    /// </summary>
     public ICommand SelectActivityCommand { get; set; }
 
-
+    /// <summary>
+    /// Selecciona o deselecciona una actividad.
+    /// </summary>
+    /// <param name="activityRecord">El registro de actividad a seleccionar o deseleccionar.</param>
     public void SelectActivity(ActivityRecord activityRecord)
     {
         activityRecord.IsSelected = !activityRecord.IsSelected;
@@ -63,21 +93,15 @@ public class ActivityRecordViewModel : BaseViewModel
             SelectedActivities.Remove(activityRecord);
     }
 
+    /// <summary>
+    /// Registra las actividades seleccionadas.
+    /// </summary>
+    /// <returns>Una tarea que representa la operación asincrónica de registrar las actividades seleccionadas.</returns>
     public async Task RegisterSelectedActivitiesAsync()
     {
-        // if (Connectivity.NetworkAccess != NetworkAccess.Internet)
-        // {
-        //     // Mostrar un mensaje al usuario
-        //     await Application.Current.MainPage.DisplayAlert("Error",
-        //         "Se requiere conexión a Internet para registrar actividades.", "OK");
-        //     return;
-        // }
-
         if (SelectedActivities.Count == 0)
         {
-            await Application.Current.MainPage.DisplayAlert("Aviso", "No has seleccionado ninguna actividad.",
-                "OK");
-
+            await Application.Current.MainPage.DisplayAlert("Aviso", "No has seleccionado ninguna actividad.", "OK");
             return;
         }
 
@@ -88,17 +112,13 @@ public class ActivityRecordViewModel : BaseViewModel
                 var existingActivity = UserActivityRecords.FirstOrDefault(a =>
                     a.ActivityRecordId == activity.RecordId && a.UserId == App.UserInfo.UserId);
 
-
                 if (existingActivity != null)
                 {
                     await Application.Current.MainPage.DisplayAlert("Aviso",
                         $"La actividad '{activity.Description}' ya ha sido registrada.", "OK");
 
-
                     activity.IsSelected = false;
-                    SelectedActivities
-                        .Remove(activity);
-
+                    SelectedActivities.Remove(activity);
                     return;
                 }
 
@@ -108,10 +128,8 @@ public class ActivityRecordViewModel : BaseViewModel
                     ActivityRecordId = activity.RecordId
                 };
 
-
                 var registeredActivity = await _activityService.RegisterUserActivityRecordAsync(userActivityRecord);
                 UserActivityRecords.Add(registeredActivity);
-
 
                 var userGoal = new UserGoal
                 {
@@ -138,7 +156,10 @@ public class ActivityRecordViewModel : BaseViewModel
         }
     }
 
-
+    /// <summary>
+    /// Carga las actividades.
+    /// </summary>
+    /// <returns>Una tarea que representa la operación asincrónica de cargar las actividades.</returns>
     public async Task LoadActivitiesAsync()
     {
         await LoadUserActivityRecordsAsync();
@@ -153,21 +174,20 @@ public class ActivityRecordViewModel : BaseViewModel
         }
 
         OnPropertyChanged(nameof(SelectedActivities));
-
-
         Preferences.Remove("SelectedActivities");
-
         await LoadSelectedActivitiesAsync();
     }
 
-
+    /// <summary>
+    /// Carga los registros de actividad del usuario.
+    /// </summary>
+    /// <returns>Una tarea que representa la operación asincrónica de cargar los registros de actividad del usuario.</returns>
     public async Task LoadUserActivityRecordsAsync()
     {
         var userActivities = await _activityService.GetUserActivityRecordsAsync(App.UserInfo.UserId);
         UserActivityRecords.Clear();
         foreach (var activity in userActivities) UserActivityRecords.Add(activity);
     }
-
 
     async Task LoadSelectedActivitiesAsync()
     {
@@ -184,7 +204,6 @@ public class ActivityRecordViewModel : BaseViewModel
                 }
         }
     }
-
 
     async Task SaveSelectedActivitiesAsync()
     {
@@ -225,7 +244,6 @@ public class ActivityRecordViewModel : BaseViewModel
                 return "kayaking.jpg";
         }
     }
-
 
     async Task RegisterUserActivityAsync(UserActivityRecord userActivityRecord)
     {

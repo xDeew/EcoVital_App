@@ -1,0 +1,835 @@
+### YamlMime:ManagedReference
+items:
+- uid: EcoVital.Services.ActivityService
+  commentId: T:EcoVital.Services.ActivityService
+  id: ActivityService
+  parent: EcoVital.Services
+  children:
+  - EcoVital.Services.ActivityService.#ctor(System.Net.Http.HttpClient)
+  - EcoVital.Services.ActivityService.DeleteUserActivityRecordAsync(System.Int32)
+  - EcoVital.Services.ActivityService.GetActivityRecordsAsync
+  - EcoVital.Services.ActivityService.GetUserActivityRecordsAsync(System.Int32)
+  - EcoVital.Services.ActivityService.RegisterUserActivityRecordAsync(EcoVital.Models.UserActivityRecord)
+  langs:
+  - csharp
+  - vb
+  name: ActivityService
+  nameWithType: ActivityService
+  fullName: EcoVital.Services.ActivityService
+  type: Class
+  source:
+    remote:
+      path: EcoVital/Services/ActivityService.cs
+      branch: main
+      repo: https://github.com/xDeew/EcoVital_App.git
+    id: ActivityService
+    path: EcoVital/Services/ActivityService.cs
+    startLine: 9
+  assemblies:
+  - EcoVital
+  namespace: EcoVital.Services
+  summary: Proporciona servicios relacionados con actividades y registros de actividad de usuarios.
+  example: []
+  syntax:
+    content: public class ActivityService
+    content.vb: Public Class ActivityService
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EcoVital.Services.ActivityService.#ctor(System.Net.Http.HttpClient)
+  commentId: M:EcoVital.Services.ActivityService.#ctor(System.Net.Http.HttpClient)
+  id: '#ctor(System.Net.Http.HttpClient)'
+  parent: EcoVital.Services.ActivityService
+  langs:
+  - csharp
+  - vb
+  name: ActivityService(HttpClient)
+  nameWithType: ActivityService.ActivityService(HttpClient)
+  fullName: EcoVital.Services.ActivityService.ActivityService(System.Net.Http.HttpClient)
+  type: Constructor
+  source:
+    remote:
+      path: EcoVital/Services/ActivityService.cs
+      branch: main
+      repo: https://github.com/xDeew/EcoVital_App.git
+    id: .ctor
+    path: EcoVital/Services/ActivityService.cs
+    startLine: 20
+  assemblies:
+  - EcoVital
+  namespace: EcoVital.Services
+  summary: Inicializa una nueva instancia de la clase <xref href="EcoVital.Services.ActivityService" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public ActivityService(HttpClient client)
+    parameters:
+    - id: client
+      type: System.Net.Http.HttpClient
+      description: Instancia de <xref href="System.Net.Http.HttpClient" data-throw-if-not-resolved="false"></xref> para realizar solicitudes HTTP.
+    content.vb: Public Sub New(client As HttpClient)
+  overload: EcoVital.Services.ActivityService.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Lanzada si el parámetro <code class="paramref">client</code> es <code>null</code>.
+  nameWithType.vb: ActivityService.New(HttpClient)
+  fullName.vb: EcoVital.Services.ActivityService.New(System.Net.Http.HttpClient)
+  name.vb: New(HttpClient)
+- uid: EcoVital.Services.ActivityService.GetActivityRecordsAsync
+  commentId: M:EcoVital.Services.ActivityService.GetActivityRecordsAsync
+  id: GetActivityRecordsAsync
+  parent: EcoVital.Services.ActivityService
+  langs:
+  - csharp
+  - vb
+  name: GetActivityRecordsAsync()
+  nameWithType: ActivityService.GetActivityRecordsAsync()
+  fullName: EcoVital.Services.ActivityService.GetActivityRecordsAsync()
+  type: Method
+  source:
+    remote:
+      path: EcoVital/Services/ActivityService.cs
+      branch: main
+      repo: https://github.com/xDeew/EcoVital_App.git
+    id: GetActivityRecordsAsync
+    path: EcoVital/Services/ActivityService.cs
+    startLine: 29
+  assemblies:
+  - EcoVital
+  namespace: EcoVital.Services
+  summary: Obtiene una lista de registros de actividad.
+  example: []
+  syntax:
+    content: public Task<List<ActivityRecord>> GetActivityRecordsAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.List{EcoVital.Models.ActivityRecord}}
+      description: Una lista de <xref href="EcoVital.Models.ActivityRecord" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Function GetActivityRecordsAsync() As Task(Of List(Of ActivityRecord))
+  overload: EcoVital.Services.ActivityService.GetActivityRecordsAsync*
+- uid: EcoVital.Services.ActivityService.RegisterUserActivityRecordAsync(EcoVital.Models.UserActivityRecord)
+  commentId: M:EcoVital.Services.ActivityService.RegisterUserActivityRecordAsync(EcoVital.Models.UserActivityRecord)
+  id: RegisterUserActivityRecordAsync(EcoVital.Models.UserActivityRecord)
+  parent: EcoVital.Services.ActivityService
+  langs:
+  - csharp
+  - vb
+  name: RegisterUserActivityRecordAsync(UserActivityRecord)
+  nameWithType: ActivityService.RegisterUserActivityRecordAsync(UserActivityRecord)
+  fullName: EcoVital.Services.ActivityService.RegisterUserActivityRecordAsync(EcoVital.Models.UserActivityRecord)
+  type: Method
+  source:
+    remote:
+      path: EcoVital/Services/ActivityService.cs
+      branch: main
+      repo: https://github.com/xDeew/EcoVital_App.git
+    id: RegisterUserActivityRecordAsync
+    path: EcoVital/Services/ActivityService.cs
+    startLine: 51
+  assemblies:
+  - EcoVital
+  namespace: EcoVital.Services
+  summary: Registra un nuevo registro de actividad del usuario.
+  example: []
+  syntax:
+    content: public Task<UserActivityRecord> RegisterUserActivityRecordAsync(UserActivityRecord userActivityRecord)
+    parameters:
+    - id: userActivityRecord
+      type: EcoVital.Models.UserActivityRecord
+      description: El registro de actividad del usuario a registrar.
+    return:
+      type: System.Threading.Tasks.Task{EcoVital.Models.UserActivityRecord}
+      description: El registro de actividad del usuario registrado.
+    content.vb: Public Function RegisterUserActivityRecordAsync(userActivityRecord As UserActivityRecord) As Task(Of UserActivityRecord)
+  overload: EcoVital.Services.ActivityService.RegisterUserActivityRecordAsync*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Lanzada si no se puede leer el contenido de la respuesta.
+- uid: EcoVital.Services.ActivityService.GetUserActivityRecordsAsync(System.Int32)
+  commentId: M:EcoVital.Services.ActivityService.GetUserActivityRecordsAsync(System.Int32)
+  id: GetUserActivityRecordsAsync(System.Int32)
+  parent: EcoVital.Services.ActivityService
+  langs:
+  - csharp
+  - vb
+  name: GetUserActivityRecordsAsync(int)
+  nameWithType: ActivityService.GetUserActivityRecordsAsync(int)
+  fullName: EcoVital.Services.ActivityService.GetUserActivityRecordsAsync(int)
+  type: Method
+  source:
+    remote:
+      path: EcoVital/Services/ActivityService.cs
+      branch: main
+      repo: https://github.com/xDeew/EcoVital_App.git
+    id: GetUserActivityRecordsAsync
+    path: EcoVital/Services/ActivityService.cs
+    startLine: 68
+  assemblies:
+  - EcoVital
+  namespace: EcoVital.Services
+  summary: Obtiene los registros de actividad de un usuario específico.
+  example: []
+  syntax:
+    content: public Task<IEnumerable<UserActivityRecord>> GetUserActivityRecordsAsync(int userId)
+    parameters:
+    - id: userId
+      type: System.Int32
+      description: El identificador del usuario.
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{EcoVital.Models.UserActivityRecord}}
+      description: Una colección de <xref href="EcoVital.Models.UserActivityRecord" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Function GetUserActivityRecordsAsync(userId As Integer) As Task(Of IEnumerable(Of UserActivityRecord))
+  overload: EcoVital.Services.ActivityService.GetUserActivityRecordsAsync*
+  nameWithType.vb: ActivityService.GetUserActivityRecordsAsync(Integer)
+  fullName.vb: EcoVital.Services.ActivityService.GetUserActivityRecordsAsync(Integer)
+  name.vb: GetUserActivityRecordsAsync(Integer)
+- uid: EcoVital.Services.ActivityService.DeleteUserActivityRecordAsync(System.Int32)
+  commentId: M:EcoVital.Services.ActivityService.DeleteUserActivityRecordAsync(System.Int32)
+  id: DeleteUserActivityRecordAsync(System.Int32)
+  parent: EcoVital.Services.ActivityService
+  langs:
+  - csharp
+  - vb
+  name: DeleteUserActivityRecordAsync(int)
+  nameWithType: ActivityService.DeleteUserActivityRecordAsync(int)
+  fullName: EcoVital.Services.ActivityService.DeleteUserActivityRecordAsync(int)
+  type: Method
+  source:
+    remote:
+      path: EcoVital/Services/ActivityService.cs
+      branch: main
+      repo: https://github.com/xDeew/EcoVital_App.git
+    id: DeleteUserActivityRecordAsync
+    path: EcoVital/Services/ActivityService.cs
+    startLine: 89
+  assemblies:
+  - EcoVital
+  namespace: EcoVital.Services
+  summary: Elimina un registro de actividad del usuario.
+  example: []
+  syntax:
+    content: public Task DeleteUserActivityRecordAsync(int recordId)
+    parameters:
+    - id: recordId
+      type: System.Int32
+      description: El identificador del registro de actividad a eliminar.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function DeleteUserActivityRecordAsync(recordId As Integer) As Task
+  overload: EcoVital.Services.ActivityService.DeleteUserActivityRecordAsync*
+  nameWithType.vb: ActivityService.DeleteUserActivityRecordAsync(Integer)
+  fullName.vb: EcoVital.Services.ActivityService.DeleteUserActivityRecordAsync(Integer)
+  name.vb: DeleteUserActivityRecordAsync(Integer)
+references:
+- uid: EcoVital.Services
+  commentId: N:EcoVital.Services
+  href: EcoVital.html
+  name: EcoVital.Services
+  nameWithType: EcoVital.Services
+  fullName: EcoVital.Services
+  spec.csharp:
+  - uid: EcoVital
+    name: EcoVital
+    href: EcoVital.html
+  - name: .
+  - uid: EcoVital.Services
+    name: Services
+    href: EcoVital.Services.html
+  spec.vb:
+  - uid: EcoVital
+    name: EcoVital
+    href: EcoVital.html
+  - name: .
+  - uid: EcoVital.Services
+    name: Services
+    href: EcoVital.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EcoVital.Services.ActivityService
+  commentId: T:EcoVital.Services.ActivityService
+  parent: EcoVital.Services
+  href: EcoVital.Services.ActivityService.html
+  name: ActivityService
+  nameWithType: ActivityService
+  fullName: EcoVital.Services.ActivityService
+- uid: System.Net.Http.HttpClient
+  commentId: T:System.Net.Http.HttpClient
+  parent: System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.http.httpclient
+  name: HttpClient
+  nameWithType: HttpClient
+  fullName: System.Net.Http.HttpClient
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: EcoVital.Services.ActivityService.#ctor*
+  commentId: Overload:EcoVital.Services.ActivityService.#ctor
+  href: EcoVital.Services.ActivityService.html#EcoVital_Services_ActivityService__ctor_System_Net_Http_HttpClient_
+  name: ActivityService
+  nameWithType: ActivityService.ActivityService
+  fullName: EcoVital.Services.ActivityService.ActivityService
+  nameWithType.vb: ActivityService.New
+  fullName.vb: EcoVital.Services.ActivityService.New
+  name.vb: New
+- uid: System.Net.Http
+  commentId: N:System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Net.Http
+  nameWithType: System.Net.Http
+  fullName: System.Net.Http
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+- uid: EcoVital.Models.ActivityRecord
+  commentId: T:EcoVital.Models.ActivityRecord
+  parent: EcoVital.Models
+  href: EcoVital.Models.ActivityRecord.html
+  name: ActivityRecord
+  nameWithType: ActivityRecord
+  fullName: EcoVital.Models.ActivityRecord
+- uid: EcoVital.Services.ActivityService.GetActivityRecordsAsync*
+  commentId: Overload:EcoVital.Services.ActivityService.GetActivityRecordsAsync
+  href: EcoVital.Services.ActivityService.html#EcoVital_Services_ActivityService_GetActivityRecordsAsync
+  name: GetActivityRecordsAsync
+  nameWithType: ActivityService.GetActivityRecordsAsync
+  fullName: EcoVital.Services.ActivityService.GetActivityRecordsAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.List{EcoVital.Models.ActivityRecord}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.List{EcoVital.Models.ActivityRecord}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<List<ActivityRecord>>
+  nameWithType: Task<List<ActivityRecord>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.List<EcoVital.Models.ActivityRecord>>
+  nameWithType.vb: Task(Of List(Of ActivityRecord))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of EcoVital.Models.ActivityRecord))
+  name.vb: Task(Of List(Of ActivityRecord))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: EcoVital.Models.ActivityRecord
+    name: ActivityRecord
+    href: EcoVital.Models.ActivityRecord.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EcoVital.Models.ActivityRecord
+    name: ActivityRecord
+    href: EcoVital.Models.ActivityRecord.html
+  - name: )
+  - name: )
+- uid: EcoVital.Models
+  commentId: N:EcoVital.Models
+  href: EcoVital.html
+  name: EcoVital.Models
+  nameWithType: EcoVital.Models
+  fullName: EcoVital.Models
+  spec.csharp:
+  - uid: EcoVital
+    name: EcoVital
+    href: EcoVital.html
+  - name: .
+  - uid: EcoVital.Models
+    name: Models
+    href: EcoVital.Models.html
+  spec.vb:
+  - uid: EcoVital
+    name: EcoVital
+    href: EcoVital.html
+  - name: .
+  - uid: EcoVital.Models
+    name: Models
+    href: EcoVital.Models.html
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
+- uid: EcoVital.Services.ActivityService.RegisterUserActivityRecordAsync*
+  commentId: Overload:EcoVital.Services.ActivityService.RegisterUserActivityRecordAsync
+  href: EcoVital.Services.ActivityService.html#EcoVital_Services_ActivityService_RegisterUserActivityRecordAsync_EcoVital_Models_UserActivityRecord_
+  name: RegisterUserActivityRecordAsync
+  nameWithType: ActivityService.RegisterUserActivityRecordAsync
+  fullName: EcoVital.Services.ActivityService.RegisterUserActivityRecordAsync
+- uid: EcoVital.Models.UserActivityRecord
+  commentId: T:EcoVital.Models.UserActivityRecord
+  parent: EcoVital.Models
+  href: EcoVital.Models.UserActivityRecord.html
+  name: UserActivityRecord
+  nameWithType: UserActivityRecord
+  fullName: EcoVital.Models.UserActivityRecord
+- uid: System.Threading.Tasks.Task{EcoVital.Models.UserActivityRecord}
+  commentId: T:System.Threading.Tasks.Task{EcoVital.Models.UserActivityRecord}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<UserActivityRecord>
+  nameWithType: Task<UserActivityRecord>
+  fullName: System.Threading.Tasks.Task<EcoVital.Models.UserActivityRecord>
+  nameWithType.vb: Task(Of UserActivityRecord)
+  fullName.vb: System.Threading.Tasks.Task(Of EcoVital.Models.UserActivityRecord)
+  name.vb: Task(Of UserActivityRecord)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: EcoVital.Models.UserActivityRecord
+    name: UserActivityRecord
+    href: EcoVital.Models.UserActivityRecord.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EcoVital.Models.UserActivityRecord
+    name: UserActivityRecord
+    href: EcoVital.Models.UserActivityRecord.html
+  - name: )
+- uid: EcoVital.Services.ActivityService.GetUserActivityRecordsAsync*
+  commentId: Overload:EcoVital.Services.ActivityService.GetUserActivityRecordsAsync
+  href: EcoVital.Services.ActivityService.html#EcoVital_Services_ActivityService_GetUserActivityRecordsAsync_System_Int32_
+  name: GetUserActivityRecordsAsync
+  nameWithType: ActivityService.GetUserActivityRecordsAsync
+  fullName: EcoVital.Services.ActivityService.GetUserActivityRecordsAsync
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{EcoVital.Models.UserActivityRecord}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{EcoVital.Models.UserActivityRecord}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IEnumerable<UserActivityRecord>>
+  nameWithType: Task<IEnumerable<UserActivityRecord>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<EcoVital.Models.UserActivityRecord>>
+  nameWithType.vb: Task(Of IEnumerable(Of UserActivityRecord))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of EcoVital.Models.UserActivityRecord))
+  name.vb: Task(Of IEnumerable(Of UserActivityRecord))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: EcoVital.Models.UserActivityRecord
+    name: UserActivityRecord
+    href: EcoVital.Models.UserActivityRecord.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EcoVital.Models.UserActivityRecord
+    name: UserActivityRecord
+    href: EcoVital.Models.UserActivityRecord.html
+  - name: )
+  - name: )
+- uid: EcoVital.Services.ActivityService.DeleteUserActivityRecordAsync*
+  commentId: Overload:EcoVital.Services.ActivityService.DeleteUserActivityRecordAsync
+  href: EcoVital.Services.ActivityService.html#EcoVital_Services_ActivityService_DeleteUserActivityRecordAsync_System_Int32_
+  name: DeleteUserActivityRecordAsync
+  nameWithType: ActivityService.DeleteUserActivityRecordAsync
+  fullName: EcoVital.Services.ActivityService.DeleteUserActivityRecordAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task

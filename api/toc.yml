@@ -1,0 +1,168 @@
+### YamlMime:TableOfContent
+items:
+- uid: EcoVital
+  name: EcoVital
+  items:
+  - uid: EcoVital.App
+    name: App
+  - uid: EcoVital.AppShell
+    name: AppShell
+  - uid: EcoVital.LoadingPage
+    name: LoadingPage
+  - uid: EcoVital.MainPage
+    name: MainPage
+  - uid: EcoVital.MauiProgram
+    name: MauiProgram
+- uid: EcoVital.Config
+  name: EcoVital.Config
+  items:
+  - uid: EcoVital.Config.ApiConfig
+    name: ApiConfig
+- uid: EcoVital.Converters
+  name: EcoVital.Converters
+  items:
+  - uid: EcoVital.Converters.BoolToColorConverter
+    name: BoolToColorConverter
+  - uid: EcoVital.Converters.BoolToLayoutOptionsConverter
+    name: BoolToLayoutOptionsConverter
+  - uid: EcoVital.Converters.BoolToOpacityConverter
+    name: BoolToOpacityConverter
+  - uid: EcoVital.Converters.BoolToVisibilityConverter
+    name: BoolToVisibilityConverter
+  - uid: EcoVital.Converters.ContainsAtConverter
+    name: ContainsAtConverter
+  - uid: EcoVital.Converters.InverseBoolToVisibilityConverter
+    name: InverseBoolToVisibilityConverter
+  - uid: EcoVital.Converters.TitleToColorConverter
+    name: TitleToColorConverter
+- uid: EcoVital.Models
+  name: EcoVital.Models
+  items:
+  - uid: EcoVital.Models.ActivityRecord
+    name: ActivityRecord
+  - uid: EcoVital.Models.ChangePasswordRequest
+    name: ChangePasswordRequest
+  - uid: EcoVital.Models.Feedback
+    name: Feedback
+  - uid: EcoVital.Models.HealthReminder
+    name: HealthReminder
+  - uid: EcoVital.Models.Message
+    name: Message
+  - uid: EcoVital.Models.SecurityQuestion
+    name: SecurityQuestion
+  - uid: EcoVital.Models.UserActivityRecord
+    name: UserActivityRecord
+  - uid: EcoVital.Models.UserGoal
+    name: UserGoal
+  - uid: EcoVital.Models.UserInfo
+    name: UserInfo
+- uid: EcoVital.Services
+  name: EcoVital.Services
+  items:
+  - uid: EcoVital.Services.ActivityService
+    name: ActivityService
+  - uid: EcoVital.Services.FeedbackService
+    name: FeedbackService
+  - uid: EcoVital.Services.ILoadingService
+    name: ILoadingService
+  - uid: EcoVital.Services.ILoginRepository
+    name: ILoginRepository
+  - uid: EcoVital.Services.LoadingService
+    name: LoadingService
+  - uid: EcoVital.Services.LoginService
+    name: LoginService
+  - uid: EcoVital.Services.OpenAiService
+    name: OpenAiService
+  - uid: EcoVital.Services.UserGoalService
+    name: UserGoalService
+- uid: EcoVital.UserControl
+  name: EcoVital.UserControl
+  items:
+  - uid: EcoVital.UserControl.FlyoutHeaderControl
+    name: FlyoutHeaderControl
+- uid: EcoVital.ViewModels
+  name: EcoVital.ViewModels
+  items:
+  - uid: EcoVital.ViewModels.ActivityRecordViewModel
+    name: ActivityRecordViewModel
+  - uid: EcoVital.ViewModels.AppShellViewModel
+    name: AppShellViewModel
+  - uid: EcoVital.ViewModels.BaseViewModel
+    name: BaseViewModel
+  - uid: EcoVital.ViewModels.ChangePasswordViewModel
+    name: ChangePasswordViewModel
+  - uid: EcoVital.ViewModels.ContactPageViewModel
+    name: ContactPageViewModel
+  - uid: EcoVital.ViewModels.FeedbackViewModel
+    name: FeedbackViewModel
+  - uid: EcoVital.ViewModels.ForgotPasswordPageViewModel
+    name: ForgotPasswordPageViewModel
+  - uid: EcoVital.ViewModels.HealthRemindersViewModel
+    name: HealthRemindersViewModel
+  - uid: EcoVital.ViewModels.HomePageViewModel
+    name: HomePageViewModel
+  - uid: EcoVital.ViewModels.LoginRegister
+    name: LoginRegister
+  - uid: EcoVital.ViewModels.ProgressStatusViewModel
+    name: ProgressStatusViewModel
+  - uid: EcoVital.ViewModels.RegisterPageViewModel
+    name: RegisterPageViewModel
+  - uid: EcoVital.ViewModels.SecurityAnswerPageViewModel
+    name: SecurityAnswerPageViewModel
+  - uid: EcoVital.ViewModels.SecurityQuestionPageViewModel
+    name: SecurityQuestionPageViewModel
+- uid: EcoVital.Views
+  name: EcoVital.Views
+  items:
+  - uid: EcoVital.Views.AboutPage
+    name: AboutPage
+  - uid: EcoVital.Views.ActivityRecord
+    name: ActivityRecord
+  - uid: EcoVital.Views.ChangePasswordPage
+    name: ChangePasswordPage
+  - uid: EcoVital.Views.ChatBotPage
+    name: ChatBotPage
+  - uid: EcoVital.Views.ContactPage
+    name: ContactPage
+  - uid: EcoVital.Views.FeedbackPage
+    name: FeedbackPage
+  - uid: EcoVital.Views.ForgotPasswordPage
+    name: ForgotPasswordPage
+  - uid: EcoVital.Views.HealthRemindersPage
+    name: HealthRemindersPage
+  - uid: EcoVital.Views.HomePage
+    name: HomePage
+  - uid: EcoVital.Views.LoginPage
+    name: LoginPage
+  - uid: EcoVital.Views.ProgressStatus
+    name: ProgressStatus
+  - uid: EcoVital.Views.RegisterPage
+    name: RegisterPage
+  - uid: EcoVital.Views.SecurityAnswerPage
+    name: SecurityAnswerPage
+  - uid: EcoVital.Views.SecurityQuestionPage
+    name: SecurityQuestionPage
+- uid: UnitTestsEcoVital
+  name: UnitTestsEcoVital
+  items:
+  - uid: UnitTestsEcoVital.ActivityRecordViewModelTests
+    name: ActivityRecordViewModelTests
+  - uid: UnitTestsEcoVital.ChangePasswordViewModelTests
+    name: ChangePasswordViewModelTests
+  - uid: UnitTestsEcoVital.ChatBotPageTests
+    name: ChatBotPageTests
+  - uid: UnitTestsEcoVital.ForgotPasswordPageViewModelTests
+    name: ForgotPasswordPageViewModelTests
+  - uid: UnitTestsEcoVital.HealthRemindersViewModelTests
+    name: HealthRemindersViewModelTests
+  - uid: UnitTestsEcoVital.HomePageViewModelTests
+    name: HomePageViewModelTests
+  - uid: UnitTestsEcoVital.LoginRegisterTests
+    name: LoginRegisterTests
+  - uid: UnitTestsEcoVital.ProgressStatusViewModelTests
+    name: ProgressStatusViewModelTests
+  - uid: UnitTestsEcoVital.SecurityAnswerPageViewModelTests
+    name: SecurityAnswerPageViewModelTests
+  - uid: UnitTestsEcoVital.SecurityQuestionPageViewModelTests
+    name: SecurityQuestionPageViewModelTests
+memberLayout: SamePage
