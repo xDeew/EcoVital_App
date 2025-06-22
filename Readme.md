@@ -1,18 +1,20 @@
 # EcoVital
 
-## Configuración
+**EcoVital** is a personal chatbot project built using OpenAI's API. This project is intended for educational and portfolio purposes only.
 
-Para usar el chatbot, necesitas una clave de API de OpenAI. Sigue estos pasos para configurar tu clave:
+## Configuration
 
-1. Crea una carpeta llamada `Config` en la raíz del proyecto.
-2. Dentro de la carpeta `Config`, crea un archivo `ApiConfig.cs`.
-3. Define la clase `ApiConfig` en `ApiConfig.cs` con el siguiente contenido:
+To use the chatbot, you need an OpenAI API key. Follow these steps to configure it:
+
+1. Create a folder named `Config` at the root of the project.
+2. Inside the `Config` folder, create a file called `ApiConfig.cs`.
+3. Define the `ApiConfig` class in `ApiConfig.cs` with the following content:
 
 ```csharp
 namespace EcoVital.Config
 {
     public static class ApiConfig
     {
-        public static string ApiKey { get; } = "sk-xxxxxx"; // Reemplaza "sk-xxxxxx" con tu clave real
+        public static string ApiKey { get; } = "sk-xxxxxx"; // Replace with your actual API key
     }
 }
