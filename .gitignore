@@ -1,37 +1,30 @@
-# Ignorar la carpeta de configuraciones de IDE de JetBrains
-.idea/
-
-# Ignorar la carpeta de configuraciones de Visual Studio
+# IDEs
 .vs/
+.idea/
+.vscode/
 
-# Archivos de configuración del sistema operativo, como los archivos .DS_Store en Mac
+# OS
 .DS_Store
+Thumbs.db
 
-# Archivos de compilación y directorios de salida
-bin/
-obj/
+# .NET build
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
 
-# Carpetas de paquetes NuGet
+# NuGet (solo si usas packages.config)
 packages/
 
-# Carpetas de node_modules si estás usando herramientas de Node.js
+# Node (si lo usas para mock/docs)
 node_modules/
 
-# Archivos de log
+# Logs
 *.log
 
+# DocFX generated output
+_site/
+api/
 
-# Ignorar archivos de proyecto de Xamarin.Android
-*.csproj
-
-
-# Carpeta de salida de compilación
-./bin/
-./obj/
-
-packages/
-
-# Ignorar archivos de configuración para evitar usos malintencionados con mi clave de API
+# Secrets / local config (mantén las claves fuera del repo)
 Config/ApiConfig.cs
-
-
