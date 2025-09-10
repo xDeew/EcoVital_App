@@ -1,6 +1,9 @@
 using System.Net;
 using System.Net.Http.Json;
 using EcoVital.Models;
+using Microsoft.Maui.Storage; // FileSystem.OpenAppPackageFileAsync
+using System.Text.Json;       // JsonSerializer
+
 
 namespace EcoVital.Services;
 
@@ -29,20 +32,33 @@ public class ActivityService
     /// <returns>Una lista de <see cref="ActivityRecord"/>.</returns>
     public async Task<List<ActivityRecord>> GetActivityRecordsAsync()
     {
-        var activityRecords = await _client.GetFromJsonAsync<List<ActivityRecord>>(_apiBaseUrl);
+    List<ActivityRecord> activityRecords = null;
 
-        var random = new Random();
-
-        foreach (var activityRecord in activityRecords)
-        {
-            activityRecord.Date = DateTime.Today;
-
-            activityRecord.Date = activityRecord.Date.AddHours(random.Next(0, 24));
-        }
-
-        return activityRecords;
+    // 1) Intento ONLINE (API)
+    try
+    {
+        activityRecords = await _client.GetFromJsonAsync<List<ActivityRecord>>(_apiBaseUrl);
+    }
+    catch
+    {
+        // Si falla la API, pasamos al modo offline
     }
 
+    // 2) Fallback OFFLINE desde seed.json
+    if (activityRecords == null || activityRecords.Count == 0)
+    {
+        activityRecords = await LoadActivitiesFromSeedAsync();
+    }
+
+    // Post-proceso: fecha + hora aleatoria (igual que hacía tu servicio)
+    var random = new Random();
+    foreach (var activityRecord in activityRecords)
+    {
+        activityRecord.Date = DateTime.Today.AddHours(random.Next(0, 24));
+    }
+
+    return activityRecords;
+    }
     /// <summary>
     /// Registra un nuevo registro de actividad del usuario.
     /// </summary>
@@ -93,4 +109,32 @@ public class ActivityService
         var response = await _client.DeleteAsync(url);
         response.EnsureSuccessStatusCode();
     }
+// Lee Resources/Raw/seed.json empaquetado en la app
+private async Task<List<ActivityRecord>> LoadActivitiesFromSeedAsync()
+{
+    try
+    {
+        using var stream = await FileSystem.OpenAppPackageFileAsync("seed.json");
+        using var reader = new StreamReader(stream);
+        var json = await reader.ReadToEndAsync();
+
+        var root = JsonSerializer.Deserialize<SeedRoot>(json, new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        });
+
+        return root?.Activities ?? new List<ActivityRecord>();
+    }
+    catch
+    {
+        // Si no existe seed.json o hay error de parseo, devolvemos lista vacía
+        return new List<ActivityRecord>();
+    }
+}
+
+private sealed class SeedRoot
+{
+    public List<ActivityRecord> Activities { get; set; } = new();
+}
+
 }
