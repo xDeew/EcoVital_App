@@ -24,33 +24,38 @@ jobs:
       - name: Show dotnet info
         run: dotnet --info
 
-      # Instala solo el workload necesario (android) para MAUI
+      # Instala únicamente el workload de Android
       - name: Install MAUI Android workload
         run: dotnet workload install maui-android --source https://api.nuget.org/v3/index.json
 
-      # Hack CI: crea un namespace vacío para que el 'using EcoVital.Config' no falle
+      # Asegura que la resolución de workloads se haga SOLO para Android
+      - name: Workload restore (Android only)
+        run: dotnet workload restore EcoVital/EcoVital.csproj /p:TargetFramework=net8.0-android
+
+      # Placeholder para 'using EcoVital.Config;' (solo en CI)
       - name: Add placeholder EcoVital.Config (CI only)
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path "EcoVital/Config" | Out-Null
           @"
           // Created by CI to satisfy 'using EcoVital.Config;'
-          namespace EcoVital.Config { /* intentionally empty for CI build */ }
+          namespace EcoVital.Config { }
           "@ | Out-File -FilePath "EcoVital/Config/Placeholder.cs" -Encoding UTF8
 
-      - name: Restore (project only)
-        run: dotnet restore EcoVital/EcoVital.csproj
+      # Restore solo del TFM de Android para evitar pedir iOS/macOS
+      - name: Restore (Android only)
+        run: dotnet restore EcoVital/EcoVital.csproj /p:TargetFramework=net8.0-android /p:SkipInvalidConfigurations=true
 
+      # Build del APK en Debug
       - name: Build Debug APK (net8.0-android)
         run: dotnet build EcoVital/EcoVital.csproj -c Debug -f net8.0-android /p:SkipInvalidConfigurations=true /p:AndroidPackageFormat=apk
 
       - name: List output
         shell: pwsh
-        run: Get-ChildItem -Recurse "EcoVital/bin/Debug/net8.0-android" | Select-Object FullName
+        run: Get-ChildItem -Recurse "EcoVital/bin/Debug/net8.0-android" | Select-Object FullName,Length
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: EcoVital-APK-Debug
-          path: |
-            EcoVital/bin/Debug/net8.0-android/*.apk
+          path: EcoVital/bin/Debug/net8.0-android/*.apk
