@@ -3,8 +3,7 @@ name: Build MAUI Android APK
 on:
   workflow_dispatch:
   push:
-    branches:
-      - revive-local-mock   # cámbialo si quieres que dispare en otra rama
+    branches: [ main, revive-local-mock ]
 
 jobs:
   build-android:
