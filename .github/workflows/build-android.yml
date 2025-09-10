@@ -11,6 +11,8 @@ jobs:
     env:
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
       NUGET_XMLDOC_MODE: skip
+      # valores dummy para el placeholder (puedes sobreescribirlos con secrets)
+      OPENAI_API_KEY: DUMMY
 
     steps:
       - name: Checkout
@@ -24,35 +26,45 @@ jobs:
       - name: Show dotnet info
         run: dotnet --info
 
-      # Instala únicamente el workload de Android
       - name: Install MAUI Android workload
         run: dotnet workload install maui-android --source https://api.nuget.org/v3/index.json
 
-      # Asegura que la resolución de workloads se haga SOLO para Android
-      - name: Workload restore (Android only)
-        run: dotnet workload restore EcoVital/EcoVital.csproj /p:TargetFramework=net8.0-android
-
-      # Placeholder para 'using EcoVital.Config;' (solo en CI)
-      - name: Add placeholder EcoVital.Config (CI only)
+      # Placeholder de configuración sólo para CI (evita el error de ApiConfig)
+      - name: Add CI placeholders (ApiConfig)
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path "EcoVital/Config" | Out-Null
           @"
-          // Created by CI to satisfy 'using EcoVital.Config;'
-          namespace EcoVital.Config { }
-          "@ | Out-File -FilePath "EcoVital/Config/Placeholder.cs" -Encoding UTF8
+          // Auto-generated for CI builds only.
+          namespace EcoVital.Config
+          {
+              public static class ApiConfig
+              {
+                  public static string OpenAIKey => System.Environment.GetEnvironmentVariable("OPENAI_API_KEY") ?? "DUMMY";
+                  public static string OpenAIBaseUrl => System.Environment.GetEnvironmentVariable("OPENAI_BASE_URL") ?? "https://api.openai.com/v1";
+                  public static string OpenAIModel => System.Environment.GetEnvironmentVariable("OPENAI_MODEL") ?? "gpt-4o-mini";
+                  public static bool UseAzureOpenAI => bool.TryParse(System.Environment.GetEnvironmentVariable("USE_AZURE_OPENAI"), out var b) && b;
+                  public static string AzureOpenAIEndpoint => System.Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT") ?? "";
+                  public static string AzureOpenAIDeployment => System.Environment.GetEnvironmentVariable("AZURE_OPENAI_DEPLOYMENT") ?? "";
+                  // aliases comunes
+                  public static string ApiKey => OpenAIKey;
+                  public static string BaseUrl => OpenAIBaseUrl;
+                  public static string Model => OpenAIModel;
+                  public static string GetApiKey() => OpenAIKey;
+                  public static string GetBaseUrl() => OpenAIBaseUrl;
+              }
+          }
+          "@ | Out-File -FilePath "EcoVital/Config/ApiConfig.cs" -Encoding UTF8
 
-      # Restore solo del TFM de Android para evitar pedir iOS/macOS
-      - name: Restore (Android only)
-        run: dotnet restore EcoVital/EcoVital.csproj /p:TargetFramework=net8.0-android /p:SkipInvalidConfigurations=true
+      - name: Restore (android only)
+        run: dotnet restore EcoVital/EcoVital.csproj -p:TargetFramework=net8.0-android
 
-      # Build del APK en Debug
       - name: Build Debug APK (net8.0-android)
-        run: dotnet build EcoVital/EcoVital.csproj -c Debug -f net8.0-android /p:SkipInvalidConfigurations=true /p:AndroidPackageFormat=apk
+        run: dotnet build EcoVital/EcoVital.csproj -c Debug -f net8.0-android /p:AndroidPackageFormat=apk /p:SkipInvalidConfigurations=true
 
       - name: List output
         shell: pwsh
-        run: Get-ChildItem -Recurse "EcoVital/bin/Debug/net8.0-android" | Select-Object FullName,Length
+        run: Get-ChildItem -Recurse "EcoVital/bin/Debug/net8.0-android" | Select-Object FullName
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
