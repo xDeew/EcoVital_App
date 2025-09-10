@@ -1,4 +1,0 @@
-# desde la raíz del repo
-git rm .github/workflows/build-maui-android.yml
-git commit -m "chore: desactivar CI (pausa del proyecto)"
-git push
