@@ -1,0 +1,7 @@
+{
+  "ecoItems": [
+    { "id": 1, "name": "Glass Bottle", "category": "Recycling", "score": 92 },
+    { "id": 2, "name": "Aluminum Can", "category": "Recycling", "score": 88 },
+    { "id": 3, "name": "Plastic Bag", "category": "Waste", "score": 12 }
+  ]
+}
