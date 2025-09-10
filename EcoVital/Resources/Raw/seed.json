@@ -1,7 +1,10 @@
 {
-  "ecoItems": [
-    { "id": 1, "name": "Glass Bottle", "category": "Recycling", "score": 92 },
-    { "id": 2, "name": "Aluminum Can", "category": "Recycling", "score": 88 },
-    { "id": 3, "name": "Plastic Bag", "category": "Waste", "score": 12 }
+  "activities": [
+    { "RecordId": 1, "Description": "Yoga 20 min",     "ActivityType": "Yoga" },
+    { "RecordId": 2, "Description": "Running 3 km",    "ActivityType": "Running" },
+    { "RecordId": 3, "Description": "Swimming 500 m",  "ActivityType": "Swimming" },
+    { "RecordId": 4, "Description": "Cycling 10 km",   "ActivityType": "Cycling" },
+    { "RecordId": 5, "Description": "HIIT 15 min",     "ActivityType": "HIIT" },
+    { "RecordId": 6, "Description": "Meditation 10 m", "ActivityType": "Meditation" }
   ]
 }
